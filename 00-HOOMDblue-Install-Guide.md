@@ -60,7 +60,7 @@ If you are running HOOMD-blue on an HPC cluster you will likely need to work in 
 
 *Note: After setting up the virtual environment you may need to reinstall NumPy and other packages using pip. This can be done before or after installing HOOMD-blue (this guide includes a reminder about this after the HOOMD-blue installation).*
 
-In the HOOMDblue directory, create a virtual Python environment to run your simulations
+In the HOOMDblue directory, create a virtual Python environment to run your simulations. (You can call this virtual environment anything you like, but for simplicity we will call it VirtEnv)
 ```bash
 $ mkdir VirtEnv
 ```
