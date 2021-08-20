@@ -189,5 +189,5 @@ Make a new directory for simulations
 $ mkdir sims
 ```
 
-See the Guide to Working with Simulations for next steps.
+See the Simulating waterDPD for more information on running simulations and next steps.
 
