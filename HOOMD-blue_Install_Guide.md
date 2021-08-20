@@ -134,7 +134,9 @@ Go back to the Terminal window where you are using VirtEnv.
 <br>
 ## Installing HOOMD-blue
 
-You are now ready to install HOOMD-blue! (Make sure that you are sourced to the virtual environment before installing)
+You are now ready to install HOOMD-blue! These instructions are from the [HOOMD-blue installation guide for stable v2.9.7](https://hoomd-blue.readthedocs.io/en/stable/installation.html).
+
+**Make sure that you are sourced to the virtual environment before installing.**
 
 Move to the new hoomd folder
 ```bash
@@ -144,8 +146,8 @@ Make a build directory and move to it
 ```bash
 (VirtEnv) $ mkdir build && cd build
 ```
-Configure as instructed on the [HOOMD-blue installation website](https://hoomd-blue.readthedocs.io/en/stable/installation.html) (ignoring the GPU related steps)<br>
-*Note: This may give you a warning for developers, but as long as there are no errors the configuration is successful and you can safely ignore the warning*
+Configure (ignoring the GPU requirements)<br>
+*Note: This may give you a warning (for developers). As long as there are no errors the configuration is successful and you can safely ignore the warning.*
 ```bash
 (VirtEnv) $ cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"`
 ```
