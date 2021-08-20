@@ -8,8 +8,8 @@ The standard installation of HOOMD-blue was adapted for our colloids simulations
 
 [HOOMD-blue]: https://glotzerlab.engin.umich.edu/hoomd-blue
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
-
 <br>
+
 ## Prerequisites
 
 Required for installation:
@@ -158,8 +158,9 @@ $ make install
 ```
 
 HOOMD-blue is installed!
+<br>
 
-If needed you can install NumPy or other required Python packages with pip
+*Note: If needed you can install NumPy or other required Python packages with pip*
 ```bash
 $ pip install NumPy
 ```
