@@ -1,5 +1,8 @@
-# PRoPS-colloids_setup
+# PRoPS Group Colloids Simulation Setup Guide
 
-This is a how-to guide for getting setup to do colloids simulations in the PRoPS group using HOOMD-blue.
+This is a how-to guide for getting setup to do colloids simulations in the [PRoPS Group] using [HOOMD-blue].
+
+[PRoPS Group]: (https://web.northeastern.edu/complexfluids/)
+[HOOMD-blue]: (http://glotzerlab.engin.umich.edu/hoomd-blue/)
 
 [Last Updated: 2021 August]
