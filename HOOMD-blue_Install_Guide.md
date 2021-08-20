@@ -21,7 +21,7 @@ Required for installation:
 
 Both clang and gcc should be included in Xcode on MacOS. MacOS also includes Python 2, but you will need to install Python 3 separately. Python 3 and the other prerequisites can be installed using [Homebrew](https://brew.sh/) or another package manager (NumPy and pybind11 are also easily installed for Python using pip, see note on virtual environments below). 
 
-Note: Using conda is possible, but not recommended. See the [HOOMD-blue](https://hoomd-blue.readthedocs.io/en/stable/installation.html) installation page for advice on using conda.
+*Note: Using conda is possible, but not recommended. See the* [HOOMD-blue](https://hoomd-blue.readthedocs.io/en/stable/installation.html) *installation page for advice on using conda.*
 
 ## Setting Up Source Repositories
 
@@ -73,7 +73,7 @@ Check that you can select Pythong 3 by specifying python3
 $ python3 --version
 Python 3.9.6
 ```
-Or by running python 3 (you can exit python with the "quit()" command)
+Or by running Python 3 (you can exit Python with the "quit()" command)
 ```bash
 $ python3
 Python 3.9.6 (default, Aug  4 2021, 22:40:34) 
