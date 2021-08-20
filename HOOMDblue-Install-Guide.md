@@ -4,7 +4,7 @@ This is a guide to installing [HOOMD-blue] for use in the [PRoPS Group]'s colloi
 
 This guide is optizimed for MacOS and was last updated in August 2021.
 
-The standard installation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
+The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
 [HOOMD-blue]: https://glotzerlab.engin.umich.edu/hoomd-blue
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
