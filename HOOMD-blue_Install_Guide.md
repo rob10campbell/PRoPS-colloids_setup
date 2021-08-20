@@ -91,7 +91,8 @@ python3 -m venv VirtEnv/ --system-site-packages
 
 If you moved to VirtEnv, use "cd .." to go back up one level to the HOOMDblue directory and source to the virtual environment
 ```bash
-source VirtEnv/bin/activate
+$ cd ..
+$ source VirtEnv/bin/activate
 ```
 
 You are now working in the virtual environment!
