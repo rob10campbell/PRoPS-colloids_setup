@@ -159,6 +159,7 @@ $ make install
 
 HOOMD-blue is installed!
 <br>
+<br>
 
 *Note: If needed you can install NumPy or other required Python packages with pip*
 ```bash
@@ -166,5 +167,5 @@ $ pip install NumPy
 ```
 <br>
 <br>
-*See the Guide to Working with Simulations for next steps.*
+See the Guide to Working with Simulations for next steps.
 
