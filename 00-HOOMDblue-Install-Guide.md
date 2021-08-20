@@ -169,7 +169,7 @@ HOOMD-blue is now installed!
 $ pip install NumPy
 ```
 <br>
-<br>
+
 # Creating a Simulations Directory
 
 You should now create a directory to house your future simulations in the HOOMDblue repository.
