@@ -8,7 +8,7 @@ The standard installation of HOOMD-blue was adapted for our colloids simulations
 
 [HOOMD-blue]: https://glotzerlab.engin.umich.edu/hoomd-blue
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
-<br>
+
 <br>
 ## Prerequisites
 
@@ -53,7 +53,7 @@ And make a new directory for HOOMD-blue
 $ mkdir HOOMDblue
 ```
 <br>
-<br>
+
 ## Creating a Python Virtual Environment
 
 If you are running HOOMD-blue on an HPC cluster you will likely need to work in a virtual environment to keep any installed python packages separate from other users. Virtual environments are also a good way to manage multiple Python installations on a dedicated workstation (i.e. managing the default Python 2 that comes with MacOS and the Python 3 we will be using), and to maintain a clean development environment for different projects. There are multiple ways to implement virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but the simplest way (and othe method used by HOOMD-blue's developers) is with venv.
@@ -165,5 +165,5 @@ $ pip install NumPy
 ```
 <br>
 <br>
-See the Guide to Working with Simulations for next steps.
-<br>
+*See the Guide to Working with Simulations for next steps.*
+
