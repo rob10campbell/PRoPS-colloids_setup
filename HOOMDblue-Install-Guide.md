@@ -170,5 +170,24 @@ $ pip install NumPy
 ```
 <br>
 <br>
+# Creating a Simulations Directory
+
+You should now create a directory to house your future simulations in the HOOMDblue repository.
+
+Exit the virtual environment
+```bash
+(VirtEnv) $ deactivate
+```
+Move back up to the HOOMDblue directory
+```bash
+$ cd ..
+$ pwd
+/Users/your_username/repositories/HOOMDblue
+```
+Make a new directory for simulations
+```bash
+$ mkdir sims
+```
+
 See the Guide to Working with Simulations for next steps.
 
