@@ -1,17 +1,67 @@
-## Guide to Working with Simulations
+## Simulating waterDPD
 
-This is a guide for running a colloids simulations with [HOOMD-blue] for research in the [PRoPS Group].
+This is a guide for running a simple colloids simulation with [HOOMD-blue] for research in the [PRoPS Group].
 
 This guide is optimized for MacOS and was last updated August 2021.
 
 See the HOOMD-blue Installation Guide for prerequisites.
 
-The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
+The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. Nabi also created the waterDPD.py file. This guide was compiled by Rob Campbell.
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 <br>
 
-# Running a Simple Simulation
+# Getting the waterDPD.py file
 
-Start by running a simple dissipative particle dynamics (DPD) simulation of particles in water.
+A good way to start working with colloids simulations in HOOMD-blue is to run a dissipative particle dynamics (DPD) simulation of particles in water. You will need the waterDPD.py file provided in this repository to run this simulation.
+
+If you haven't already, clone this repository
+```bash
+$ cd repositories/
+$ git clone --recursive https://github.com/rob10campbell/PRoPS-colloids_setup.git
+```
+Move to your "HOOMDblue" repository's simulations directory and make a directory for the water simulation
+```bash
+$ cd ~/repostiories/HOOMDblue/sims/
+$ mkdir water
+```
+Move to the water directory and copy the waterDPD.py file from this repository to the HOOMDblue/sims/water directory
+```bash
+$ cd water
+$ cp ~/repositories/PRoPS-colloids_setup/waterDPD.py waterDPD.py
+$ ls
+waterDPD.py
+```
+<br>
+
+# Running a simulation
+
+Go back to the HOOMDblue directory and activate the virtual environment
+```bash
+$ cd ..
+$ cd ..
+$ pwd
+/Users/your_username/repositories/HOOMDblue
+$ source VirtEnv/bin/activate
+(VirtEnv) $
+```
+You can now move back to the direcotry for the water simulation and run the file<br>
+*Note: This file intentionally imports several packages when it is run. You will likely be prompted to install some of the required packages before you can run the file (e.g. to install gsd, "pip install gsd"). After you have installed any missing packages, try running the file again.*
+```bash
+(VirtEnv) $ cd sims/water/
+(VirtEnv) $ python3 waterDPD.py
+```
+This should launch HOOMD-blue, display the file, and then run the file. Successfully running the file will add two new output files to the directory, "Equilibrium.gsd" and "Pressure_xy.log"
+```bash
+(VirtEnv) $ ls
+Equilibrium.gsd	Pressure_xy.log	waterDPD.py
+```
+You can open Pressure_xy.log with vim or another text editor to see the recorded temperature and pressure with each timestep. 
+```bash
+(VirtEnv) $ vim Pressure_xy.log
+```
+The gsd file will generate a visualization of the particles, which we will view in VMD.
+<br>
+<br>
+See the VMD Installation Guide for next steps. 
