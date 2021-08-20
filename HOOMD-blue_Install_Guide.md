@@ -30,7 +30,7 @@ Both clang and gcc should be included in Xcode on MacOS. MacOS also includes Pyt
 
 If you do not already have a src folder or other location for repositories, it is recommended that you make one in your home directory.
 
-Open Terminal. By default you should be in the home directory. You can check this by printing the current working directory with "pwd" (you should receive the following output where "your_username" is your computer log-in user name)
+Open Terminal. By default you should be in the home directory. You can check this by printing the current working directory with "pwd" (you should receive the following output where "your_username" is your computer login user name)
 ```bash
 $ pwd
 /Users/your_username
@@ -56,28 +56,28 @@ $ mkdir HOOMDblue
 
 ## Creating a Python Virtual Environment
 
-If you are running HOOMD-blue on an HPC cluster you will likely need to work in a virtual environment to keep any installed python packages separate from other users. Virtual environments are also a good way to manage multiple Python installations on a dedicated workstation (i.e. managing the default Python 2 that comes with MacOS and the Python 3 we will be using), and to maintain a clean development environment for different projects. There are multiple ways to implement virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but the simplest way (and othe method used by HOOMD-blue's developers) is with venv.
+If you are running HOOMD-blue on an HPC cluster you will likely need to work in a virtual environment to keep any installed Python packages separate from other users. Virtual environments are also a good way to manage multiple Python installations on a dedicated workstation (i.e. switching between the default Python 2 that comes with MacOS and the Python 3 we will be using), and to ensure a clean development environment for new projects. There are multiple ways to implement virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but the simplest way (and the method used by HOOMD-blue's developers) is with venv.
 
-*Note: You may need to reinstall NumPy and other packages for each virtual environment using pip. This can be done before or after install HOOMD-blue.*
+*Note: After setting up the virtual environment you may need to reinstall NumPy and other packages using pip. This can be done before or after installing HOOMD-blue (this guide includes a reminder about this after the HOOMD-blue installation).*
 
-In the HOOMDblue directory, create a virtual python environment to run your simulations
+In the HOOMDblue directory, create a virtual Python environment to run your simulations
 ```bash
 $ mkdir VirtEnv
 ```
 
-Before setting which version of python you will use for the virtual environment, check your defaults:
+Before setting which version of Python you will use for the virtual environment, check your defaults:
 
-Check your version of python (unless you changed your default version after installing Python 3, this will be a version of Python 2)
+Check your default version of Python (unless you changed your default version after installing Python 3, this will be a version of Python 2)
 ```bash
 $ python --version
 Python 2.7.16
 ```
-Check that you can select Pythong 3 by specifying python3
+Check that you can specify Python 3 with "python3"
 ```bash
 $ python3 --version
 Python 3.9.6
 ```
-Or by running Python 3 (you can exit Python with the "quit()" command)
+Or by running python3 to see which version loads (you can then exit Python with the "quit()" command).
 ```bash
 $ python3
 Python 3.9.6 (default, Aug  4 2021, 22:40:34) 
@@ -115,21 +115,21 @@ You can exit the virtual environment with the "deactivate" command, but stay in 
 
 We use the stable release of HOOMD-blue (v2.9.7), available with installation instructions [here](https://hoomd-blue.readthedocs.io/en/stable/installation.html). In our experience, cloning from Git leads to errors during the installation process. Therefore, it is recommended that you instead download the tar file and manually unzip it.
 
-Download the tar file using the Terminal
+In a new Terminal window (i.e. NOT in VirtEnv), download the tar file
 ```bash
 $ curl -O https://glotzerlab.engin.umich.edu/Downloads/hoomd/hoomd-v2.9.7.tar.gz
 ```
 
 Go to the home directory in Finder.<br>
-If you have not already added your home directory to the Finder sidebar it may be difficult to access. To fix this, open a new Finder window and select "Downloads" from the Favorites sidebar. Then, at the top of the Finder window, right click on the current folder name (Downloads) and select the Users folder. You should see a folder named your username. Drag and drop that folder into the Favorites sidebar (it will create a shortcut).
+If you have not already added your home directory to the Finder sidebar it may be difficult to access. To fix this, open a new Finder window and select "Downloads" from the Favorites sidebar. Then, at the top of the Finder window, right click on the current folder name (Downloads) and select Users from the drop-down menuto move to the Users folder. You should see a folder named your computer login username. Drag and drop that folder into the Favorites sidebar to create a shortcut to your home directory.
 
-From your home directory, go to "repositories" and then HOOMDblue
+From your home directory, go to "repositories" and then "HOOMDblue"
 
 Double click on the tar file to unzip it
 
 Leave the new, unzipped folder and drag and drop the tar file to the Trash
 
-Go back to the Terminal window
+Go back to the Terminal window where you are using VirtEnv.
 <br>
 <br>
 ## Installing HOOMD-blue
@@ -138,30 +138,31 @@ You are now ready to install HOOMD-blue! (Make sure that you are sourced to the 
 
 Move to the new hoomd folder
 ```bash
-$ cd hoomd-v2.9.7
+(VirtEnv) $ cd hoomd-v2.9.7
 ```
 Make a build directory and move to it
 ```bash
-$ mkdir build && cd build
+(VirtEnv) $ mkdir build && cd build
 ```
-Configure as instructed on the [HOOMD-blue installation website](https://hoomd-blue.readthedocs.io/en/stable/installation.html) (ignoring the GPU related steps)
+Configure as instructed on the [HOOMD-blue installation website](https://hoomd-blue.readthedocs.io/en/stable/installation.html) (ignoring the GPU related steps)<br>
+*Note: This may give you a warning for developers, but as long as there are no errors the configuration is successful and you can safely ignore the warning*
 ```bash
-$ cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"`
+(VirtEnv) $ cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"`
 ```
 Compile
 ```bash
-$ make -j4
+(VirtEnv) $ make -j4
 ```
 And install HOOMD-blue into your Python environment
 ```bash
-$ make install
+(VirtEnv) $ make install
 ```
 
-HOOMD-blue is installed!
+HOOMD-blue is now installed!
 <br>
 <br>
 
-*Note: If needed you can install NumPy or other required Python packages with pip*
+*Note: If prompted, you can install NumPy or other required Python packages with pip*
 ```bash
 $ pip install NumPy
 ```
