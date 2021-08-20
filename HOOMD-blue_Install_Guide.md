@@ -1,14 +1,15 @@
 # HOOMD-blue Installation Guide
 
-This is a guide to installing [HOOMD-blue] for use in the PRoPS Group's colloid simulations. Our implementation of HOOMD-blue is currently CPU only (no GPU components). 
+This is a guide to installing [HOOMD-blue] for use in the [PRoPS Group]'s colloid simulations. Our implementation of HOOMD-blue is currently CPU only (no GPU components). 
 
 This guide is optizimed for MacOS and was last updated in August 2021.
 
 The standard installation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
 [HOOMD-blue]: https://glotzerlab.engin.umich.edu/hoomd-blue
-
-
+[PRoPS Group]: https://web.northeastern.edu/complexfluids/
+<br>
+<br>
 ## Prerequisites
 
 Required for installation:
@@ -23,8 +24,8 @@ Required for installation:
 Both clang and gcc should be included in Xcode on MacOS. MacOS also includes Python 2, but you will need to install Python 3 separately. Python 3 and the other prerequisites can be installed using [Homebrew](https://brew.sh/) or another package manager (NumPy and pybind11 are also easily installed for Python using pip, see note on virtual environments below). 
 
 *Note: Using conda is possible, but not recommended. See the* [HOOMD-blue](https://hoomd-blue.readthedocs.io/en/stable/installation.html) *installation page for advice on using conda.*
-
-
+<br>
+<br>
 ## Setting Up Source Repositories
 
 If you do not already have a src folder or other location for repositories, it is recommended that you make one in your home directory.
@@ -51,8 +52,8 @@ And make a new directory for HOOMD-blue
 ```bash
 $ mkdir HOOMDblue
 ```
-
-
+<br>
+<br>
 ## Creating a Python Virtual Environment
 
 If you are running HOOMD-blue on an HPC cluster you will likely need to work in a virtual environment to keep any installed python packages separate from other users. Virtual environments are also a good way to manage multiple Python installations on a dedicated workstation (i.e. managing the default Python 2 that comes with MacOS and the Python 3 we will be using), and to maintain a clean development environment for different projects. There are multiple ways to implement virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but the simplest way (and othe method used by HOOMD-blue's developers) is with venv.
@@ -108,8 +109,8 @@ You are now working in the virtual environment! This will be reflected in the co
 ```
 
 You can exit the virtual environment with the "deactivate" command, but stay in VirtEnv for the installation.
-
-
+<br>
+<br>
 ## Acquiring HOOMD-blue
 
 We use the stable release of HOOMD-blue (v2.9.7), available with installation instructions [here](https://hoomd-blue.readthedocs.io/en/stable/installation.html). In our experience, cloning from Git leads to errors during the installation process. Therefore, it is recommended that you instead download the tar file and manually unzip it.
@@ -129,8 +130,8 @@ Double click on the tar file to unzip it
 Leave the new, unzipped folder and drag and drop the tar file to the Trash
 
 Go back to the Terminal window
-
-
+<br>
+<br>
 ## Installing HOOMD-blue
 
 You are now ready to install HOOMD-blue! (Make sure that you are sourced to the virtual environment before installing)
@@ -165,4 +166,4 @@ $ pip install NumPy
 <br>
 <br>
 See the Guide to Working with Simulations for next steps.
-
+<br>
