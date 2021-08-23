@@ -2,9 +2,9 @@
 
 This is a guide for running a simple particle simulation with [HOOMD-blue] for research in the [PRoPS Group].
 
-This guide is optimized for MacOS and was last updated August 2021.
+See the HOOMD-blue Installation guide for prerequisites.
 
-See the HOOMD-blue Installation Guide for prerequisites.
+This guide is optimized for MacOS and was last updated August 2021.
 
 The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. Nabi also created the waterDPD.py file. This guide was compiled by Rob Campbell.
 
