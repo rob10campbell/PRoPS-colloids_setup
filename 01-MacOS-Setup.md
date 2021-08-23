@@ -1,6 +1,6 @@
 # MacOS System Setup Recommendations and Tips
 
-This is a guide to setting up a new MacOS computer before installing and using [HOOMD-blue] for colloids simulations in the [PRoPS Group]. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
+This is a guide to setting up a new MacOS computer for command line programming before installing and using [HOOMD-blue] for colloids simulations in the [PRoPS Group]. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
 
 This guide was complied by Rob Campbell, and was last updated in August 2021.
 
@@ -46,7 +46,7 @@ Another important difference is which file you use to modify the prompt. If you 
 <br>
 ## Xcode
 
-The first thing you need to do before using the Terminal is install Xcode. Xcode includes several essential packages and pieces of software for programming in MacOS.
+The first thing you need to do before using the Terminal is install Xcode. Xcode includes several essential pieces of software for programming in MacOS.
 
 Open a Terminal window and enter
 ```bash
@@ -60,9 +60,9 @@ You will also need to install a package manager, like [Homebrew](https://brew.sh
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-This script (from the Homebrew [website](https://brew.sh/)) explains what it will do and then pauses before it does it.
+This script (copied from the Homebrew [website](https://brew.sh/)) explains what it will do and then pauses before installing.
 
-Some simple Homebrew commands are
+Some simple Homebrew commands are<br>
 Update Homebrew
 ```bash
 $ brew update
@@ -79,9 +79,22 @@ $ brew upgrade package-name
 
 ## Text Editors
 
-You will want to get comfortable with a command line text editor for quickly creating and editing files. MacOS includes [nano](https://www.nano-editor.org/) and [vim](https://www.vim.org/). You can update these or install other text editors with Homebrew.
+You will want to get comfortable with a command line text editor for quickly creating and editing files. MacOS includes [Nano](https://www.nano-editor.org/) and [Vim](https://www.vim.org/). You can update these or install other text editors with Homebrew.
+
+Open and existing file (or create a new one) with
+```bash
+$ vim filename
+```
+
+*Note on Vim*
+Vim is powerful, but difficult to get used to because of its unintuitive default interface and its many functions and shortcuts. The basics of Vim are: 
+* Opening a file with "vim" does not allow you to immediately edit it. You must first enter "Instert" mode, by pressing "i"
+* To stop editing a file, press "esc" to return to the default mode
+* The command ":q" will quit a file that has not been edited
+* The command ":q!" will quit a file that has been edited WITHOUT saving changes
+* The command ":wq" will save and quite a file that has been edited
 <br>
-<br>
+
 ## Cmake
 
 HOOMD-blue requires [cmake](https://cmake.org/), which you can go ahead and install or update now with Homebrew
@@ -89,8 +102,35 @@ HOOMD-blue requires [cmake](https://cmake.org/), which you can go ahead and inst
 $ brew install cmake
 ```
 <br>
-<br>
+
 ## Python 3
 
+MacOS comes with Python 2 pre-installed, but you DO NOT want to use this Python. Not only do we want to use Python 3, rather than Python 2, but the pre-installed version of Python 2 is used by your computer internally, and so it's best not to mess with it. 
+
+One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects, then you probably want to install [pyenv](https://github.com/pyenv/pyenv) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv for that and can instead use the built-in venv option. More on that in the HOOMD-blue Installation Guide.
+
+If you are using pyenv, see the [pyenv site](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
+
+If you decide not to use pyenv, then you can still install Python 3 with
+```bash
+$ brew install python
+```
+This will also install pip, the Python package manager, which you can use to install NumPy and other required packages. 
+```bash
+$ pip install NumPy
+```
+
+Whichever installation method you choose, you will be able to check you version of Python with 
+```bash
+$ python --version
+```
+You will be able to run the default version of Python with 
+```bash
+$ python
+```
+And you can specify Python 3 with
+```bash
+$ python3
+```
 
 
