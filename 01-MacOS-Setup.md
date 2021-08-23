@@ -86,7 +86,7 @@ Open and existing file (or create a new one) with
 $ vim filename
 ```
 
-*Note on Vim*
+*Note on Vim*<br>
 Vim is powerful, but difficult to get used to because of its unintuitive default interface and its many functions and shortcuts. The basics of Vim are: 
 * Opening a file with "vim" does not allow you to immediately edit it. You must first enter "Instert" mode, by pressing "i"
 * To stop editing a file, press "esc" to return to the default mode
