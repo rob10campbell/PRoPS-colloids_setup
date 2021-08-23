@@ -1,6 +1,6 @@
 # Hardware Requirements and System Recommendations
 
-This is a guide to choosing a computer for running [HOOMD-blue] for colloids simulations in the [PRoPS Group].
+This is a guide to choosing a computer for research simulating colloids with [HOOMD-blue] in the [PRoPS Group].
 
 This guide was compiled by Rob Campbell and was last updated in August 2021.
 
