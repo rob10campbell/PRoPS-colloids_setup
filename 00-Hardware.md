@@ -12,7 +12,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 
 # Operating System
 
->OOMD-blue currently requires Linux or MacOS. Our guides are optimized for MacOS. Many HOOMD-blue users work with Linux, so if you are familiar with Linux and prefer it over MacOS it should be straightforward to use a Linux machine; however, MacOS is recommended because it is what members of the group are most familiar with, and therefore what we are most able to troubleshoot and offer advice on.
+HOOMD-blue currently requires Linux or MacOS. Our guides are optimized for MacOS. Many HOOMD-blue users work with Linux, so if you are familiar with Linux and prefer it over MacOS it should be straightforward to use a Linux machine; however, MacOS is recommended because it is what members of the group are most familiar with, and therefore what we are most able to help troubleshoot.
 <br>
 
 # Laptop vs. Desktop
@@ -22,7 +22,7 @@ A laptop is sufficient for this work. Most of our simulations are run on Northea
 
 # Memory
 
-Memory is the **most important** feature on your laptop. In our experience 8GB is not enough to do this work without the computer getting hot/slow quite often, so opt for at least 16GB. It is unlikely you will need more than 16GB unless you have other software you are planning to use that requries more.
+Memory is the **most important** feature for our work. In our experience 8GB is not enough to do this work without the computer getting hot/slow quite often, so opt for at least 16GB. It is unlikely you will need more than 16GB unless you plan to use other software that requries more.
 <br>
 
 # Storage
@@ -39,7 +39,7 @@ Our implementation of HOOMD-blue is currently CPU only, without parallelization,
 
 Any reasonably contempory processor should be good enough. Our group members currently use the 2018 Intel i7, 2020 Intel i7, and 2020 Intel i5 without issue.
 
-Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). Current information about Apple Silicon sugggest it will have significant performance advantages on Mac0S over Intel, and we expect Apple silicon to be a great choice in the future. For 2021, the pandemic-related global chip-shortage has caused shipping delays and made it easier to get a hold of Intel Macs, so that is what we recommend this year.
+Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). Current information about Apple Silicon sugggests it will give significant performance advantages on Mac0S over Intel, and we expect Apple silicon to be a great choice in the future. For 2021, the pandemic-related global chip-shortage has caused shipping delays that make it easier to get a hold of Intel Macs, so that is what we recommend this year.
 <br>
 
 # Current Hardware Used by Group Members (Fall 2021)
@@ -48,15 +48,18 @@ Most Mac computers will soon switch over from Intel to Apple silicon (starting w
 * Processor: 2.7 GHz Quad-Core Intel Core i7
 * Memory: 16GB 2133 MHz LPDDR3
 * Storage: 500GB
+<br>
 
 13-inch MacBook Pro 2020
 * Processor: 2 GHz Quad-Core Intel Core i5
 * Memory: 16GB 3733 MHz LPDDR4X
 * Storage: 512GB SSD
+<br>
 
 13-inch MacBook Pro 2020
 * Processor: 2 GHz Quad-Core Intel Core i7
 * Memory: 16GB 3733 MHz LPDDR4X
 * Storage: 512GB SSD
+<br>
 
 
