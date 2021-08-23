@@ -1,4 +1,4 @@
-## Simulating waterDPD
+# Simulating waterDPD
 
 This is a guide for running a simple particle simulation with [HOOMD-blue] for research in the [PRoPS Group].
 
@@ -12,7 +12,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 <br>
 
-# Getting the waterDPD.py file
+## Getting the waterDPD.py File
 
 A good way to start working with colloids simulations in HOOMD-blue is to run a dissipative particle dynamics (DPD) simulation of a random distribution of water particles. You will need the waterDPD.py file provided in this repository to run this simulation.
 
@@ -35,7 +35,7 @@ waterDPD.py
 ```
 <br>
 
-# Running a simulation
+## Running a Simulation
 
 Go back to the HOOMDblue directory and activate the virtual environment
 ```bash
