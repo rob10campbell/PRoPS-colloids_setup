@@ -130,7 +130,7 @@ timestep	pressure_xy	temperature
 ```
 <br>
 
-In contrast, if you open the gsd file it will look like gibberish. The gsd file is used to generate a visualization of the particles, which we will view later with the [Visual Molecular Dynamics (VMD)](https://www.ks.uiuc.edu/Research/vmd/) software.
+In contrast, if you open the GSD file it will look like gibberish. The GSD file generates a visualization of the simulation, which we will view later with the [Visual Molecular Dynamics (VMD)](https://www.ks.uiuc.edu/Research/vmd/) software.
 <br>
 <br>
 ## Modifying waterDPD.py
