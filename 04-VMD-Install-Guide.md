@@ -146,7 +146,7 @@ $ cp /Applications/VMD/Contents/vmd/plugins/MACOSXX86_64/molfile/gsdplugin.so .
 Your should now be able to open GSD files with the original VMD application! You can open the VMD application from the Applications/VMD folder or from Launchpad.<br>
 ***NOTE: Unfortunately you cannot keep VMD in the Dock.*** *Right-clicking on the icon and selecting "Keep in Dock" will work once, but after you close VMD the path will break and direct to the VMD icon file, not the VMD application. Bummer.*
 
-Before you delete the duplicate Contents folder, the `gsd-vmd-main` folder in your Downloads, and `gsd-vmd-main.zip` you should test to make sure that you can open GSD files with VMD.
+Before you delete the duplicate Contents folder, the gsd-vmd-main folder in your Downloads, and the gsd-vmd-main.zip file you should test to make sure that you can open GSD files with VMD.
 <br>
 <br>
 ## Opening GSD Files with VMD
@@ -165,7 +165,7 @@ Go to VMD Main
 
 The GSD file should now open! 
 
-You can close the Molecule File Browser and select the OpenGL Display to view the default visualization setting (which displays "bonds" between your particles).
+You can close the Molecule File Browser and select the OpenGL Display window to view the default visualization setting (which displays "bonds" between your particles).
 <br>
 <br>
 See the guide to Using VMD for an overview of visualization options. 
