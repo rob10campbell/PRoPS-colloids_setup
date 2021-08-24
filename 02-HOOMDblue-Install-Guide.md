@@ -23,21 +23,21 @@ Required for installation:
 * pybind11 >= 2.2
 * NumPy >= 1.7
 
-Both clang and gcc should be included in Xcode on MacOS. MacOS also includes Python 2, but you will need to install Python 3 separately. Python 3 and the other prerequisites can be installed using [Homebrew](https://brew.sh/) or another package manager (NumPy and pybind11 are also easily installed for Python using pip, see note on virtual environments below). 
+Both clang and gcc should be included with Xcode on MacOS. MacOS also includes Python 2, but you will need to install Python 3 separately. Python 3 and the other prerequisites can be installed using [Homebrew](https://brew.sh/) or another package manager (NumPy and pybind11 are also easily installed for Python using pip, see note on virtual environments below). 
 
-*Note: It is not recommended to install prerequisites with conda is possible. See the* [HOOMD-blue](https://hoomd-blue.readthedocs.io/en/stable/installation.html) *installation page for advice on using conda.*
+*Note: It is not recommended to install HOOMD-blue prerequisites with conda. See the* [HOOMD-blue](https://hoomd-blue.readthedocs.io/en/stable/installation.html) *installation page for advice on using conda.*
 <br>
 <br>
 ## Setting Up Source Repositories
 
 If you do not already have a src folder or other location for repositories, it is recommended that you make one in your home directory.
 
-Open Terminal. By default you should be in the home directory. You can check this by printing the current working directory with "pwd" (you should receive the following output where "your_username" is your computer login user name)
+Open Terminal. By default you should be in the home directory. You can check this by printing the current working directory with `pwd` (you should receive the following output where "your_username" is your computer login user name)
 ```bash
 $ pwd
 /Users/your_username
 ```
-You can also review existing directories in the home directory with "ls"
+You can also review existing directories in the home directory with `ls`
 ```bash
 $ ls
 ```
@@ -57,7 +57,7 @@ $ mkdir HOOMDblue
 
 ## Creating a Python Virtual Environment
 
-If you are running HOOMD-blue on an HPC cluster you will likely need to work in a virtual environment to keep any installed Python packages separate from other users. Virtual environments are also a good way to manage multiple Python installations on a dedicated workstation (i.e. switching between the default Python 2 that comes with MacOS and the Python 3 we will be using), and to ensure a clean development environment when starting a new project. There are multiple ways to implement virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but the simplest way (and the method used by HOOMD-blue's developers) is with venv.
+If you are running HOOMD-blue on an HPC cluster you will likely need to work in a virtual environment to keep any installed Python packages separate from other users. Virtual environments are also a good way to manage multiple Python installations on a dedicated workstation (i.e. switching between the default Python 2 that comes with MacOS and the Python 3 we will be using), and to ensure a clean development environment when starting a new project. There are multiple ways to implement virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but the simplest way (and the method used by HOOMD-blue's developers) is with `venv`.
 
 *Note: After setting up the virtual environment you may need to reinstall NumPy and other packages to this environment using pip. This can be done before or after installing HOOMD-blue. This guide includes a reminder about this step after the HOOMD-blue installation.*
 
@@ -73,12 +73,12 @@ Check your default version of Python (unless you changed your default version af
 $ python --version
 Python 2.7.16
 ```
-Check that you can specify Python 3 with "python3"
+Check that you can specify Python 3 with `python3`
 ```bash
 $ python3 --version
 Python 3.9.6
 ```
-Or by running python3 to see which version loads (you can then exit Python with the "quit()" command).
+Or by running python3 to see which version loads (you can then exit Python with the `quit()` command).
 ```bash
 $ python3
 Python 3.9.6 (default, Aug  4 2021, 22:40:34) 
@@ -87,12 +87,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> quit()
 ```
 
-Now, without leaving the HOOMDblue directory, set VirtEnv to use python3 (this will create all the base directory files (bin, etc.) in the VirtEnv folder)
+Now, without leaving the HOOMDblue directory, set VirtEnv to use Python 3 (this will create all the base directory files (bin, etc.) in the VirtEnv folder)
 ```bash
 $ python3 -m venv VirtEnv/ --system-site-packages
 ```
 
-You can move into the VirtEnv folder and check that it worked with "python --version" 
+You can move into the VirtEnv folder and check that it worked with `python --version`
 ```bash
 $ cd VirtEnv
 $ python --version
@@ -109,7 +109,7 @@ You are now working in the virtual environment! This will be reflected in the co
 (VirtEnv) $
 ```
 
-You can exit the virtual environment with the "deactivate" command, but stay in VirtEnv for the installation.
+You can exit the virtual environment with the `deactivate` command, but stay in VirtEnv for the installation.
 <br>
 <br>
 ## Acquiring HOOMD-blue
