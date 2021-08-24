@@ -1,6 +1,6 @@
 # MacOS System Setup Recommendations and Tips
 
-This is a guide to setting up a new MacOS computer for command line programming before installing and using [HOOMD-blue] for colloids simulations in the [PRoPS Group]. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
+This is a guide to setting up a new MacOS computer for command line programming, specifically what to do before installing and using [HOOMD-blue] for colloids simulations in the [PRoPS Group]. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
 
 This guide was complied by Rob Campbell, and was last updated in August 2021.
 
@@ -22,7 +22,7 @@ Once you have opened the Terminal application you can create a shortcut to it th
 
 After you open Terminal, right click the Terminal icon in the Dock at the bottom of your screen, scroll up to "Options," and select "Keep in Dock."
 
-By default, Terminal opens in your home directory (where "you_username" is the username you use on for you profile on your computer)
+By default, Terminal opens in your home directory (where "your_username" is the username you use on for your account on your computer)
 ```bash
 /Users/your_username
 ```
@@ -46,7 +46,7 @@ Another important difference is which file you use to modify the prompt. If you 
 <br>
 ## Xcode
 
-The first thing you need to do before using the Terminal is install Xcode. Xcode includes several essential pieces of software for programming in MacOS.
+The first thing you need to do is install Xcode. Xcode includes several essential pieces of software for programming in MacOS.
 
 Open a Terminal window and enter
 ```bash
@@ -60,7 +60,7 @@ You will also need to install a package manager, like [Homebrew](https://brew.sh
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-This script (copied from the Homebrew [website](https://brew.sh/)) explains what it will do and then pauses before installing.
+This script (from the Homebrew [website](https://brew.sh/)) explains what it will do and then pauses before installing.
 
 Some simple Homebrew commands are:<br>
 Update Homebrew
@@ -81,7 +81,7 @@ $ brew upgrade package-name
 
 You will want to get comfortable with a command line text editor for quickly creating and editing files. MacOS includes [Nano](https://www.nano-editor.org/) and [Vim](https://www.vim.org/). You can update these or install other text editors with Homebrew.
 
-Open and existing file (or create a new one) with
+If you're using Vim, open and existing file (or create a new one) with
 ```bash
 $ vim filename
 ```
@@ -92,7 +92,7 @@ Vim is powerful, but difficult to get used to because of its unintuitive default
 * To stop editing a file, press "esc" to return to the default mode
 * The command ":q" will quit a file that has not been edited
 * The command ":q!" will quit a file that has been edited WITHOUT saving changes
-* The command ":wq" will save and quite a file that has been edited
+* The command ":wq" will save and quit a file that has been edited
 <br>
 
 ## Cmake
