@@ -143,7 +143,7 @@ Git is a version management tool, especially useful for collaborating with other
 
 Once you have an account you should
 * Create a repository
-* [Set up Git on the command line (and clone your repository with SSH)](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) (This will allow you to manage files and repositories from the command line)
+* [Set up Git on the command line (and clone your Github repository with SSH)](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) (This will allow you to contribute to files and repositories on Github from the command line)
 * [Optional] Fork this repository so you can keep up-to date (and help us keep it updated!), and clone it to your computer
 
 
