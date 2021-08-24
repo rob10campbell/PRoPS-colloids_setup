@@ -2,9 +2,7 @@
 
 This is a guide for running a simple particle simulation with [HOOMD-blue] for research in the [PRoPS Group].
 
-See the HOOMD-blue Installation guide for prerequisites.
-
-This guide is optimized for MacOS.
+This guide is optimized for MacOS. See the HOOMD-blue Installation guide for prerequisites.
 
 [Last Update: August 2021]
 
@@ -40,21 +38,19 @@ waterDPD.py
 
 ## About waterDPD.py
 
-After downloading the waterDPD.py file, you can exam it with vim
+After downloading the waterDPD.py file, you can exam it with an integrated development environment (IDE) such as [Eclipse](https://www.eclipse.org/downloads/) or [Pycharm](https://www.jetbrains.com/pycharm/), or with a built-in text editor such as [Vim](https://www.vim.org/)
 ```bash
 $ vim waterDPD.py
 ```
-Or in an integrated development environment (IDE) such as [Eclipse](https://www.eclipse.org/downloads/) or [Pycharm](https://www.jetbrains.com/pycharm/).
-
-*Note: If you are viewing or editing waterDPD.py in an IDE you should already have line number by default. If you are using Vim you will need to turn on line numbers with the command ":set number" or ":set nu"*
+*Note: If you are viewing or editing waterDPD.py in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command ":set number" or ":set nu"*
 
 You will see that the waterDPD.py Python script is divided into 4 sections:
 * Importing a list of packages
 * Defining a set of Inputs
 * Calculating additional values based on the Inputs
-* Initializing HOOMD-blue and running the simulation, including outputs
+* Initializing HOOMD-blue and running the simulation, including any outputs
 
-This is the standard framework for writing colloids simulation scripts. 
+This is our standard framework for writing colloids simulation scripts. 
 
 If you look more closely at the "Total INITIALIZE" section you will see that the code:
 Initializes HOOMD-blue
@@ -70,7 +66,7 @@ Creates a random distribtion
 34 groupA = hoomd.group.type(name='groupA', type='A');
 35
 ```
-Sets up the dissipative particle dynamics (DPD) interactions, where A, gamma, and T are the only required variables
+Sets up the dissipative particle dynamics (DPD) interactions (where A, gamma, and T are the only required variables)
 ```bash
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=simulation_seed);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
@@ -84,7 +80,7 @@ Uses a standard integration mode to integrate across all the particles over time
 42
 43
 ```
-And then produces output files
+And then produces two output files, "Equilibrium.gsd" and "Pressure_xy.log"
 ```bash
 44 hoomd.dump.gsd(filename="Equilibrium.gsd", overwrite=True, period=1, group=all, dynamic=['attribute', 'momentum', 'topology'])
 45 hoomd.analyze.log(filename='Pressure_xy.log', overwrite=True ,
@@ -92,9 +88,9 @@ And then produces output files
 47 hoomd.run(N_time_steps);
 ```
 
-For now close the file ("esc" ":q") and try running the simulation.
+Now that we have examined the waterDPD.py script, close the file ("esc" ":q") and try running the simulation.
 <br>
-
+<br>
 ## Running a Simulation
 
 Go back to the HOOMDblue directory and activate the virtual environment
@@ -112,7 +108,8 @@ You can now move back to the directory for the water simulation and run the file
 (VirtEnv) $ cd sims/water/
 (VirtEnv) $ python3 waterDPD.py
 ```
-This should launch HOOMD-blue, display the file, and then run the file. <br>
+This should launch HOOMD-blue, display the file, and then run the file.
+
 Successfully running the file will add two new output files to the directory: "Equilibrium.gsd" and "Pressure_xy.log"<br>
 You can check that this worked with the command "ls"
 ```bash
@@ -123,14 +120,22 @@ You can open Pressure_xy.log with Vim or another text editor to see the recorded
 ```bash
 (VirtEnv) $ vim Pressure_xy.log
 ```
-The gsd file will generate a visualization of the particles, which we will view in VMD.
-<br>
+For example, the first 4 lines should look something like this (although the numbers will be different)
+```bash
+timestep	pressure_xy	temperature
+0	0.1109824717	0
+1	0.1085123802	0.02589183378
+2	0.1036177395	0.09799321669
+```
 
+In contrast, if you open the gsd file it will look like gibberish. The gsd file is uesd to generate a visualization of the particles, which we will view later with the [Visual Molecular Dynamics (VMD)](https://www.ks.uiuc.edu/Research/vmd/) software.
+<br>
+<br>
 ## Modifying waterDPD.py
 
-Now that you have successfully run the simulation, you can try making changes to see what happens.
+Now that you have successfully run the simulation, you can try making changes to the inputs and then check the Pressure_xy.log file to see how the simulation changes.
 
-For reproducibility when testing and debugging these simulations you should replace the simulation_seed with a fixed value (e.g. 123) in the "Total INITIALIZATION" section on lines 31 and 36
+For reproducibility when testing and debugging these simulations you should replace the simulation_seed with a fixed value (e.g. 123) in the "Total INITIALIZATION" section on lines 31 and 36 (scroll right on the box below to see the changes to line 31)
 ```bash
 29 #################        Total INITIALIZATION        ##############
 30 hoomd.context.initialize("");
@@ -142,7 +147,7 @@ For reproducibility when testing and debugging these simulations you should repl
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=123);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
 ```
-Once you have made these changes you can go back up to the "INPUTS" section and try changing dt (line 23), KT (line 24), etc. to see how changes affect the pressures and temperatures recorded in the Pressure_xy.log file.
+Once you have made these changes you can go back up to the "INPUTS" section and try changing the timestep dt (line 23), [KT](https://en.wikipedia.org/wiki/KT_(energy) (line 24), etc. to see how changes affect the behavior of the system during the simulation (i.e. the pressures and temperatures recorded in the Pressure_xy.log file).
 ```bash
 20 ################           INPUTS             ##############
 21 N_time_steps = 1000;L_X = 10; L_Y = 10; L_Z = 10;
@@ -153,6 +158,6 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 
 ## Other Examples
 
-Now that you are familiar with this sample script, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
+Now that you are familiar with the waterDPD.py example and how to run a script abasic simulation with HOOMD-blue, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
 
-For next steps on visualizing simulations, see the VMD Installation Guide. 
+For next steps on visualizing simulation results (i.e. gsd files), see the VMD Installation Guide. 
