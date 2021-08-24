@@ -139,6 +139,15 @@ $ python3
 ```
 <br>
 
+# IDEs
+
+While you can write and edit scripts with a text editor, you will likely want to install an integrated development environment (IDE) for developing and debugging your code.
+
+It is recommended that you download [Eclipse](https://www.eclipse.org/downloads/) for C++ programming.
+
+You can also use Eclipse for developing Python code, but some people prefer a dedicated Python IDE. For working on MacOS, the recommended IDE for Python is [PyCharm](https://www.jetbrains.com/pycharm/).
+<br>
+
 # Git
 
 Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a github account you can make one for free on [https://github.com/](https://github.com/).
