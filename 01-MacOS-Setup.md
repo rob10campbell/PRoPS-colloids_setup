@@ -56,13 +56,13 @@ $ xcode-select --install
 
 ## Package Manager
 
-You will also need to install a package manager, like [Homebrew](https://brew.sh/)
+You will also need to install a package manager, like [Homebrew](https://brew.sh/). You can install Homebrew with
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 This script (copied from the Homebrew [website](https://brew.sh/)) explains what it will do and then pauses before installing.
 
-Some simple Homebrew commands are<br>
+Some simple Homebrew commands are:<br>
 Update Homebrew
 ```bash
 $ brew update
@@ -132,5 +132,16 @@ And you can specify Python 3 with
 ```bash
 $ python3
 ```
+<br>
+
+# Git
+
+Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a github account you can make one for free on [https://github.com/](https://github.com/).
+
+Once you have an account you should
+* Create a repository
+* [Set up Git on the command line (and clone your repository with SSH)](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git)
+* [Optional] Fork this repository so you can keep up-to date (and help us keep it updated!), and clone it to your computer
+
 
 
