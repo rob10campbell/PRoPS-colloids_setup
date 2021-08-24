@@ -150,12 +150,14 @@ You can also use Eclipse for developing Python code, but some people prefer a de
 <br>
 # Git
 
-Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a github account you can make one for free on [https://github.com/](https://github.com/).
+Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a Github account you can make one for free on [https://github.com/](https://github.com/).
 
 Once you have an account you should
 * Create a repository
 * [Set up Git on the command line (and clone your Github repository with SSH)](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) (This will allow you to contribute to files and repositories on Github from the command line)
 * [Optional] Fork this repository so you can keep up-to date (and help us keep it updated!), and clone it to your computer
+
+A great, low-pressure way to get more comfortable with Git commands and the workflow for collaborations on Github is by helping fix typos and formatting inconsistencies on an existing project. You are very welcome to do that with the PRoPS-colloids_setup guides to help us keep this information up-to-date and easy to read.
 
 
 
