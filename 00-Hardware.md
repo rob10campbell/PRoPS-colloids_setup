@@ -2,7 +2,9 @@
 
 This is a guide to choosing a computer for research simulating colloids with [HOOMD-blue] in the [PRoPS Group].
 
-This guide was compiled by Rob Campbell and was last updated in August 2021.
+[Last Update: August 2021]
+
+This guide was compiled by Rob Campbell.
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
@@ -10,17 +12,17 @@ This guide was compiled by Rob Campbell and was last updated in August 2021.
 
 ## Operating System
 
-HOOMD-blue currently requires Linux or MacOS. Many HOOMD-blue users work with Linux, so if you are familiar with Linux and prefer it over MacOS it should be straightforward to use a Linux machine; however, MacOS is recommended because it is what other members of the group are most familiar with, and therefore what we are most able to help troubleshoot.
+HOOMD-blue currently requires MacOS or Linux. MacOS is recommended because it is what current group members use, and what you can get the most help troubleshooting. That said, if you are familiar with Linux and prefer it over MacOS you can definitely choose to use a Linux machine.
 <br>
 <br>
 ## Laptop vs. Desktop
 
-A laptop is sufficient for this work. Most simulations are run on Northeastern's Discovery research cluster, so you will mainly be using your computer for writing scripts, debugging, and interfacing with the cluster. Most members of the group have chosen 13" laptops because they're easier to carry between campus, work-from-home setups, and conferences, but if you prefer a larger screen for programming absolutely go for it.
+A laptop is sufficient for this work. Most simulations are run on Northeastern's Discovery research cluster, so you will mainly be using your computer for writing scripts, debugging, and interfacing with the cluster. Most members of the group have chosen 13" laptops because they're more portable, but if you prefer a larger screen for programming absolutely go for it.
 <br>
 <br>
 ## Memory
 
-Memory is the **most important** feature for our work. In our experience 8GB is not enough to do this work without the computer getting hot/slow quite often, so opt for at least 16GB. It is unlikely you will need more than 16GB unless you plan to use other software that requries it.
+Memory is the **most important** feature for our work. In our experience 8GB is not enough to do this work without the computer getting hot/slow quite often, so opt for at least 16GB. It's unlikely you'll need more than 16GB unless you plan to use other software that requries it.
 <br>
 <br>
 ## Storage
@@ -30,14 +32,14 @@ For storage, we recommend 500GB. Most data will be stored externally on the clus
 <br>
 ## GPU
 
-Our implementation of HOOMD-blue is currently CPU only (without parallelization) so you will not need a high performance GPU unless you intend to redevelop the code. HOOMD-blue has built-in GPU options, but we found them difficult to set up in the past and chose not to use them at this time.
+Our implementation of HOOMD-blue is currently CPU only (without parallelization) so you will not need a high performance GPU unless you intend to redevelop the code. HOOMD-blue has existing GPU options, but we found them difficult to set up in the past and chose not to use them at this time.
 <br>
 <br>
 ## Processor
 
 Any reasonably current processor should be good enough for this work. Our group members currently use the 2018 Intel i7, 2020 Intel i7, and 2020 Intel i5 without issue.
 
-Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). Current information about Apple Silicon sugggests it will give significant performance advantages on Mac0S over Intel, and we expect Apple silicon to be a great choice in the future. For 2021, pandemic-related chip-shortages have made it easier to get a hold of Intel Macs, so that is what we recommend this year.
+Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). We expect Apple silicon to be a great choice in the future. For 2021, pandemic-related chip-shortages have made it easier to get a hold of Intel Macs, so that is what we recommend this year.
 <br>
 <br>
 ## Current Hardware Used by Group Members (Fall 2021)
