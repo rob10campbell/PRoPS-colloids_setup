@@ -54,12 +54,12 @@ This is our standard framework for writing colloids simulation scripts.
 
 If you look more closely at the "Total INITIALIZE" section you will see that the code:
 Initializes HOOMD-blue
-```bash
+```python
 29 #################        Total INITIALIZATION        ##############
 30 hoomd.context.initialize("");
 ```
 Creates a random distribtion
-```bash
+```python
 31 hoomd.deprecated.init.create_random(N=N_Solvents, box=hoomd.data.boxdim(Lx=L_X, Ly=L_Y, Lz=L_Z), name='A', min_dist=0., seed=randomint(1, 101), dimensions=3)
 32
 33 nl = hoomd.md.nlist.tree();
@@ -67,13 +67,13 @@ Creates a random distribtion
 35
 ```
 Sets up the dissipative particle dynamics (DPD) interactions (where A, gamma, and T are the only required variables)
-```bash
+```python
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=simulation_seed);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
 38
 ```
 Uses a standard integration mode to integrate across all the particles over time
-```bash
+```python
 39 hoomd.md.integrate.mode_standard(dt=dt_Integration);
 40 all = hoomd.group.all();
 41 hoomd.md.integrate.nve(group = all);
@@ -81,7 +81,7 @@ Uses a standard integration mode to integrate across all the particles over time
 43
 ```
 And then produces two output files, "Equilibrium.gsd" and "Pressure_xy.log"
-```
+```python
 44 hoomd.dump.gsd(filename="Equilibrium.gsd", overwrite=True, period=1, group=all, dynamic=['attribute', 'momentum', 'topology'])
 45 hoomd.analyze.log(filename='Pressure_xy.log', overwrite=True ,
 46                   quantities=['pressure_xy','temperature'],period=1)
@@ -121,7 +121,7 @@ You can open Pressure_xy.log with Vim or another text editor to see the recorded
 (VirtEnv) $ vim Pressure_xy.log
 ```
 For example, the first 4 lines should look something like this (although the numbers will be different)
-```bash
+```vim
 timestep	pressure_xy	temperature
 0	0.1109824717	0
 1	0.1085123802	0.02589183378
@@ -136,7 +136,7 @@ In contrast, if you open the gsd file it will look like gibberish. The gsd file 
 Now that you have successfully run the simulation, you can try making changes to the inputs and then check the Pressure_xy.log file to see how the simulation changes.
 
 For reproducibility when testing and debugging these simulations you should replace the simulation_seed with a fixed value (e.g. 123) in the "Total INITIALIZATION" section on lines 31 and 36 (scroll right on the box below to see the changes to line 31)
-```bash
+```python
 29 #################        Total INITIALIZATION        ##############
 30 hoomd.context.initialize("");
 31 hoomd.deprecated.init.create_random(N=N_Solvents, box=hoomd.data.boxdim(Lx=L_X, Ly=L_Y, Lz=L_Z), name='A', min_dist=0., seed=123, dimensions=3)
@@ -148,7 +148,7 @@ For reproducibility when testing and debugging these simulations you should repl
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
 ```
 Once you have made these changes you can go back up to the "INPUTS" section and try changing the timestep dt (line 23), [KT](https://en.wikipedia.org/wiki/KT_(energy) (line 24), etc. to see how changes affect the behavior of the system during the simulation (i.e. the pressures and temperatures recorded in the Pressure_xy.log file).
-```bash
+```python
 20 ################           INPUTS             ##############
 21 N_time_steps = 1000;L_X = 10; L_Y = 10; L_Z = 10;
 22 dt_Integration = 0.01; m_S = 1; R_S = 0.5;
