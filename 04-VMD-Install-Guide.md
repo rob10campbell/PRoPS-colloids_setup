@@ -114,14 +114,14 @@ $ mkdir build && cd build
 ```
 Run cmake to configure the plugin
 ```bash
-cmake ..
+$ cmake ..
 ```
 And then install the plugin
 ```bash
 $ make install
 ```
 <br>
-You can now run VMD (with the GSD plugin installed) from the duplicate Contents folder. To open this version of VMD, select the Unix executable file `vmd_MACOSXX86_64` in the Applications/VMD/Contents/vmd/ folder.
+You can now run VMD (with the GSD plugin installed) from the duplicate Contents folder. To open this version of VMD, select the Unix executable file vmd_MACOSXX86_64 located in the Applications/VMD/Contents/vmd/ folder.
 
 This is functional, but not ideal.
 <br>
