@@ -89,7 +89,7 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 47 hoomd.run(N_time_steps);
 ```
 
-Now that you have examined the `waterDPD.py` script, close the file (in Vim, "esc" ":q") and try running the simulation.
+Now that you have examined the `waterDPD.py` script, close the file (in Vim, `esc` `:q`) and try running the simulation.
 <br>
 <br>
 ## Running a Simulation
@@ -103,7 +103,7 @@ $ pwd
 $ source VirtEnv/bin/activate
 (VirtEnv) $
 ```
-You can now move back to the directory for the water simulation and run the file.<br>
+You can now move back to the directory for the water simulation and run `waterDPD.py`.<br>
 *Note:* `waterDPD.py` *intentionally imports several packages when it is run. You will likely be prompted to install some of these packages before you can run the file (e.g. to install gsd, use* `pip install gsd`*). After you have installed any missing packages, try running the file again.*
 ```bash
 (VirtEnv) $ cd sims/water/
@@ -149,7 +149,7 @@ For reproducibility when testing and debugging these simulations you should repl
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=123);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
 ```
-Once you have made these changes you can go back up to the "INPUTS" section and try changing the timestep dt (line `23`), KT, etc. to see how changes affect the behavior of the system during the simulation (i.e. the pressures and temperatures recorded in the `Pressure_xy.log` file).
+Once you have made these changes you can go back up to the "INPUTS" section and try changing the timestep dt (line `22`), KT (line `23`), etc. to see how changes affect the behavior of the system during the simulation (i.e. what changes happen to the pressures and temperatures recorded in the `Pressure_xy.log` file).
 ```python
 20 ################           INPUTS             ##############
 21 N_time_steps = 1000;L_X = 10; L_Y = 10; L_Z = 10;
@@ -161,5 +161,6 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 ## Other Examples
 
 Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
-
-For next steps on visualizing simulation results (i.e. gsd files), see the VMD Installation Guide. 
+<br>
+<br>
+For next steps, see the VMD Installation Guide. 
