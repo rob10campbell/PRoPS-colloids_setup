@@ -14,7 +14,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 
 ## Getting the waterDPD.py File
 
-A good way to start working with colloids simulations in HOOMD-blue is to run a dissipative particle dynamics (DPD) simulation of a random distribution of water particles. You will need the waterDPD.py file provided in this repository to run this simulation.
+A good way to start working with colloids simulations in HOOMD-blue is to run a dissipative particle dynamics (DPD) simulation of a random distribution of water particles. You will need the `waterDPD.py` file provided in this repository to run this simulation.
 
 If you haven't already, clone this repository (or a fork of this repository) to your "repositories" directory.<br>
 *Note: For help setting up command line git with Github, see the MacOS Setup guide.*
@@ -22,12 +22,12 @@ If you haven't already, clone this repository (or a fork of this repository) to 
 $ cd repositories/
 $ git clone https://github.com/rob10campbell/PRoPS-colloids_setup.git
 ```
-Move to the simulations directory in your "HOOMDblue" repository and make a directory for the water simulation
+Move to the simulations directory in your `HOOMDblue` repository and make a directory for the water simulation
 ```bash
 $ cd ~/repostiories/HOOMDblue/sims/
 $ mkdir water
 ```
-Move to the "water" directory and copy the waterDPD.py file into that directory from the cloned copy of this repository
+Move to the `water` directory and copy the `waterDPD.py` file into that directory from the cloned copy of this repository
 ```bash
 $ cd water
 $ cp ~/repositories/PRoPS-colloids_setup/waterDPD.py waterDPD.py
@@ -38,11 +38,11 @@ waterDPD.py
 
 ## About waterDPD.py
 
-After downloading the waterDPD.py file, you can exam it with an integrated development environment (IDE) such as [Eclipse](https://www.eclipse.org/downloads/) or [Pycharm](https://www.jetbrains.com/pycharm/), or with a built-in text editor such as [Vim](https://www.vim.org/)
+After downloading `waterDPD.py` you can exam it with an integrated development environment (IDE) such as [Eclipse](https://www.eclipse.org/downloads/) or [Pycharm](https://www.jetbrains.com/pycharm/), or with a built-in text editor such as [Vim](https://www.vim.org/)
 ```bash
 $ vim waterDPD.py
 ```
-*Note: If you are viewing or editing waterDPD.py in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command "`:set number`" or "`:set nu`"*
+*Note: If you are viewing or editing `waterDPD.py` in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command `:set number` or `:set nu`*
 
 You will see that the waterDPD.py Python script is divided into 4 sections:
 1. Importing a list of packages
@@ -51,8 +51,9 @@ You will see that the waterDPD.py Python script is divided into 4 sections:
 4. Initializing HOOMD-blue and running the simulation, including any outputs
 
 This is our standard framework for writing colloids simulation scripts. 
-
-If you look more closely at the "Total INITIALIZE" section you will see that the code:
+<br>
+<br>
+If you look more closely at the `Total INITIALIZE` section you will see that the code:<br>
 Initializes HOOMD-blue
 ```python
 29 #################        Total INITIALIZATION        ##############
@@ -93,7 +94,7 @@ Now that we have examined the waterDPD.py script, close the file ("esc" ":q") an
 <br>
 ## Running a Simulation
 
-Go back to the HOOMDblue directory and activate the virtual environment
+Go back to the `HOOMDblue` directory and activate the virtual environment
 ```bash
 $ cd ..
 $ cd ..
