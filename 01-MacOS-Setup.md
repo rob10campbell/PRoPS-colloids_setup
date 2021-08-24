@@ -43,7 +43,7 @@ and zsh uses %
 %
 ```
 
-Another important difference is which file you use to modify the prompt. If you want to make any changes to settings in the Terminal prompt you will need to modify the ~/.bash_profile in bash and the ~/.zshrc file in zsh.
+Another important difference is which file you use to modify the prompt. If you want to make any changes to settings in the Terminal prompt you will need to modify the `~/.bash_profile` in bash and the `~/.zshrc` file in zsh.
 <br>
 <br>
 ## Xcode
@@ -74,7 +74,7 @@ Install software/packages
 ```bash
 $ brew install package-name
 ```
-and update installed software
+And update installed software
 ```bash
 $ brew upgrade package-name
 ```
@@ -91,11 +91,11 @@ $ vim filename
 
 *Note about using Vim:*<br>
 Vim is powerful, but difficult to get used to because of its unintuitive default interface and its many functions and shortcuts. The basics of Vim are: 
-* Opening a file with "vim" does not allow you to immediately edit it. You must first enter "Instert" mode, by pressing "i"
-* To stop editing a file, press "esc" to return to the default mode
-* The command ":q" will quit a file that has not been edited
-* The command ":q!" will quit a file that has been edited WITHOUT saving changes
-* The command ":wq" will save (write) and quit a file that has been edited
+* Opening a file with `vim` does not allow you to immediately edit it. You must first enter "Instert" mode, by pressing `i`
+* To stop editing a file, press `esc` to return to the default mode
+* The command `:q` will quit a file that has not been edited
+* The command `:q!` will quit a file that has been edited WITHOUT saving changes
+* The command `:wq` will save (write) and quit a file that has been edited
 <br>
 
 ## Cmake
@@ -147,7 +147,7 @@ It is recommended that you download [Eclipse](https://www.eclipse.org/downloads/
 
 You can also use Eclipse for developing Python code, but some people prefer a dedicated Python IDE. For working on MacOS, the recommended IDE for Python is [PyCharm](https://www.jetbrains.com/pycharm/).
 <br>
-
+<br>
 # Git
 
 Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a github account you can make one for free on [https://github.com/](https://github.com/).
