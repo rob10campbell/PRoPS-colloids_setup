@@ -42,13 +42,13 @@ After downloading the waterDPD.py file, you can exam it with an integrated devel
 ```bash
 $ vim waterDPD.py
 ```
-*Note: If you are viewing or editing waterDPD.py in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command ":set number" or ":set nu"*
+*Note: If you are viewing or editing waterDPD.py in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command "`:set number`" or "`:set nu`"*
 
 You will see that the waterDPD.py Python script is divided into 4 sections:
-* Importing a list of packages
-* Defining a set of Inputs
-* Calculating additional values based on the Inputs
-* Initializing HOOMD-blue and running the simulation, including any outputs
+1. Importing a list of packages
+2. Defining a set of Inputs
+3. Calculating additional values based on the Inputs
+4. Initializing HOOMD-blue and running the simulation, including any outputs
 
 This is our standard framework for writing colloids simulation scripts. 
 
@@ -81,7 +81,7 @@ Uses a standard integration mode to integrate across all the particles over time
 43
 ```
 And then produces two output files, "Equilibrium.gsd" and "Pressure_xy.log"
-```bash
+```
 44 hoomd.dump.gsd(filename="Equilibrium.gsd", overwrite=True, period=1, group=all, dynamic=['attribute', 'momentum', 'topology'])
 45 hoomd.analyze.log(filename='Pressure_xy.log', overwrite=True ,
 46                   quantities=['pressure_xy','temperature'],period=1)
@@ -158,6 +158,6 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 
 ## Other Examples
 
-Now that you are familiar with the waterDPD.py example and how to run a script abasic simulation with HOOMD-blue, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
+Now that you are familiar with using HOOMD-blue to run the waterDPD.py example you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
 
 For next steps on visualizing simulation results (i.e. gsd files), see the VMD Installation Guide. 
