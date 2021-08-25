@@ -24,8 +24,7 @@ A 2016 blogpost on the differences between academic code and production code, ma
 MIT CSAIL's course on using the shell, VIM, Command Line, Git, etc.
 
 [The Missing Semester of Your CS Education]: https://missing.csail.mit.edu/
-<br>
-<br>
+
 ### Command Line
 
 Command Line Cheat Sheet
@@ -44,9 +43,8 @@ Git Cheat Sheet
 <br>
 <br>
 ## Python
+<br>
 
-<br>
-<br>
 ## R
 
 [R for Data Science course on LinkeIn Learning]
@@ -54,6 +52,6 @@ Git Cheat Sheet
 [R for Data Science course on LinkedIn Learning]: https://www.linkedin.com/learning/learning-r-2/r-for-data-science?u=74653650
 <br>
 
-## C++
+## C/C++
 
 
