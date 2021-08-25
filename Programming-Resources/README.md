@@ -47,7 +47,7 @@ Git Cheat Sheet
 
 ## R
 
-[R for Data Science course on LinkeIn Learning]
+[R for Data Science course on LinkedIn Learning]
 
 [R for Data Science course on LinkedIn Learning]: https://www.linkedin.com/learning/learning-r-2/r-for-data-science?u=74653650
 <br>
