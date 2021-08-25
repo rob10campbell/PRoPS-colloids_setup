@@ -17,8 +17,8 @@ The standard implementation of HOOMD-blue and it's associate visualizations were
 
 Required for installation:
 * MacOS or Linux (this guide is optimized for MacOS)
-* HOOMD-blue (see HOOMD-blue Installation Guide)
-* A completed simulation (see Simulating waterDPD)
+* HOOMD-blue (see the [HOOMD-blue Installation Guide](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/02-HOOMDblue-Install-Guide.md))
+* A completed simulation (see [Simulating waterDPD](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/03-Simulating-waterDPD.md))
 <br>
 
 ## Acquiring VMD
@@ -151,7 +151,7 @@ Before you delete the duplicate Contents folder, the gsd-vmd-main folder in your
 <br>
 ## Opening GSD Files with VMD
 
-If you have not already done so, run the `waterDPD.py` example simulation, or another simulation that produces a GSD file (see Simulating waterDPD for details).
+If you have not already done so, run the `waterDPD.py` example simulation, or another simulation that produces a GSD file (see [Simulating waterDPD](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/03-Simulating-waterDPD.md) for details).
 
 Open VMD by selecting the icon in Launchpad or the VMD application in the Applications/VMD folder.
 
@@ -168,5 +168,5 @@ The GSD file should now open!
 You can close the Molecule File Browser and select the OpenGL Display window to view the default visualization setting (which displays "bonds" between your particles).
 <br>
 <br>
-See the guide to Using VMD for an overview of visualization options. 
+See the guide to [Using VMD](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/05-Using-VMD.md) for an overview of visualization options. 
 
