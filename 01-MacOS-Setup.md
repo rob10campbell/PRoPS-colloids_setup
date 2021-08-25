@@ -110,11 +110,11 @@ $ brew install cmake
 
 MacOS comes with Python 2 pre-installed, but you **DO NOT** want to use this Python. Not only do we want to use Python 3, rather than Python 2, but the pre-installed version of Python 2 is used by your computer internally, and so it's best not to mess with it. 
 
-One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects, then you may want to install [pyenv](https://github.com/pyenv/pyenv) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv for that and can instead use the built-in venv option. More on that in the HOOMD-blue Installation Guide.
+One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects, then you may want to install [pyenv](https://github.com/pyenv/pyenv) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv for that and can instead use the built-in venv option. More on that in the [HOOMD-blue Installation Guide](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/02-HOOMDblue-Install-Guide.md).
 
-If you are using pyenv, see the [pyenv site](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
+If you are using pyenv, see the [pyenv website](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
 
-Another popular option is to use the package and environment manager [conda](https://docs.conda.io/en/latest/) via Miniconda (the basic installation) or Anaconda (a larger installation with 7500+ packages included). Conda is also not required for using HOOMD-blue. If you are using conda, see the [installation guide](https://docs.conda.io/en/latest/).
+Another popular option is to use the package and environment manager [conda](https://docs.conda.io/en/latest/) via Miniconda (the basic installation) or Anaconda (a larger installation with 7500+ packages included). Conda is also not required for using HOOMD-blue. If you are using conda, see the [conda website for installation steps](https://docs.conda.io/en/latest/).
 
 If you decide not to use pyenv or conda, then you can still install Python 3 with
 ```bash
