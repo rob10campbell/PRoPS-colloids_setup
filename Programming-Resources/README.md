@@ -29,7 +29,7 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 
 ### Command Line
 
-* [Terminal Cheat Sheet](/terminal-basics-cheatsheet.pdf)
+* [Terminal Cheat Sheet](https://github.com/rob10campbell/PRoPS-colloids_setup/Programming-Resources/terminal-basics-cheatsheet.pdf)
 
 ### VIM
 
