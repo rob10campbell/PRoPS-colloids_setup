@@ -14,7 +14,7 @@ This guide was compiled by Rob Campbell.
 
 ## Best Practices for Collaborating on Code
 
-[Stealing Google's Coding Practices for Academia]<br>
+* [Stealing Google's Coding Practices for Academia]<br>
 A 2016 blogpost on the differences between academic code and production code, making an argument for best practices for collaborative programming in academic research: style guides, tooling, code review, pair programming, and open source.
 
 [Stealing Google's Coding Practices for Academia]: https://da-data.blogspot.com/2016/04/stealing-googles-coding-practices-for.html?m=1
@@ -22,24 +22,24 @@ A 2016 blogpost on the differences between academic code and production code, ma
 
 ## Foundational CS Skills
 
-[The Missing Semester of Your CS Education]<br>
+* [The Missing Semester of Your CS Education]<br>
 Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line, Git, etc.
 
 [The Missing Semester of Your CS Education]: https://missing.csail.mit.edu/
 
 ### Command Line
 
-Command Line Cheat Sheet
+* Command Line Cheat Sheet
 
 ### VIM
 
-[Graphical vi-vim Cheat Sheet and Tutorial]
+* [Graphical vi-vim Cheat Sheet and Tutorial]
 
 [Graphical vi-vim Cheat Sheet and Tutorial]: http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html
 
 ### Git
 
-Git Cheat Sheet
+* Git Cheat Sheet
 <br>
 <br>
 ## Python
@@ -47,7 +47,7 @@ Git Cheat Sheet
 
 ## R
 
-[R for Data Science course on LinkedIn Learning]
+* [R for Data Science course on LinkedIn Learning]
 
 [R for Data Science course on LinkedIn Learning]: https://www.linkedin.com/learning/learning-r-2/r-for-data-science?u=74653650
 <br>
