@@ -12,7 +12,7 @@ This guide was compiled by Rob Campbell and was last updated August 2021.
 
 ## Best Practices for Collaborating on Code
 
-[Stealing Google's Coding Practices for Academia]
+[Stealing Google's Coding Practices for Academia]<br>
 A 2016 blogpost on the differences between academic code and production code, making an argument for best practices for collaborative programming in academic research: style guides, tooling, code review, pair programming, and open source.
 
 [Stealing Google's Coding Practices for Academia]: https://da-data.blogspot.com/2016/04/stealing-googles-coding-practices-for.html?m=1
@@ -20,7 +20,7 @@ A 2016 blogpost on the differences between academic code and production code, ma
 
 ## Foundational CS Skills
 
-[The Missing Semester of Your CS Education]
+[The Missing Semester of Your CS Education]<br>
 MIT CSAIL's course on using the shell, VIM, Command Line, Git, etc.
 
 [The Missing Semester of Your CS Education]: https://missing.csail.mit.edu/
