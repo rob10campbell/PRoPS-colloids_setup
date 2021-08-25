@@ -29,7 +29,7 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 
 ### Command Line
 
-* Command Line Cheat Sheet
+* [Terminal Cheat Sheet](/terminal-basics-cheatsheet.pdf)
 
 ### VIM
 
@@ -39,7 +39,7 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 
 ### Git
 
-* Git Cheat Sheet
+* [Git Cheat Sheet](/git-cheat-sheet_USletter.pdf)
 <br>
 
 ## Python
