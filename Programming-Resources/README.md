@@ -4,7 +4,9 @@ This is a collection of programming resources that can help you get started with
 
 Our work currently relies on familiarity with the command line, Python, R, and C++, as well as MacOS. All of us were new to at least some of these things when we started working in the PRoPS group. To help future group members get up to speed faster, we've collected some of the resources we found most useful for learning these topics here.
 
-This guide was compiled by Rob Campbell and was last updated August 2021.
+[Last Update: August 2021]
+
+This guide was compiled by Rob Campbell.
 
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
@@ -21,21 +23,19 @@ A 2016 blogpost on the differences between academic code and production code, ma
 ## Foundational CS Skills
 
 [The Missing Semester of Your CS Education]<br>
-MIT CSAIL's course on using the shell, VIM, Command Line, Git, etc.
+Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line, Git, etc.
 
 [The Missing Semester of Your CS Education]: https://missing.csail.mit.edu/
 
 ### Command Line
 
 Command Line Cheat Sheet
-<br>
-<br>
+
 ### VIM
 
 [Graphical vi-vim Cheat Sheet and Tutorial]
 
 [Graphical vi-vim Cheat Sheet and Tutorial]: http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html
-<br>
 
 ### Git
 
