@@ -41,8 +41,9 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 
 * Git Cheat Sheet
 <br>
-<br>
+
 ## Python
+
 <br>
 
 ## R
