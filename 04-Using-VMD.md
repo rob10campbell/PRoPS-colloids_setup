@@ -2,7 +2,7 @@
 
 This is a brief introduction to using [VMD] to visulaize the results of [HOOMD-blue] colloids simulations for research in the [PRoPS Group].
 
-See [Simulating waterDPD](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/03-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/04-VMD-Install-Guide.md) for help installing VMD.
+See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/03-VMD-Install-Guide.md) for help installing VMD.
 
 This guide is optimized for MacOS.
 
@@ -26,7 +26,7 @@ You should keep the Terminal window open, but you do not need to interact with i
 <br>
 ## Opening a GSD file with VMD
 
-As described at the end of the [VMD Installation Guide](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/04-VMD-Install-Guide.md), after installing the GSD Plugin you can open the GSD output of a HOOMD-blue simulation (such as the `Equilibrium.gsd` file produced by `waterDPD.py`) with VMD.
+As described at the end of the [VMD Installation Guide](/03-VMD-Install-Guide.md), after installing the GSD Plugin you can open the GSD output of a HOOMD-blue simulation (such as the `Equilibrium.gsd` file produced by `waterDPD.py`) with VMD.
 
 Open VMD by selecting the icon in Launchpad or the VMD application in the Applications/VMD folder.
 
