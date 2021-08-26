@@ -2,11 +2,11 @@
 
 This is a guide for running a simple particle simulation with [HOOMD-blue] for research in the [PRoPS Group].
 
-This guide is optimized for MacOS. See the [HOOMD-blue Installation Guide](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/02-HOOMDblue-Install-Guide.md) for prerequisites.
+This guide is optimized for MacOS. See the [HOOMD-blue Installation Guide](../01-HOOMDblue-Install-Guide.md) for prerequisites.
 
 [Last Update: August 2021]
 
-The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. Nabi also created the [waterDPD.py](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/waterDPD.py) file. This guide was compiled by Rob Campbell.
+The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. Nabi also created the [waterDPD.py](../waterDPD.py) file. This guide was compiled by Rob Campbell.
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
@@ -163,4 +163,4 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
 <br>
 <br>
-For next steps, see the [VMD Installation Guide](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/04-VMD-Install-Guide.md). 
+For next steps, see the [VMD Installation Guide](../03-VMD-Install-Guide.md). 

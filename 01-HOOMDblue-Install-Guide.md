@@ -193,5 +193,5 @@ $ mkdir sims
 ```
 <br>
 
-You are now ready to use HOOMD-blue! See [Simulating waterDPD](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/03-Simulating-waterDPD.md) for more information on running simulations and next steps.
+You are now ready to use HOOMD-blue! See [Simulating waterDPD](../02-Simulating-waterDPD.md) for more information on running simulations and next steps.
 
