@@ -14,7 +14,7 @@ For advice on choosing and setting up a workstation for HOOMD-blue simulations, 
 The rest of the guides are numbered to follow the steps for getting set up with HOOMD-blue, VMD, and other related tools for running and analyzing simulation data:
 1. [The HOOMD-blue Installation Guide](../01-HOOMDblue-Install-Guide.md)
 2. The Guide to Running HOOMD-blue Simulations: [Simulating waterDPD](../02-Simulating-waterDPD.md)
-3. [The VMD Installation Guide](/03-VMD-Install-Guide.md)
+3. [The VMD Installation Guide](/main/03-VMD-Install-Guide.md)
 4. [The Guide to Using VMD](../04-Using-VMD.md)
 5. The Guide to Modifying VMD (to be added)
 6. The Guide to Postprocessing in R (in progress)
