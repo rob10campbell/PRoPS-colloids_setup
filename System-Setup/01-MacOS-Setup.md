@@ -157,7 +157,7 @@ Once you have an account you should
 * [Set up Git on the command line (and clone your Github repository with SSH)](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) (This will allow you to contribute to files and repositories on Github from the command line)
 * [Optional] Fork this repository so you can keep up-to date (and help us keep it updated!), and clone it to your computer
 
-A low-pressure way to get more comfortable with Git commands and the Github workflow is by helping fix typos and formatting inconsistencies in the documentation for an existing project. You are very welcome to do that with the [PRoPS-colloids_setup guides](../) and to help us keep this information up-to-date and easy to read.
+A low-pressure way to get more comfortable with Git commands and the Github workflow is by helping fix typos and formatting inconsistencies in the documentation for an existing project. You are very welcome to do that with the PRoPS-colloids_setup guides and to help us keep this information up-to-date and easy to read.
 
 
 
