@@ -160,7 +160,7 @@ For reproducibility when testing, debugging, and publishing these simulations yo
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=123);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
 ```
-Once you have made these changes you can go back up to the "INPUTS" section and try changing the length of the simulation N_time_steps (line `21`), the timestep size dt (line `22`), temperature (via KT, in line `23`), etc. and see how changes affect the behavior of the system during the simulation (i.e. what changes happen to the pressures and temperatures recorded in the `Pressure_xy.log` file).
+Once you have made these changes you can go back up to the "INPUTS" section and try changing the length of the simulation `N_time_steps` (line `21`), the timestep size `dt` (line `22`), temperature (via `KT`, in line `23`), etc. and see how changes affect the behavior of the system during the simulation (i.e. what changes happen to the pressures and temperatures recorded in the `Pressure_xy.log` file).
 ```python
 20 ################           INPUTS             ##############
 21 N_time_steps = 1000;L_X = 10; L_Y = 10; L_Z = 10;
@@ -171,7 +171,7 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 
 ## Other Examples
 
-Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
+Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)" repository from HOOMD-blue's developers.
 <br>
 <br>
 For next steps, see the [VMD Installation Guide](/03-VMD-Install-Guide.md). 
