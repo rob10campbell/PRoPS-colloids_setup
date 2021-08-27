@@ -17,7 +17,7 @@ The rest of the guides are numbered to follow the steps for getting set up with 
 3. [The VMD Installation Guide](/03-VMD-Install-Guide.md)
 4. The guide to visualizing `.gsd` files in VMD: [Using VMD](/04-Using-VMD.md)
 5. The advanced guide to VMD (to be added)
-6. The guide to analyzing `.log` files in R: [Log Analysis with R](/06-Log-Analysis-with-R) (in progress)
+6. The guide to analyzing `.log` files in R: [Log Analysis with R](/06-Log-Analysis-with-R.md) (in progress)
 7. [The Guide to Accessing the Discovery Cluster](/07-Accessing-Discovery.md)
 8. The Guide to Running Simulations on Discovery (to be added)
 
