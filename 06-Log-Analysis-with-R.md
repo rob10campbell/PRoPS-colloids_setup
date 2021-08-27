@@ -29,7 +29,8 @@ For getting started with R, it is recommended that you install the [tidyverse](h
 
 You are now ready to use R!
 
-After you open RStudio you can also modify it's appearance by going to "RStudio" and then selecting "Preferences..." to open the **Options** window. Go to the "Appearance" option on the sidebar and you can choose between "Classic," "Modern," and "Sky" themes, adjust the font and font size, and change your "Editor theme" to match your color preferences (or to match another IDE, such as "Eclipse").<br>
+After you open RStudio you can also modify it's appearance by going to "RStudio" and then selecting "Preferences..." to open the **Options** window. Go to the "Appearance" option on the sidebar and you can choose between "Classic," "Modern," and "Sky" themes, adjust the font and font size, and change your "Editor theme" to match your color preferences (or to match another IDE, such as "Eclipse").
+
 **Pro Tip**: If you select "Code" from the sidebar and switch to the "Display" tab, you can turn on "Rainbow parentheses" so that each set of parentheses inside another (i.e."(())") will have a different color, making it easier to keep track of nested parentheses and avoid parentheses-related errors.
 
 
