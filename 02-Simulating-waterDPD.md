@@ -6,7 +6,7 @@ This guide is optimized for MacOS. See the [HOOMD-blue Installation Guide](/01-H
 
 [Last Update: August 2021]
 
-The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. Nabi also created the [waterDPD.py](/waterDPD.py) file. This guide was compiled by Rob Campbell.
+The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. Nabi also created the sample [waterDPD.py](/waterDPD.py) file. This guide was compiled by Rob Campbell.
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
@@ -14,7 +14,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 
 ## Getting the waterDPD.py File
 
-A good way to start working with colloids simulations in HOOMD-blue is to run a dissipative particle dynamics (DPD) simulation of a random distribution of water particles. You will need the `waterDPD.py` file provided in this repository to run this simulation.
+To get started simulating colloids with HOOMD-blue, run a simple dissipative particle dynamics (DPD) simulation of a random distribution of water particles. You will need the `waterDPD.py` file provided in this repository to run this simulation.
 
 If you haven't already, clone this repository (or a fork of this repository) to your "repositories" directory.<br>
 *Note: For help setting up command line git with Github, see the MacOS Setup guide.*
@@ -67,7 +67,7 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 34 groupA = hoomd.group.type(name='groupA', type='A');
 35
 ```
-* Sets up the dissipative particle dynamics (DPD) interactions (where A, gamma, and T are the only required variables)
+* Sets up the dissipative particle dynamics (DPD) interactions (where `gamma`, `A` and temperature (via `KT`) are the only required variables for calculating the forces, and `r_cut` is the cutoff distance after which two particles are deemed too far away to interact with each other).
 ```python
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=simulation_seed);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
@@ -81,13 +81,22 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 42
 43
 ```
-* And then produces two output files, "Equilibrium.gsd" and "Pressure_xy.log"
+* And then produces two output files: `Equilibrium.gsd` using the `hoomd.dump` command
 ```python
 44 hoomd.dump.gsd(filename="Equilibrium.gsd", overwrite=True, period=1, group=all, dynamic=['attribute', 'momentum', 'topology'])
+```
+* And `Pressure_xy.log` using the `hoomd.analyze` command. In line `46` the `quantities` option specifies what quantities are logged into the output file (for a full list of available quantities in `hoomd.analyze.log` see the [documentation](https://hoomd-blue.readthedocs.io/en/stable/module-hoomd-analyze.html#hoomd.analyze.log))
+```python
 45 hoomd.analyze.log(filename='Pressure_xy.log', overwrite=True ,
 46                   quantities=['pressure_xy','temperature'],period=1)
+```
+
+* The simulation then runs for `N_time_steps` (which is defined in the "INPUTS" section as 1000)
+```python
 47 hoomd.run(N_time_steps);
 ```
+
+*Note: The `.gsd` and `.log` filetypes are the main outputs we want to generate with all our simulations.**
 
 Now that you have examined the `waterDPD.py` script, close the file (in Vim, `esc` `:q`) and try running the simulation.
 <br>
@@ -131,13 +140,15 @@ timestep	pressure_xy	temperature
 <br>
 
 In contrast, if you open the GSD file it will look like gibberish. The GSD file generates a visualization of the simulation, which we will view later with the [Visual Molecular Dynamics (VMD)](https://www.ks.uiuc.edu/Research/vmd/) software.
+
+We will go over additional analysis of `Pressure_xy.log` in a separate guide.
 <br>
 <br>
 ## Modifying waterDPD.py
 
 Now that you have successfully run the simulation, you can try making changes to the inputs and then check the `Pressure_xy.log` file to see how the simulation changes.
 
-For reproducibility when testing and debugging these simulations you should replace the `simulation_seed` with a fixed value (e.g. 123) in the "Total INITIALIZATION" section on lines `31` and `36` (scroll right on the box below to see the changes to line `31`)
+For reproducibility when testing, debugging, and publishing these simulations you should replace the `simulation_seed` with a fixed value (e.g. 123) in the "Total INITIALIZATION" section for both HOOMD-blue, on line `31`, and the DPD model, on line `36` (scroll right on the box below to see the changes to line `31`). The original code includes a random seed because it is important when designing a new simulation to make sure the results are dependent on your chosen variables and NOT the starting seed, which you can test by simulating the same parameters multiple times with a random seed and checking for consistency.
 ```python
 29 #################        Total INITIALIZATION        ##############
 30 hoomd.context.initialize("");
@@ -149,7 +160,7 @@ For reproducibility when testing and debugging these simulations you should repl
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=123);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
 ```
-Once you have made these changes you can go back up to the "INPUTS" section and try changing the timestep dt (line `22`), KT (line `23`), etc. to see how changes affect the behavior of the system during the simulation (i.e. what changes happen to the pressures and temperatures recorded in the `Pressure_xy.log` file).
+Once you have made these changes you can go back up to the "INPUTS" section and try changing the length of the simulation N_time_steps (line `21`), the timestep size dt (line `22`), temperature (via KT, in line `23`), etc. and see how changes affect the behavior of the system during the simulation (i.e. what changes happen to the pressures and temperatures recorded in the `Pressure_xy.log` file).
 ```python
 20 ################           INPUTS             ##############
 21 N_time_steps = 1000;L_X = 10; L_Y = 10; L_Z = 10;
@@ -160,7 +171,7 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 
 ## Other Examples
 
-Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
+Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)."
 <br>
 <br>
 For next steps, see the [VMD Installation Guide](/03-VMD-Install-Guide.md). 
