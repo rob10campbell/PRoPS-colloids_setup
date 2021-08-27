@@ -20,7 +20,8 @@ Our R workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was compil
 You can install R directly from the [R Project website](https://www.r-project.org/) by downloading from your preferred CRAN mirror (to get automatically redirected to an available server use "0-Cloud")<br>
 *Note: If you are downloading for MacOS there are two releases of the latest version of R, one for Intel-based computers and one for the Apple silicon ARM computer. Be sure to choose the correct version for your needs.*
 
-Once you have installed R you should install RStudio from the RStudio website, by choosing the [free desktop version](https://www.rstudio.com/products/rstudio/download/#download) (*Note: The website should automatically detect your operating system and give you the correct download link*)
+Once you have installed R you should install RStudio from the RStudio website, by choosing the [free desktop version](https://www.rstudio.com/products/rstudio/download/#download)<br>
+*Note: The website should automatically detect your operating system and give you the correct download link.*
 
 For getting started with R, it is recommended that you install the [tidyverse](https://www.tidyverse.org/) collection of packages designed for data science. To do this open RStudio and in the Console enter
 ```console
