@@ -56,7 +56,7 @@ $ xcode-select --install
 ```
 <br>
 
-## Package Manager
+## Package Managers
 
 You will also need to install a package manager, such as [Homebrew](https://brew.sh/). You can install Homebrew with
 ```bash
@@ -139,7 +139,7 @@ $ python3
 ```
 <br>
 
-# IDEs
+## IDEs
 
 While you can write and edit scripts with a text editor, you will likely want to install an integrated development environment (IDE) for developing and debugging your code.
 
@@ -148,7 +148,7 @@ It is recommended that you download [Eclipse](https://www.eclipse.org/downloads/
 You can also use Eclipse for developing Python code, but some people prefer a dedicated Python IDE. For working on MacOS, the recommended IDE for Python is [PyCharm](https://www.jetbrains.com/pycharm/).
 <br>
 <br>
-# Git
+## Git
 
 Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a Github account you can make one for free on [https://github.com/](https://github.com/).
 
@@ -157,7 +157,7 @@ Once you have an account you should
 * [Set up Git on the command line](https://docs.github.com/en/get-started/quickstart/set-up-git#setting-up-git) and [clone your repository with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line)<br>
 *Note: Your ID and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can* [manage your email settings on GitHub](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address) *and use the Github-generated* `users.noreply.github.com` *email address as your commit email address in Git.*
 
-## **Optional**: Signature Verification
+### *Optional*: Signature Verification
 
 Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
 
