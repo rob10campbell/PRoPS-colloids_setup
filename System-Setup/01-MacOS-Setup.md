@@ -156,8 +156,18 @@ Once you have an account you should
 * [Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
 * [Set up Git on the command line](https://docs.github.com/en/get-started/quickstart/set-up-git#setting-up-git) and [clone your repository with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line)<br>
 *Note: Your ID and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can* [manage your email settings on GitHub](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address) *and use the Github-generated* `users.noreply.github.com` *email address as your commit email address in Git.*
-* ***Recommended***: Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with [vigilant mode](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits) and a GPG key. This step verifies your identity when you make a commit, making it harder for somene else to contribute to a project in your name without your permission.<br>
-*Note: To do this on MacOS you will need to first* `brew install gnupg gnupg2` *to install* [GNU Privacy Guard (GPG)](https://gnupg.org/).
+
+***Optional***: Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
+* Turn on [vigilant mode](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits) 
+* Install [GNU Privacy Guard (GPG)](https://gnupg.org/)
+```bash
+$ brew install gnupg gnupg2
+```
+* Make sure you have the passphrase entry management tool `pinentry` installed
+```bash
+$ brew install pinentry`
+```
+* [Follow the steps for creating a GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/checking-for-existing-gpg-keys) and then add it to your Github profile
 
 ***Optional***: Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
