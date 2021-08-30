@@ -153,8 +153,11 @@ You can also use Eclipse for developing Python code, but some people prefer a de
 Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a Github account you can make one for free on [https://github.com/](https://github.com/).
 
 Once you have an account you should
-* Create a repository
+* [Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
 * [Set up Git on the command line (and clone your Github repository with SSH)](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) (This will allow you to contribute to files and repositories on Github from the command line)
+*Note: If you would like to keep your email private in GitHub repository records, set your email in Git to the users.noreply.github.com email* [generated for you by GitHub](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)*, not your primary email address.*
+* [Recommended] Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with [vigilant mode](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) and a GPG key. This will publically verify that changes you make to a project on GitHub are actually made by you, and not someone else disguised as your username.
+*Note: To do this on MacOS you will need to first* `brew install gnupg gnupg2` *to install* [GNU Privacy Guard](https://en.wikipedia.org/wiki/GNU_Privacy_Guard) *(GPG).*
 
 Optional: Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
