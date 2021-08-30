@@ -157,7 +157,9 @@ Once you have an account you should
 * [Set up Git on the command line](https://docs.github.com/en/get-started/quickstart/set-up-git#setting-up-git) and [clone your repository with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line)<br>
 *Note: Your ID and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can* [manage your email settings on GitHub](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address) *and use the Github-generated* `users.noreply.github.com` *email address as your commit email address in Git.*
 
-***Optional***: Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
+## **Optional**: Signature Verification
+
+Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
 * Turn on [vigilant mode](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits) 
 * Install [GNU Privacy Guard (GPG)](https://gnupg.org/)
 ```bash
@@ -172,9 +174,35 @@ $ brew install pinentry`
 ```bash
 $ git config --global commit.gpgsign true
 ```
-* This allows you to commit as normal, but requires you to enter your GPG passphrase for every commit. If you would like the passphrase to be automatically entered from the keychain you can install [GPG Suite](https://gpgtools.org/), or configure `gpg-agent` to save your GPG passphrase.<br>
 
-***Optional***: Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
+This allows you to commit as normal, but requires you to enter your GPG passphrase for every commit. If you would like the passphrase to be automatically entered from the keychain you can install [GPG Suite](https://gpgtools.org/) (recommended by Github), or configure `gpg-agent` to save your GPG passphrase.
+
+To configure `gpg-agent`
+* Install `pinentry-mac`
+```bash
+$ brew install gnupg pinentry-mac
+```
+* Create a `gpg-agent.config` file
+```bash
+$ vim ~/.gnupg/gpg-agent.conf
+```
+* Copy the following text into the file
+```vim
+# Connects gpg-agent to the OSX keychain via the brew-installed
+# pinentry program from GPGtools. This allows the gpg key's passphrase
+# to be stored in the login keychain, enabling automatic key signing.
+pinentry-program /usr/local/bin/pinentry-mac
+```
+* Sign a test message so pinentry-mac can store your password in the keychain
+```bash
+$ echo "test" | gpg --clearsign
+```
+* Enter your password when prompted, and check "Save in Keychain" if asked.
+
+
+### *Optional*: Contribute to the PRoPS-colloids_setup repository
+
+Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
 * [Create a branch](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) for the changes you intend to make
 * Make your changes to your fork
