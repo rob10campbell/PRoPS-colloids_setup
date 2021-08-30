@@ -202,7 +202,7 @@ $ echo "test" | gpg --clearsign
 
 ### *Optional*: Contribute to the PRoPS-colloids_setup repository
 
-Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
+Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the [Github workflow](https://guides.github.com/introduction/flow/)) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
 * [Create a branch](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) for the changes you intend to make
 * Make your changes to your fork
