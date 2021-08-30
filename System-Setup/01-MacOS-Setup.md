@@ -155,9 +155,11 @@ Git is a version management tool, especially useful for collaborating with other
 Once you have an account you should
 * Create a repository
 * [Set up Git on the command line (and clone your Github repository with SSH)](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) (This will allow you to contribute to files and repositories on Github from the command line)
-* [Optional] Fork this repository so you can keep up-to date (and help us keep it updated!), and clone it to your computer
 
-A low-pressure way to get more comfortable with Git commands and the Github workflow is by helping fix typos and formatting inconsistencies in the documentation for an existing project. You are very welcome to do that with the PRoPS-colloids_setup guides and to help us keep this information up-to-date and easy to read.
-
+Optional: Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes that fix typos, formatting inconsistencies, and out-dated information: 
+* [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
+* [Create a branch](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) for the changes you intend to make
+* Make your changes to your fork
+* [Send a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) from your fork's branch to the `main` branch
 
 
