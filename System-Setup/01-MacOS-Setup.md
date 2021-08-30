@@ -160,45 +160,50 @@ Once you have an account you should
 ## **Optional**: Signature Verification
 
 Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
-* Turn on [vigilant mode](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits) 
-* Install [GNU Privacy Guard (GPG)](https://gnupg.org/)
+
+Turn on [vigilant mode](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits) in your Github profile's Settings.
+
+Install [GNU Privacy Guard (GPG)](https://gnupg.org/) with
 ```bash
 $ brew install gnupg gnupg2
 ```
-* Make sure you have the passphrase entry management tool `pinentry` installed
+and make sure you have the passphrase entry management tool `pinentry` installed
 ```bash
 $ brew install pinentry`
 ```
-* [Follow the steps for creating a GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/checking-for-existing-gpg-keys) and then add it to your Github profile
-* To configure Git to sign all commits by default, run
+
+[Follow the steps for creating a GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/checking-for-existing-gpg-keys) and then add it to your Github profile
+
+To configure Git to sign all commits by default, run
 ```bash
 $ git config --global commit.gpgsign true
 ```
 
-This allows you to commit as normal, but requires you to enter your GPG passphrase for every commit. If you would like the passphrase to be automatically entered from the keychain you can install [GPG Suite](https://gpgtools.org/) (recommended by Github), or configure `gpg-agent` to save your GPG passphrase.
+This allows you to commit as normal, with identity verification, but it will require you to enter your GPG passphrase to authenticate a commit. If you would like the passphrase to be automatically entered from the MacOS keychain you can install [GPG Suite](https://gpgtools.org/) (recommended by Github), or configure `gpg-agent` to save your GPG passphrase.
 
-To configure `gpg-agent`
-* Install `pinentry-mac`
+You can configure `gpg-agent` to retrieve your passphrase with the following steps:
+
+Install `pinentry-mac`
 ```bash
 $ brew install gnupg pinentry-mac
 ```
-* Create a `gpg-agent.config` file
+Create a `gpg-agent.config` file
 ```bash
 $ vim ~/.gnupg/gpg-agent.conf
 ```
-* Copy the following text into the file
+Copy the following text into the file
 ```vim
 # Connects gpg-agent to the OSX keychain via the brew-installed
 # pinentry program from GPGtools. This allows the gpg key's passphrase
 # to be stored in the login keychain, enabling automatic key signing.
 pinentry-program /usr/local/bin/pinentry-mac
 ```
-* Sign a test message so pinentry-mac can store your password in the keychain
+Sign a test message so pinentry-mac can store your password in the keychain
 ```bash
 $ echo "test" | gpg --clearsign
 ```
-* Enter your password when prompted, and check "Save in Keychain" if asked.
-
+Enter your password when prompted, and check "Save in Keychain."
+*Note: If you are not prompted to "Save in Keychain" then you will still need to enter your GPG passphrase at least once when working from a new Terminal window.*
 
 ### *Optional*: Contribute to the PRoPS-colloids_setup repository
 
