@@ -157,7 +157,7 @@ Go back to `waterDPD.py` and increase the runtime by changing `N_time_steps" to 
 While the simulation runs, go back to RStudio and in the R script add
 ```r
 nrow(P.df)
-``
+```
 and then command+enter to execute it. You should see the numebr of lines displayed in the Console. You can execute this command again and watch the number of lines increase towards 10,000 as the simulation runs.
 
 You can also replot the temperature plot and the pressure plot while the simulation runs. This will only plot the amount of data that has been logged at the time you executed the command, but you can continue to update the plots as the simulation finishes.
