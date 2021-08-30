@@ -16,8 +16,10 @@ This guide was compiled by Rob Campbell.
 
 * [Stealing Google's Coding Practices for Academia]<br>
 A 2016 blogpost on the differences between academic code and production code, making an argument for best practices for collaborative programming in academic research: style guides, tooling, code review, pair programming, and open source.
+
 * [Reproducible research: Goals, Guidelines and Git]<br>
 Slides from a 2019 Princeton workshop with an overview of reproducible research best practices and a guide to setting up Git (geared towards bioinformatics, but still useful)
+
 * [Making READMEs Readable]<br>
 Best practices for open-source READMEs/documentation
 
@@ -45,8 +47,10 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 ### Git
 
 * [Git Cheat Sheet](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/Programming-Resources/git-cheat-sheet_USletter.pdf) (PDF)
+
 * [Reproducible research: Goals, Guidelines and Git](https://opr.princeton.edu/workshops/Downloads/2019May_RRandGitPratt.pdf)<br>
 Slides from a 2019 Princeton workshop with an overview of reproducible research best practices and a guide to setting up Git.
+
 * [.gitignore Templates](https://github.com/github/gitignore)
 
 ### Markdown
