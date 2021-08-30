@@ -30,7 +30,7 @@ Move to the simulations directory in your "HOOMDblue" repository and make a dire
 $ cd ~/repostiories/HOOMDblue/sims/
 $ mkdir water
 ```
-Move to the "water" directory and copy waterDPD.py into that directory from the cloned copy of this repository
+Move to the "water" directory and copy `waterDPD.py` into that directory from the cloned copy of this repository
 ```bash
 $ cd water
 $ cp ~/repositories/PRoPS-colloids_setup/waterDPD.py waterDPD.py
