@@ -15,7 +15,8 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 ## Simulating Water
 
 To get started using HOOMD-blue for colloids simulations, run a dissipative particle dynamics (DPD) simulation of a random distribution of water molecules. You will need the `waterDPD.py` file provided in this repository to run this simulation.
-
+<br>
+<br>
 ## Getting `waterDPD.py`
 
 If you haven't already, clone this repository (or a fork of this repository) to your "repositories" directory.<br>
