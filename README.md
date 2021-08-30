@@ -6,7 +6,8 @@ This is a how-to guide for getting setup to do colloids simulations in the [PRoP
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
 [Last Update: 2021 August]
-
+<br>
+<br>
 ## Before you Begin
 
 For programming resources to help you with the command line, VIM, Python, R, C++, and other skills that are useful for our work, see the [Programming Resources folder](/Programming-Resources).
@@ -33,5 +34,6 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 7. [The Guide to Accessing the Discovery Cluster](/07-Accessing-Discovery.md)
 
 8. *The Guide to Running Simulations on Discovery (to be added)*
-
+<br>
+<br>
 Additional files can be added in the future, as needed.
