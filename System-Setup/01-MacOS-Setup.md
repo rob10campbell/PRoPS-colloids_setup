@@ -202,8 +202,7 @@ Sign a test message so pinentry-mac can store your password in the keychain
 ```bash
 $ echo "test" | gpg --clearsign
 ```
-Enter your password when prompted, and check "Save in Keychain."
-*Note: If you are not prompted to "Save in Keychain" then you will still need to enter your GPG passphrase at least once when working from a new Terminal window.*
+Enter your password when prompted, and check "Save in Keychain" if given the option.
 
 ### *Optional*: Contribute to the PRoPS-colloids_setup repository
 
