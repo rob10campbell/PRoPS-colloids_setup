@@ -15,6 +15,11 @@ Our R workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was compil
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 <br>
 
+## Why Choose R
+
+To analyze the `.log` file genearted by a HOOMD-blue colloids simulation we will primarily be plotting the numbers stored in the file. This can easily be done in R, Python, MATLAB, or other software and programming languages, but the versatility of R for statistical analysis, and the quality of plotting options, makes it by far the best choice (even if the syntax can take a little while to get used to).
+<br>
+<br>
 ## Getting and Installing R, RStudio, and the Tidyverse
 
 You can install R directly from the [R Project website](https://www.r-project.org/) by downloading from your preferred CRAN mirror (to get automatically redirected to the closest available server use the "0-Cloud" link)<br>
@@ -33,3 +38,101 @@ You are now ready to use R!
 **Pro Tip**: Got to "RStudio" on the MacOS Menu Bar and select "Preferences..." to open the Options window. If you select "Code" from the sidebar and switch to the "Display" tab, you can turn on "Rainbow parentheses" so that each set of parentheses inside another (i.e."(**()**)") will have a different color, making it easier to keep track of nested parentheses and avoid parentheses-related errors.
 
 If you would like to modify the appearance of RStudio further, go to "Appearance" in the sidebar to change the overall "RStudio theme", adjust the font and font size, and change your "Editor theme" to match your color preferences (or to match another IDE, such as "Eclipse").
+<br>
+<br>
+## The RStudio Console
+
+RStudio has 4 main sections
+1. [top-left] A new or existing file, where you write your R scripts. This will only be visible if you have a file open.
+2. [bottom-left] A Console, Terminal, of Jobs manager. You can use the Console for basic math, running R commands separate from a full script, etc.
+3. [top-right] A list of loaded Environment data sets, as well as History, Connections, and Tutorial tabs.
+4. [bottom-right] A Files viewer, Plots, available Packages, Help, and general Viewer.
+
+To get started we will write our code in a file in the top-left, view information about executed code in the Console at the bottom-left, and view Plots in the bottom-right.
+<br>
+<br>
+## Creating a New R Script
+
+Go to the "File" menu on the MacOS Menu Bar, and select "New File," "R Script"
+<br>
+<br>
+## Loading and Checking Data
+
+In the R Script, create a data frame to read the `Pressure_xy.log` file (or other `.log` file)
+```r
+P.df = read.table(file = "~/file_location", header = T)
+```
+*Note: when entering the file location you can use the "tab" key to view available file path options and autocomplete with "return")*
+
+ With the cursor on this line, hold the "command" key and hit "return" to load the file. 
+
+To check the file, load the first few lines by adding
+```r
+head(P.df)
+```
+to the R script and then hit command+return. <br>
+In the Console section [bottom-left] you will see the first 6 lines (your values for `pressure_xy` and `temperature` will be different)
+```console
+> head(P.df)
+  timestep pressure_xy temperature
+1        0  0.11098247  0.00000000
+2        1  0.10851238  0.02589183
+3        2  0.10361774  0.09799322
+4        3  0.09769909  0.20621219
+5        4  0.08895702  0.34156559
+6        5  0.07994112  0.49465869
+```
+We can see that the file has 3 columns of data, and the first line in each column is not a data point, it's the label for that column.
+
+You should also get a summary overview of the full data set. This can help you catch any weird things that might have happened (e.g. if temperature was set to 1 but reaches 1000, or if any basic statistical analyses give you an "N/A" value instead of a number).
+Back in the R Script, add
+```r
+summary(P.df)
+```
+and command+enter to run it.<br>
+The Console should show you something like:
+```console
+> summary(P.df)
+    timestep      pressure_xy         temperature    
+ Min.   :  0.0   Min.   :-0.121535   Min.   :0.0000  
+ 1st Qu.:249.8   1st Qu.:-0.038633   1st Qu.:0.1051  
+ Median :499.5   Median :-0.013924   Median :0.1204  
+ Mean   :499.5   Mean   :-0.016007   Mean   :0.2323  
+ 3rd Qu.:749.2   3rd Qu.: 0.002718   3rd Qu.:0.2157  
+ Max.   :999.0   Max.   : 0.110982   Max.   :1.6282 
+```
+You can see there are 1000 timesteps (0-99), the pressure ranges from ~-0.1 to ~0.1, and the termperature ranges from 0 to ~1. All looks good!
+
+You can also view the full data set in a table (similar to an Excel sheet). In the R Script add
+```r
+View(P.df)
+```
+and hit command+enter to create a new file with the table. This file will open as a new tab in the top-left section (temporarily hiding the R Script from view).
+<br>
+<br>
+## Plotting Data
+
+Go back to the R Script file and let's plot the data!<br>
+Let's start with temperature vs. time. We already loaded each column of the data from `Pressure_xy.log` into the dataframe `P.df`, so we can assign those variables to the x and y axes with `P.df$variable-name`:
+```r
+plot(x = P.df$timestep, y = P.df$temperature, xlab = "Time", ylab = "Temperature")
+```
+The attributes `xlab` and `ylab` set the x-axis label and y-axis label, respectively.
+
+Hit command+enter to plot. The command will be executed in the Console, and when it finishes running the plot will appear in the bottom-right section.
+
+You'll see that the temperature briefly spikes above 1.5 before dropping and stabilizing around 0.1. 
+
+Go ahead and view the `waterDPD.py` script. Either open the file with your preferred IDE, or open a Temrinal window alongside R Studio and 
+```bash
+$ vim /repositories/HOOMDblue/sims/water/waterDPD.py
+```
+Looking at the "INPUTS" you can see that we set the temperature at 0.1 (kT=0.1). In the simulation the temperature shoots up, as the particles start moving, but it goes back down to 0.1 because of the dissipative forces (i.e. viscosity) in our dissipative particle dynamics (DPD) model. The dissipative force takes away the extra energy from the initiated particle motion, and the simulation stabilizes.
+
+Check to see if it really does go to 0.1 by adding a red dashed line at 0.1:
+```r
+lines(x = c(-100, 2000), y = c(0.1, 0.1), lty=2, col='red', lwd=2)
+```
+
+
+
