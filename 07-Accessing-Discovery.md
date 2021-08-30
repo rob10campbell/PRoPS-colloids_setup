@@ -1,22 +1,21 @@
 # Getting Setup with the Discovery Cluster
 
-This is a guide to getting setup to use the Discovery Cluster at Northeastern University for research in the [PRoPS Group] simulating colloids with [HOOMD-blue].
+This is a guide to getting setup to use the Discovery Cluster at Northeastern University for research in the [PRoPS Group].
 
 This guide is optimized for MacOS.
 
 [Last Update: August 2021]
 
-The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
+This guide was compiled by Rob Campbell.
 
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
-[HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 <br>
 
 ## Getting Access
 
 To request access to the Discovery cluster, complete the [ServiceNow Research Computing Access Request form](https://service.northeastern.edu/tech?id=sc_cat_item&sys_id=0ae24596db535fc075892f17d496199c). We do not need the software Gaussian.
 
-More details on getting access and using Discovery are available in [the Discovery docs](https://rc-docs.northeastern.edu/en/latest/get_started/get_access.html).
+More details on getting access and using Discovery are available in [the Discovery documentation](https://rc-docs.northeastern.edu/en/latest/get_started/get_access.html).
 <br>
 <br>
 ## Connecting to Discovery
