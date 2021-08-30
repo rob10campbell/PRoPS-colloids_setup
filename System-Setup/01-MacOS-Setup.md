@@ -168,6 +168,11 @@ $ brew install gnupg gnupg2
 $ brew install pinentry`
 ```
 * [Follow the steps for creating a GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/checking-for-existing-gpg-keys) and then add it to your Github profile
+* To configure Git to sign all commits by default, run
+```bash
+$ git config --global commit.gpgsign true
+```
+* This allows you to commit as normal, but requires you to enter your GPG passphrase for every commit. If you would like the passphrase to be automatically entered from the keychain you can install [GPG Suite](https://gpgtools.org/), or configure `gpg-agent` to save your GPG passphrase.<br>
 
 ***Optional***: Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
