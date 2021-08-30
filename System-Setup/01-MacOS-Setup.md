@@ -159,7 +159,7 @@ Once you have an account you should
 * ***Recommended***: Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with [vigilant mode](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits) and a GPG key. This step verifies your identity when you make a commit, making it harder for somene else to contribute to a project in your name without your permission.<br>
 *Note: To do this on MacOS you will need to first* `brew install gnupg gnupg2` *to install* [GNU Privacy Guard (GPG)](https://gnupg.org/).
 
-***Optional***: Now that you are set up to use Git and Github, help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow!) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
+***Optional***: Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the Github workflow) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
 * [Create a branch](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) for the changes you intend to make
 * Make your changes to your fork
