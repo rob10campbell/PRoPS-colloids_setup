@@ -127,12 +127,43 @@ Go ahead and view the `waterDPD.py` script. Either open the file with your prefe
 ```bash
 $ vim /repositories/HOOMDblue/sims/water/waterDPD.py
 ```
-Looking at the "INPUTS" you can see that we set the temperature at 0.1 (kT=0.1). In the simulation the temperature shoots up, as the particles start moving, but it goes back down to 0.1 because of the dissipative forces (i.e. viscosity) in our dissipative particle dynamics (DPD) model. The dissipative force takes away the extra energy from the initiated particle motion, and the simulation stabilizes.
+Looking at the "INPUTS" you can see that we set the temperature at 0.1 (`KT=.1`). In the simulation the temperature shoots up, as the particles start moving, but it goes back down to 0.1 because of the dissipative forces (i.e. viscosity) in our dissipative particle dynamics (DPD) model. The dissipative force takes away the extra energy from the initiated particle motion, and the simulation stabilizes to equilibrium conditions.
 
 Check to see if it really does go to 0.1 by adding a red dashed line at 0.1:
 ```r
 lines(x = c(-100, 2000), y = c(0.1, 0.1), lty=2, col='red', lwd=2)
 ```
+
+Now check another parameter: pressure vs. time
+```r
+plot(x = P.df$timestep, y = P.df$pressure, xlab = "Time", ylab = "Pressure")
+lines(x = c(-100, 2000), y = c(0, 0), lty=2, col='red', lwd=2)
+```
+This should start noisy but eventually even out to an oscillation around 0.
+
+Remember that we're plotting something more specific than just "pressure." Pressure is a tensor with multiple directions, and if you look back at `waterDPD.py` you'll remember that we specifically chose in `hoomd.analyze` to log the pressure in the x-y direction. This was chosen so that we could eventually look at shear stress (tau = -P), but there's no shear yet. This simulation only generates a particle distribution at equilibrium, and so the pressure oscillates around 0 between -0.5 and 0.5.
+
+Just to make sure, look back at the summary and see that the average pressure is close to 0 (our example is -0.016007). If you run the simulation for longer, say 10,000 timesteps, you get much closer.
+<br>
+<br>
+## Using R to Analyze `.log` Files While a Simulation Runs
+
+You can also use R to track a simulation's progress as it runs.
+
+Let's check the simulation again: Does the temperature remain at 0.1 and the pressure average at 0 for longer timesteps?
+
+Go back to `waterDPD.py` and increase the runtime by changing `N_time_steps" to 10,000. Then source to VirtEnv and run the simulation.
+
+While the simulation runs, go back to RStudio and in the R script add
+```r
+nrow(P.df)
+``
+and then command+enter to execute it. You should see the numebr of lines displayed in the Console. You can execute this command again and watch the number of lines increase towards 10,000 as the simulation runs.
+
+You can also replot the temperature plot and the pressure plot while the simulation runs. This will only plot the amount of data that has been logged at the time you executed the command, but you can continue to update the plots as the simulation finishes.
+<br>
+<br>
+## The Importance of Temperature
 
 
 
