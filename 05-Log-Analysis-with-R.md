@@ -154,7 +154,7 @@ You can also use R to track a simulation's progress as it runs.
 
 Let's check the simulation again: Does the temperature remain at 0.1 and the pressure average at 0 for longer timesteps?
 
-Go back to `waterDPD.py` and increase the runtime by changing `N_time_steps` to 10,000. Then source to VirtEnv and run the simulation (see [Running a Simulation](../02-Simulating-waterDPD.md#running-a-simulation) in Simulating waterDPD.py for full steps).
+Go back to `waterDPD.py` and increase the runtime by changing `N_time_steps` to 10,000. Then source to VirtEnv and run the simulation (see [Running a Simulation](/02-Simulating-waterDPD.md#running-a-simulation) in Simulating waterDPD.py for full steps).
 
 While the simulation runs, go back to RStudio and in the R script add
 ```r
