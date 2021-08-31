@@ -141,7 +141,7 @@ lines(x = c(-100, 2000), y = c(0, 0), lty=2, col='red', lwd=2)
 ```
 This should start noisy but eventually even out to an oscillation around 0.
 
-Remember that we're plotting something more specific than just "pressure." Pressure is a tensor with multiple directions, and if you look back at `waterDPD.py` you'll remember that we specifically chose in `hoomd.analyze` to log the pressure in the x-y direction. This was chosen so that we could eventually look at shear stress (tau = -P), but there's no shear yet. This simulation only generates a particle distribution at equilibrium, and so the pressure oscillates around 0 between -0.5 and 0.5.
+Remember that we're plotting something more specific than just "pressure." Pressure is a tensor with multiple directions, and if you look back at `waterDPD.py` you'll remember that we specifically chose in `hoomd.analyze` to log the pressure in the x-y direction. This was chosen so that we could eventually look at shear stress (tau = -P), but there's no shear yet. The first step is to bring the simulation to equilibrium, which is all that `waterDPD.py` currently does. And at equilibrium the pressure oscillates around 0 between -0.5 and 0.5.
 
 Just to make sure, look back at the summary and see that the average pressure is close to 0 (our example is -0.016007). If you run the simulation for longer, say 10,000 timesteps, you get much closer.
 <br>
@@ -165,5 +165,25 @@ You can also replot the temperature plot and the pressure plot while the simulat
 <br>
 ## The Importance of Temperature
 
+Typically when running a simulation in HOOMD-blue you will want to output a `.gsd` file for visualization and a `.log` of temperature and pressure. Temperature is necessary to track for a variety of reasons, but *most importantly* because we are running a dissipative particle dynamics (DPD) simulation. 
 
+***Always check that temperature is conserved to verify that the DPD simulation is running properly.***
+
+A working DPD simulation will maintain a steady temperature around the value we set for KT. If temperature is not conserved, that is a sign that the simulation is not running properly.
+
+Temperature is conserved by the dissipative force, which you can modify with gamma (gamma determines the viscosity to some extent). Larger gamma means stronger dissipative force means the DPD simulation is better at dissipating extra energy.
+
+To test this, go back to `waterDPD.py` and lower gamma significantly (gamma=0.1) and rerun the simulation. In RStudio, plot the temperature to see the results.
+
+Even after 10,000 timesteps, the simulation should still struggle to get down to a temperature of 0.1. This simulation probably needs 30,000-40,000 timesteps to stabilize, which is only the first step (achieving equilibrium) before testing the effects of shear or anything else.
+
+Rerunning the pressure plot should also show more instability (with peaks easily reaching -0.1/0.1) even in the later parts of the simulation.
+
+This should help demonstrate how important it will be to find the right balance of values to enter into our simulation to both accurately model a system and minimize the time needed to complete a simulation.
+
+***Typically you should use the diffusion time to estimate how long a simulation needs to be run to reach equilibrium (the standard is to run for 500 diffusion times).*** Some systems, like those with low-frequency vibrations, will probably equilibriate faster. Once you start working on a project you can usually find advice in the literature specific to your system.
+
+
+
+ 
 
