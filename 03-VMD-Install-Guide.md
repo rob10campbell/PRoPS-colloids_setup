@@ -168,5 +168,7 @@ The GSD file should now open!
 You can close the Molecule File Browser and select the OpenGL Display window to view the default visualization setting (which displays "bonds" between your particles).
 <br>
 <br>
+## Next Steps
+
 See the guide to [Using VMD](/05-Using-VMD.md) for an overview of visualization options. 
 

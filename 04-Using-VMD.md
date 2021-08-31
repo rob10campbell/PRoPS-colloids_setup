@@ -2,9 +2,7 @@
 
 This is a brief introduction to using [VMD] to visulaize the results of [HOOMD-blue] colloids simulations for research in the [PRoPS Group].
 
-See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/03-VMD-Install-Guide.md) for help installing VMD.
-
-This guide is optimized for MacOS.
+This guide is optimized for MacOS. See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/03-VMD-Install-Guide.md) for help installing VMD.
 
 [Last Updated: August 2021].
 

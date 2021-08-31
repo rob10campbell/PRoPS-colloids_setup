@@ -193,5 +193,7 @@ $ mkdir sims
 ```
 <br>
 
+## Next Steps
+
 You are now ready to use HOOMD-blue! See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more information on running simulations and next steps.
 
