@@ -188,7 +188,11 @@ Rerunning the pressure plot should also show more instability with peaks easily 
 This should help demonstrate how important it will be to find the right balance of values to enter into our simulations, to both accurately model a system and to minimize the time needed to complete a simulation.
 
 ***Typically you should use the diffusion time to estimate how long a simulation needs to be run to reach equilibrium (the standard is to run for 500 diffusion times).*** Some systems, like those with low-frequency vibrations, will probably equilibriate faster. Once you start working on a project you can usually find advice on these parameters in the literature specific to your system.
+<br>
+<br>
+For next steps with an overview of the DPD model and discussion about adding shearing to the simulation, check out Prof. Jamali's paper: "[Viscosity measurement techniques in Dissipative Particle Dynamics](https://www.sciencedirect.com/science/article/abs/pii/S0010465515002076)"
 
+We will be using the Lees-Edwards boundary condition, which we have written into HOOMD-blue with a C++ script (because HOOMD-blue's included shearing options don't give us what we need).
 
 
  
