@@ -51,7 +51,9 @@ To get started we will write our code in a file in the top-left, view informatio
 <br>
 ## Creating a New R Script
 
-Go to the "File" menu on the MacOS Menu Bar, and select "New File," "R Script"
+Go to the "File" menu on the MacOS Menu Bar, and select "New File," "R Script."
+
+This guide will walk you through how to write an R script for analyzing `.log` files from HOOMD-blue simulations. The completed [sample-r-analysis.R](/sample-r-analysis.R) script is also available as part of this repository.
 <br>
 <br>
 ## Loading and Checking Data
