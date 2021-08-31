@@ -209,6 +209,7 @@ If you get a differnet pop-up (more like part of the Terminal window) without th
 $ killall gpg-agent
 ```
 and resrart gpg-agent in "daemon mode" (as a background process)
+```bash
 $ gpg-agent --daemon
 ```
 
