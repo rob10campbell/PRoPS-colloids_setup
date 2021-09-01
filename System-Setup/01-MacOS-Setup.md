@@ -156,8 +156,9 @@ Once you have an account you should:
 
 1. [Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
 
-2. Set up Git on the command line: <br>
-Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in "repositories")
+2. Set up Git on the command line:
+
+    Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in "repositories")
 
     Move to this directory and initialize Git with the command
     ```bash
@@ -198,6 +199,11 @@ $ git commit
 ```
 This will open a new window where you should enter a comment describing the changes you made <br>
 ***ALWAYS add a comment explaining your commit***
+
+You can also do this in one line with
+```bash
+$ git commit -m "comment description"
+```
 
 You can check the status again with `git status` to see that the changes have been committed to the branch.
 
