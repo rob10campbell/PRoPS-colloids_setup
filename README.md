@@ -10,9 +10,9 @@ This is a how-to guide for getting setup to do colloids simulations in the [PRoP
 <br>
 ## Before you Begin
 
-For programming resources to help you with the command line, VIM, Python, R, C++, and other skills that are useful for our work, see the [Programming Resources folder](/Programming-Resources).
+For programming resources to help you with the command line, VIM, Python, R, C++, Git, and other skills that are useful for our work, see the [Programming Resources folder](/Programming-Resources).
 
-For advice on choosing and setting up a workstation for HOOMD-blue simulations, see the [System Setup folder](/System-Setup)
+For advice on choosing a workstation and setting up a new MacOS computer for HOOMD-blue simulations (including steps for setting up Git and Github) see the [System Setup folder](/System-Setup)
 <br>
 <br>
 ## Installing Software and Running Simulations
