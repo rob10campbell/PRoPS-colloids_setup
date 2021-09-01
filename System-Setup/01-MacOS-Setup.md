@@ -154,16 +154,19 @@ Git is a version management tool, especially useful for collaborating with other
 
 Once you have an account you should:
 
-[Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
+[**Create a repository**](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) **on Github**
 
-Set up Git on the command line: <br>
-1. Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in repositories) <br>
-2. Move to this directory and initialize git with the command
+**Set up Git on the command line:** <br>
+Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in repositories)
+
+Move to this directory and initialize git with the command
 ```bash
 $ git init
 ```
 This will create a number of files needed to use Git.
-3. Configure Git with your Github credentials<br>
+
+Configure Git with your Github credentials:
+
 Set your username
 ```bash
 $ git configure --global user.name "your_Github_username"
@@ -172,35 +175,44 @@ and email
 ```bash
 $ git configure --global user.email "the_email_you_use_with_Github"
 ```
-The `--global` attribute sets these log-in credentials for all your Git directories.
+The `--global` attribute sets these log-in credentials for all your Git directories.<br>
 *Note: Your ID and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
-3. [Set up SSH authentication for connecting to Github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line).
-4. [Clone your Github repository to your computer with SSH](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) (be sure to use the SSH link, not the HTTPS link)
 
-Make some test changes to your new repository:<br>
-1. In Terminal, make or edit your repository's README.md file
-2. Stage the changes you made with the command
+[Set up SSH authentication for connecting to Github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line).
+
+[Clone your Github repository to your computer with SSH](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) (be sure to use the SSH link, not the HTTPS link)
+
+**Make some test changes to your new repository:**
+
+In Terminal, make or edit your repository's README.md file
+
+Stage the changes you made with the command
 ```bash
 $ git add .
 ```
-3. Check your status with
+
+Check your status with
 ```bash
 $ git status
 ```
 This will show you that a file is being tracked but has not been committed to the branch yet.
-4. Commit the changes to your branch with
+
+Commit the changes to your branch with
 ```bash
 $ git commit
 ```
 This will open a new window where you should enter a comment about the changes you made (i.e. "test") ***ALWAYS leave a comment explaining your commit***
-5. You can check the status again with `git status`
-6. Push the committed changes to the `main` branch on Github with
+
+You can check the status again with `git status`
+
+Push the committed changes to the `main` branch on Github with
 ```bash
 $ git push
 ```
-7. You're now up to date! You can go to the repository on Github and view the changes. 
 
-See the [Github Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more Git commands.
+You're now up to date! You can go to the repository on Github and view the changes. 
+
+See the [Programming Resources](../Programming_Resources) folder and the [Git Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more help with Git commands.
 
 ### *Optional Settings*: Signature Verification
 
