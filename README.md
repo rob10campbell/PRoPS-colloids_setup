@@ -33,7 +33,7 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 7. [The Guide to Accessing the Discovery Cluster](/07-Accessing-Discovery.md)
 
-8. *The Guide to Running Simulations on Discovery (to be added)*
+8. *The guide to running simulations on Discovery (to be added)*
 <br>
 <br>
 Additional files can be added in the future, as needed.
