@@ -157,22 +157,23 @@ Once you have an account you should:
 1. [Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
 
 2. Set up Git on the command line: <br>
-Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in "repositories") <br> 
-<br> Move to this directory and initialize Git with the command
-```bash
-$ git init
-```
-This will create several files in this directory needed to use Git.
+Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in "repositories")
 
-Next, you need to configure Git with your Github credentials. You can do this globally with the `--global` attribute. Set your username with
-```bash
-$ git configure --global user.name "your_Github_username"
-```
-and set your email (use an email address that you have verified on Github)
-```bash
-$ git configure --global user.email "the_email_you_use_with_Github"
-```
-*Note: Your username and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
+    Move to this directory and initialize Git with the command
+    ```bash
+    $ git init
+    ```
+    This will create several files in this directory needed to use Git.
+
+    Next, you need to configure Git with your Github credentials. You can do this globally with the `--global` attribute. Set your username with
+    ```bash
+    $ git configure --global user.name "your_Github_username"
+    ```
+    and set your email (use an email address that you have verified on Github)
+    ```bash
+    $ git configure --global user.email "the_email_you_use_with_Github"
+    ```
+    *Note: Your username and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
 
 3. [Set up SSH authentication for connecting to Github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line).
 
@@ -210,7 +211,7 @@ You're now up to date! You can go to the repository on Github and view the chang
 See the [Programming Resources](../Programming_Resources) folder and the [Git Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more help with Git commands.
 <br>
 <br>
-### *Optional Settings*: Signature Verification
+### *Optional Git Settings*: Signature Verification
 
 Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
 
@@ -267,7 +268,7 @@ $ gpg-agent --daemon
 ```
 <br>
 
-### *Optional Next Steps*: Contribute to the PRoPS-colloids_setup repository
+### *Optional Git Next Steps*: Contribute to the PRoPS-colloids_setup repository
 
 Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the [Github workflow](https://guides.github.com/introduction/flow/)) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
