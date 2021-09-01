@@ -152,12 +152,57 @@ You can also use Eclipse for developing Python code, but some people prefer a de
 
 Git is a version management tool, especially useful for collaborating with others on shared code. If you don't already have a Github account you can make one for free on [https://github.com/](https://github.com/).
 
-Once you have an account you should
-* [Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
-* [Set up Git on the command line](https://docs.github.com/en/get-started/quickstart/set-up-git#setting-up-git) and [clone your repository with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line)<br>
-*Note: Your ID and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can* [manage your email settings on GitHub](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address) *and use the Github-generated* `users.noreply.github.com` *email address as your commit email address in Git.*
+Once you have an account you should:
 
-### *Optional*: Signature Verification
+[Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
+
+Set up Git on the command line: <br>
+1. Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in repositories) <br>
+2. Move to this directory and initialize git with the command
+```bash
+$ git init
+```
+This will create a number of files needed to use Git.
+3. Configure Git with your Github credentials<br>
+Set your username
+```bash
+$ git configure --global user.name "your_Github_username"
+```
+and email
+```bash
+$ git configure --global user.email "the_email_you_use_with_Github"
+```
+The `--global` attribute sets these log-in credentials for all your Git directories.
+*Note: Your ID and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
+3. [Set up SSH authentication for connecting to Github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line).
+4. [Clone your Github repository to your computer with SSH](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) (be sure to use the SSH link, not the HTTPS link)
+
+Make some test changes to your new repository:<br>
+1. In Terminal, make or edit your repository's README.md file
+2. Stage the changes you made with the command
+```bash
+$ git add .
+```
+3. Check your status with
+```bash
+$ git status
+```
+This will show you that a file is being tracked but has not been committed to the branch yet.
+4. Commit the changes to your branch with
+```bash
+$ git commit
+```
+This will open a new window where you should enter a comment about the changes you made (i.e. "test") ***ALWAYS leave a comment explaining your commit***
+5. You can check the status again with `git status`
+6. Push the committed changes to the `main` branch on Github with
+```bash
+$ git push
+```
+7. You're now up to date! You can go to the repository on Github and view the changes. 
+
+See the [Github Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more Git commands.
+
+### *Optional Settings*: Signature Verification
 
 Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
 
@@ -213,7 +258,7 @@ and resrart gpg-agent in "daemon mode" (as a background process)
 $ gpg-agent --daemon
 ```
 
-### *Optional*: Contribute to the PRoPS-colloids_setup repository
+### *Optional Next Steps*: Contribute to the PRoPS-colloids_setup repository
 
 Help us keep these guides accurate and up-to-date (and get more familiar with Git commands and the [Github workflow](https://guides.github.com/introduction/flow/)) by proposing changes to this repository that fix typos, formatting inconsistencies, and out-dated information: 
 * [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account
