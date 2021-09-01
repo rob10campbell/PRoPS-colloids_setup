@@ -157,9 +157,8 @@ Once you have an account you should:
 1. [Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
 
 2. Set up Git on the command line: <br>
-Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in "repositories")
-
-Move to this directory and initialize Git with the command
+Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in "repositories") <br> 
+<br> Move to this directory and initialize Git with the command
 ```bash
 $ git init
 ```
@@ -210,7 +209,7 @@ You're now up to date! You can go to the repository on Github and view the chang
 
 See the [Programming Resources](../Programming_Resources) folder and the [Git Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more help with Git commands.
 <br>
-
+<br>
 ### *Optional Settings*: Signature Verification
 
 Set up [signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/about-commit-signature-verification) with vigilant mode and a GPG key (this step verifies your identity when you make a commit, making it harder for someone else to contribute to a project in your name without your permission).
