@@ -154,56 +154,52 @@ Git is a version management tool, especially useful for collaborating with other
 
 Once you have an account you should:
 
-[**Create a repository**](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) **on Github**
+1. [Create a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on Github
 
-**Set up Git on the command line:** <br>
-Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in repositories)
+2. Set up Git on the command line: <br>
+Open Terminal and, in the home directory, create a new directory where you want to store your Github repositories (this directory can also store non-Github repositories, for example it could be the "src" or "repositories" directory in home, or a "Github" directory in "repositories")
 
-Move to this directory and initialize git with the command
+Move to this directory and initialize Git with the command
 ```bash
 $ git init
 ```
-This will create a number of files needed to use Git.
+This will create several files in this directory needed to use Git.
 
-Configure Git with your Github credentials:
-
-Set your username
+Next, you need to configure Git with your Github credentials. You can do this globally with the `--global` attribute. Set your username with
 ```bash
 $ git configure --global user.name "your_Github_username"
 ```
-and email
+and set your email (use an email address that you have verified on Github)
 ```bash
 $ git configure --global user.email "the_email_you_use_with_Github"
 ```
-The `--global` attribute sets these log-in credentials for all your Git directories.<br>
-*Note: Your ID and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
+*Note: Your username and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
 
-[Set up SSH authentication for connecting to Github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line).
+3. [Set up SSH authentication for connecting to Github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh) (this will allow you to contribute to files and repositories on Github from the command line).
 
-[Clone your Github repository to your computer with SSH](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) (be sure to use the SSH link, not the HTTPS link)
+4. [Clone your Github repository to your computer with SSH](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) (be sure to use the SSH link, not the HTTPS link)
 
-**Make some test changes to your new repository:**
+You now have a local copy of your Github repository on your computer! You can make changes here and then push them to the main branch on Github via the command line. To practice this, use Terminal to make or edit your repository's README.md file, and then push these changes to Github with the following steps:
 
-In Terminal, make or edit your repository's README.md file
-
-Stage the changes you made with the command
+Stage your changes to the README.md file to Git with the command
 ```bash
 $ git add .
 ```
 
-Check your status with
+Check the status of files in your repository with
 ```bash
 $ git status
 ```
-This will show you that a file is being tracked but has not been committed to the branch yet.
+This will show you that a file is being tracked, but the changes have not been committed to the branch yet.
 
 Commit the changes to your branch with
 ```bash
 $ git commit
 ```
-This will open a new window where you should enter a comment about the changes you made (i.e. "test") ***ALWAYS leave a comment explaining your commit***
+This will open a new window where you should enter a comment describing the changes you made <br>
+***ALWAYS add a comment explaining your commit***
 
-You can check the status again with `git status`
+You can check the status again with `git status` to see that the changes have been committed to the branch.
 
 Push the committed changes to the `main` branch on Github with
 ```bash
@@ -213,6 +209,7 @@ $ git push
 You're now up to date! You can go to the repository on Github and view the changes. 
 
 See the [Programming Resources](../Programming_Resources) folder and the [Git Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more help with Git commands.
+<br>
 
 ### *Optional Settings*: Signature Verification
 
@@ -269,6 +266,7 @@ and resrart gpg-agent in "daemon mode" (as a background process)
 ```bash
 $ gpg-agent --daemon
 ```
+<br>
 
 ### *Optional Next Steps*: Contribute to the PRoPS-colloids_setup repository
 
