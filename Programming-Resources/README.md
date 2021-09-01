@@ -55,6 +55,9 @@ Slides from a 2019 Princeton workshop with an overview of reproducible research 
 
 * [.gitignore Templates](https://github.com/github/gitignore)
 
+* [Setting Up a Github Repository for Your Lab](https://ourcodingclub.github.io/tutorials/git-for-labs/#version)<br>
+A guide for how to manage a research lab's Github organizational account. Aimed at ecology and evolutionary biology research, but includes many broadly applicable best practices.
+
 ### Markdown
 
 * [Markdown Basic Syntax](https://www.markdownguide.org/basic-syntax/)
