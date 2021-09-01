@@ -214,7 +214,7 @@ $ git push
 
 You're now up to date! You can go to the repository on Github and view the changes. 
 
-See the [Programming Resources](../Programming_Resources) folder and the [Git Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more help with Git commands.
+See the [Programming Resources](../Programming-Resources) folder and the [Git Cheet Sheet](../Programming-Resources/git-cheat-sheet_USletter.pdf) for more help with Git commands.
 <br>
 <br>
 ### *Optional Git Settings*: Signature Verification

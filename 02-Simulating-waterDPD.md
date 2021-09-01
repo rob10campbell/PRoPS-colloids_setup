@@ -20,7 +20,7 @@ To get started using HOOMD-blue for colloids simulations, run a dissipative part
 ## Getting `waterDPD.py`
 
 If you haven't already, clone this repository (or a fork of this repository) to your "repositories" directory.<br>
-*Note: For help setting up command line git with Github, see the MacOS Setup guide.*
+*Note: For help setting up command line Git with Github, see the* [MacOS Setup guide](/System-Setup/01-MacOS-Setup.md#git).
 ```bash
 $ cd repositories/
 $ git clone https://github.com/rob10campbell/PRoPS-colloids_setup.git

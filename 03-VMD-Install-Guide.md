@@ -170,5 +170,5 @@ You can close the Molecule File Browser and select the OpenGL Display window to 
 <br>
 ## Next Steps
 
-See the guide to [Using VMD](/05-Using-VMD.md) for an overview of visualization options. 
+See the guide to [Using VMD](/04-Using-VMD.md) for an overview of visualization options. 
 
