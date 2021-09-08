@@ -180,7 +180,10 @@ Once you have an account you should:
 
 4. [Clone your Github repository to your computer with SSH](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) (be sure to use the SSH link, not the HTTPS link)
 
-You now have a local copy of your Github repository on your computer! You can make changes here and then push them to the main branch on Github via the command line. To practice this, use Terminal to make or edit your repository's README.md file, and then push these changes to Github with the following steps:
+You now have a local copy of your Github repository on your computer! Github calls this a "remote repository" (because it is a remote copy of your main Github repository)<br>
+*Note: If you would like to rename a Github repository you will also have to update* [the name of your matching remote repository](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#renaming-a-remote-repository) *in order to keep the connection between the two. You can also* [delete a remote repository](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#removing-a-remote-repository) *without deleting the main copy on Github.*
+
+You can now make changes in your remote repository and then push them to the main branch on Github via the command line. To practice this, use Terminal to make or edit your repository's README.md file, and then push these changes to Github with the following steps:
 
 Stage your changes to the README.md file to Git with the command
 ```bash
