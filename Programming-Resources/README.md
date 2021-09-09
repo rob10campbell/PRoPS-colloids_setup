@@ -65,6 +65,8 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 * [Markdown Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 
+* [Getting Started with writing and formatting on Github](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github)
+
 <br>
 
 ## Python
