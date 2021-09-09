@@ -50,6 +50,9 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 
 * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
 
+* [Learn Git Branching](https://learngitbranching.js.org/)<br>
+An interactive set of tutorials for learning Git.
+
 * [Reproducible research: Goals, Guidelines and Git](https://opr.princeton.edu/workshops/Downloads/2019May_RRandGitPratt.pdf)<br>
 Slides from a 2019 Princeton workshop with an overview of reproducible research best practices and a guide to setting up Git.
 
