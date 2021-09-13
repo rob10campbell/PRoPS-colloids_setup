@@ -92,21 +92,20 @@ Now, without leaving the HOOMDblue directory, set VirtEnv to use Python 3 (this 
 $ python3 -m venv VirtEnv/ --system-site-packages
 ```
 
-You can move into the VirtEnv folder and check that it worked with `python --version`
+And then source to the virtual environemnt to activate it
 ```bash
-$ cd VirtEnv
-$ python --version
-Python 3.9.6
-```
-Then return to the HOOMDblue directory and source to the virtual environemnt
-```bash
-$ cd ..
 $ source VirtEnv/bin/activate
 ```
 
 You are now working in the virtual environment! This will be reflected in the command prompt.
 ```bash
 (VirtEnv) $
+```
+
+You should make sure that VirtEnv is using the correct version of Python:
+```bash
+(VirtEnv) $ python --version
+Python 3.9.6
 ```
 
 You can exit the virtual environment with the `deactivate` command, but stay in VirtEnv for the installation.
