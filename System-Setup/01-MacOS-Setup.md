@@ -120,10 +120,7 @@ If you decide not to use pyenv or conda, then you can still install Python 3 wit
 ```bash
 $ brew install python
 ```
-This will also install pip, the Python package manager, which you can use to install NumPy and other required Python packages. 
-```bash
-$ pip install NumPy
-```
+This will also install pip, the Python package manager, which you can use to install NumPy and other required Python packages once we set up our virtual environments during the HOOMD-blue installation steps.
 
 Whichever installation method you choose, you will be able to check your current version of Python with 
 ```bash
