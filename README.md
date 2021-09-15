@@ -5,7 +5,7 @@ This is a how-to guide for getting setup to do colloids simulations in the [PRoP
 [PRoPS Group]: https://web.inortheastern.edu/complexfluids/
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
-[Last Update: 2021 August]
+[Last Update: August 2021]
 <br>
 <br>
 ## Before you Begin
