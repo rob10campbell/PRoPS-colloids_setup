@@ -70,6 +70,23 @@ You automatically have access to the essential partitions for running small jobs
 To request access to one of these partitions use the [Partition Access Request Form](https://service.northeastern.edu/tech?id=sc_cat_item&sys_id=0c34d402db0b0010a37cd206ca9619b7).
 <br>
 <br>
+## Copying files to Discovery
+
+There are several ways that you can copy files to and from Discovery:
+
+The method used in most Discovery Trainings is the web-based interface [Discovery Open on Demand (OOD)](https://ood.discovery.neu.edu/pun/sys/dashboard).
+
+You can also transfer small files from your computer to Discovery on the terminal with the `scp` command and Discovery's dedicated transfer node (`xfer`). You cannot transfer data from the `login` node or any other node except `xfer`.
+
+For example, to transfer files to your `/scratch` space, use the command:
+```bash
+$ scp filename yourusername@xfer.discovery.neu.edu:/scratch/yourusername
+```
+The Discovery documentation includes more details about [transfering files](https://rc-docs.northeastern.edu/en/latest/using-discovery/transferringdata.html), including options for SSHFS.
+
+The *recommended* method for transfering files (especially large data files) is with Globus. You can learn more about how to set up a Globus account and enable Globus' command line tools on the [Using Globus](https://rc-docs.northeastern.edu/en/latest/using-discovery/globus.html#using-globus) page in the Discovery documentation.
+<br>
+<br>
 ## Advice for Running Simulations on Discovery
 
 [to be added]
