@@ -75,10 +75,17 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 ## R
 
-* [R for Data Science course on LinkedIn Learning]
+* [R for Data Science course on LinkedIn Learning] \(LinkedIn Learning)
+
+* [R Essential Training: Wrangling and Visualizing Data] \(LinkedIn Learning)
+
+* [R Essential Training Part 2: Modeling Data] \(LinkedIn Learning)
 
 [R for Data Science course on LinkedIn Learning]: https://www.linkedin.com/learning/learning-r-2/r-for-data-science?u=74653650
+[R Essential Training: Wrangling and Visualizing Data]: https://www.linkedin.com/learning/r-essential-training-wrangling-and-visualizing-data?contextUrn=urn%3Ali%3AlearningCollection%3A6820781619499036673&u=74653650
+[R Essential Training Part 2: Modeling Data]: https://www.linkedin.com/learning/r-essential-training-part-2-modeling-data?contextUrn=urn%3Ali%3AlearningCollection%3A6820781619499036673&u=74653650
 <br>
+
 
 ## C/C++
 
