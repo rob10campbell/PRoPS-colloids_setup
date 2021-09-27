@@ -115,7 +115,11 @@ You can exit the virtual environment with the `deactivate` command, but stay in 
 
 We use the stable release of HOOMD-blue (v2.9.7), available with installation instructions [here](https://hoomd-blue.readthedocs.io/en/stable/installation.html). In our experience, cloning from Git leads to errors during the installation process. Therefore, it is recommended that you instead download the tar file and manually unzip it.
 
-In a new Terminal window (i.e. NOT in VirtEnv), download the tar file
+In a new Terminal window (i.e. NOT in VirtEnv) move to the HOOMDblue folder
+```bash
+$ cd repositories/HOOMDblue
+```
+and download the tar file
 ```bash
 $ curl -O https://glotzerlab.engin.umich.edu/Downloads/hoomd/hoomd-v2.9.7.tar.gz
 ```
