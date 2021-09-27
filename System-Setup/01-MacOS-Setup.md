@@ -226,7 +226,7 @@ $ brew install gnupg gnupg2
 ```
 and make sure you have the passphrase entry management tool `pinentry` installed
 ```bash
-$ brew install pinentry`
+$ brew install pinentry
 ```
 
 [Follow the steps for creating a GPG key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/checking-for-existing-gpg-keys) and then add it to your Github profile
