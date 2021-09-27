@@ -269,6 +269,11 @@ and resrart gpg-agent in "daemon mode" (as a background process)
 ```bash
 $ gpg-agent --daemon
 ```
+then try again:
+```bash
+$ echo "test" | gpg --clearsign
+```
+You should now be set up for verified commits.
 <br>
 
 ### *Optional Git Next Steps*: Contribute to the PRoPS-colloids_setup repository
