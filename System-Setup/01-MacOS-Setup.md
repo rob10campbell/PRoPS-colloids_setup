@@ -165,11 +165,11 @@ Once you have an account you should:
 
     Next, you need to configure Git with your Github credentials. You can do this globally with the `--global` attribute. Set your username with
     ```bash
-    $ git configure --global user.name "your_Github_username"
+    $ git config --global user.name "your_Github_username"
     ```
     and set your email (use an email address that you have verified on Github)
     ```bash
-    $ git configure --global user.email "the_email_you_use_with_Github"
+    $ git config --global user.email "the_email_you_use_with_Github"
     ```
     *Note: Your username and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
 
