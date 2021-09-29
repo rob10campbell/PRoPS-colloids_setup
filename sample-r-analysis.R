@@ -23,7 +23,7 @@ View(P.df)
 # PLOT DATA ##################################################
 
 # Plot time vs. temperature (how does temp evolve in the simulation over time)
-plot(x = P.df$, y = P.df$temperature, xlab = "Time", ylab = "Temperature")
+plot(x = P.df$timestep, y = P.df$temperature, xlab = "Time", ylab = "Temperature")
 
 # We expect temperature to stabilize around the value we assigned kT (kT=0.1).
 # Add a line at 0.1 to the plot to see if this is true
