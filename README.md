@@ -23,7 +23,7 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 1. [The HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md)
 
-2. The guide to running HOOMD-blue simulations: [Simulating waterDPD](/02-Simulating-waterDPD.md)
+2. An introduction to running HOOMD-blue simulations: [Simulating waterDPD](/02-Simulating-waterDPD.md)
 
 3. [The VMD Installation Guide](/03-VMD-Install-Guide.md)
 
