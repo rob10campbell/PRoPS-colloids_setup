@@ -185,5 +185,6 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 *Exploring HOOMD-blue's Capabilities:*<br>
 * Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example, learn more about HOOMD-blue's capabilities by working through the examples in the "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)" repository from HOOMD-blue's developers.
 
-*Analyzing Simulation Data*<br>
+*Analyzing Simulation Data*
+
 For next steps analyzing simulation data, see the [VMD Installation Guide](/03-VMD-Install-Guide.md) and [Log Analysis with R](/05-Log-Analysis-with-R.md).
