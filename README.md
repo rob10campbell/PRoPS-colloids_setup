@@ -29,9 +29,9 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 4. An introdcution to visualizing `.gsd` files in VMD: [Using VMD](/04-Using-VMD.md)
 
-5. The guide to analyzing `.log` files in R: [Log Analysis with R](/05-Log-Analysis-with-R.md) (in progress)
+5. The guide to analyzing `.log` files in R: [Log Analysis with R](/05-Log-Analysis-with-R.md)
 
-6. *The advanced guide to VMD (to be added)*
+6. A guide to installing our modifications to HOOMD-blue: [Modifying HOOMD-blue](/06-Modifying-HOOMDblue.md)
 
 7. [The Guide to Accessing the Discovery Cluster](/07-Accessing-Discovery.md)
 
