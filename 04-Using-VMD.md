@@ -4,7 +4,7 @@ This is a brief introduction to using [VMD] to visulaize the results of [HOOMD-b
 
 This guide is optimized for MacOS. See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/03-VMD-Install-Guide.md) for help installing VMD.
 
-[Last Updated: August 2021].
+[Last Updated: December 2021].
 
 Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
@@ -55,6 +55,8 @@ At the bottom of the **Graphical Representations** window is a tab called "Draw 
 To change the "Drawing Method" to spheres, choose "VDW" from the "Drawing Method" dropdown menu.
 
 The change should take place automatically, but you can also apply changes with the "Apply" button at the bottom of the window.
+
+*Note: For large simulations (with large numbers of particles) the "VDW" representation will be quite slow. It is important to check the simulation in "VDW" to make sure that there are no non-physical overlaps between particles; however, once you've checked that you can switch to "Points" for faster rendering if desired.*
 
 You can leave the **Graphical Representations** window open, since we will come back to it soon.
 <br>
@@ -147,3 +149,11 @@ There are many useful Extensions available for VMD, but none are particularly ne
 One useful feature in the **VMD Main** "Extensions" menu is the "Tk Console" which allows you to program directly into VMD with the **VMD TkConsole** window. The syntax is very different from the command line, so it is difficult to get started using, but you won't need to use it very much and it's there if you need it! There is excellent documentation (and tutorials) for the Tk Console in the VMD community if you need it.
 
 In general the VMD community is quite large, so there are a lot of resources available if you need help.
+<br>
+<br>
+## Some Recommended Visualization Styles
+
+Some recommended visualizations for colloid particles are:
+* Set the "Coloring Method" to "Velocity" to visualize shear flow
+* Use the "Periodic" tab in the **Graphical Representations** window to add 1 or 2 copies of the simulation box in the "+X" and "-X" direction to visualize flow 
+* Adust visualization settings in the "Z" axis and modify the lighting position to more accurately reprensent the volume fraction of a sample (i.e. add depth to the image). Set the coloring method to "Position/Z" and adjust the opacity and/or brightness of the particles along this axis. 
