@@ -4,7 +4,7 @@ This is a guide to installing the  Visual Molecular Dynamics ([VMD]) software, a
 
 This guide is for optimized for MacOS. 
 
-[Last Update: August 2021]
+[Last Update: December 2021]
 
 The standard implementation of HOOMD-blue and it's associate visualizations were adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
@@ -92,33 +92,33 @@ The Contents folder contains a directory called "vmd" where we will configure th
 Open a new Terminal window and move to the /Contents/vmd directory
 *Note: There are at least two Applications folders on your computer, one in your home directory and one in your root directory. You do NOT want the Applications folder in your home directory (*`~/Applications/`*), you want the Applications folder in your root directory (*`/Applications/`, *where most applications are installed).*
 ```bash
-$ cd ..
-$ cd ..
-$ cd Applications/VMD/Contents/vmd
+% cd ..
+% cd ..
+% cd Applications/VMD/Contents/vmd
 ```
 Or, jump their directly with
 ```bash
-$ cd /Applications/VMD/Contents/vmd
+% cd /Applications/VMD/Contents/vmd
 ```
 Copy the downloaded `gsd-vmd-main` folder to this directory with
 ```bash
-$ cp -r ~/Downloads/gsd-vmd-main .
+% cp -r ~/Downloads/gsd-vmd-main .
 ```
 Move to the new folder
 ```bash
-$ cd gsd-vdm-main
+% cd gsd-vdm-main
 ```
 Make a build directory and move to it
 ```bash
-$ mkdir build && cd build
+5 mkdir build && cd build
 ```
 Run cmake to configure the plugin
 ```bash
-$ cmake ..
+5 cmake ..
 ```
 And then install the plugin
 ```bash
-$ make install
+5 make install
 ```
 <br>
 You can now run VMD (with the GSD plugin installed) from the duplicate Contents folder. To open this version of VMD, select the Unix executable file vmd_MACOSXX86_64 located in the Applications/VMD/Contents/vmd/ folder.
@@ -136,11 +136,11 @@ If you want to open VMD from an application icon, rather than the Unix executabl
 
 Open a new Terminal window and move to the VMD application molfile directory (where plugins are stored)
 ```bash
-$ cd /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/plugins/MACOSXX86_64/molfile/  
+% cd /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/plugins/MACOSXX86_64/molfile/  
 ```
 Copy the GSD plugin from where it was installed in the duplicate Contents folderto this molfile directory (where you are currently located)
 ```bash
-$ cp /Applications/VMD/Contents/vmd/plugins/MACOSXX86_64/molfile/gsdplugin.so .
+% cp /Applications/VMD/Contents/vmd/plugins/MACOSXX86_64/molfile/gsdplugin.so .
 ```
 
 Your should now be able to open GSD files with the original VMD application! You can open the VMD application from the Applications/VMD folder or from Launchpad.<br>
