@@ -2,7 +2,7 @@
 
 This is a guide to setting up a new MacOS computer for command line programming, specifically what to do before installing and using [HOOMD-blue] for colloids simulations in the [PRoPS Group]. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
 
-[Last Update: August 2021]
+[Last Update: December 2021]
 
 This guide was complied by Rob Campbell.
 
