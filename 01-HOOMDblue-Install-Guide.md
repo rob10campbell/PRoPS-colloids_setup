@@ -4,7 +4,7 @@ This is a guide to installing [HOOMD-blue] for use in the [PRoPS Group]'s colloi
 
 This guide is optizimed for MacOS.
 
-[Last Update: August 2021]
+[Last Update: December 2021]
 
 The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
@@ -34,24 +34,24 @@ If you do not already have a src folder or other location for repositories, it i
 
 Open Terminal. By default you should be in the home directory. You can check this by printing the current working directory with `pwd` (you should receive the following output where "your_username" is your computer login user name)
 ```bash
-$ pwd
+% pwd
 /Users/your_username
 ```
 You can also review existing directories in the home directory with `ls`
 ```bash
-$ ls
+% ls
 ```
 Make a new directory for your repositories
 ```bash
-$ mkdir repositories
+% mkdir repositories
 ```
 Then move to the repositories directory
 ```bash
-$ cd repositories
+% cd repositories
 ```
 And make a new directory for HOOMD-blue
 ```bash
-$ mkdir HOOMDblue
+% mkdir HOOMDblue
 ```
 <br>
 
@@ -63,24 +63,24 @@ If you are running HOOMD-blue on an HPC cluster you will likely need to work in 
 
 In the HOOMDblue directory, create a virtual Python environment to run your simulations. (You can call this virtual environment anything you like, but for simplicity we will call it VirtEnv)
 ```bash
-$ mkdir VirtEnv
+% mkdir VirtEnv
 ```
 
 Before setting which version of Python you will use for the virtual environment, check your defaults:
 
 Check your default version of Python (unless you changed your default version after installing Python 3, this will be the system version of Python 2)
 ```bash
-$ python --version
+% python --version
 Python 2.7.16
 ```
 Check that you can specify Python 3 with `python3`
 ```bash
-$ python3 --version
+% python3 --version
 Python 3.9.6
 ```
 Or by running python3 to see which version loads (you can then exit Python with the `quit()` command).
 ```bash
-$ python3
+% python3
 Python 3.9.6 (default, Aug  4 2021, 22:40:34) 
 [Clang 12.0.5 (clang-1205.0.22.11)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -89,22 +89,22 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 Now, without leaving the HOOMDblue directory, set VirtEnv to use Python 3 (this will create all the base directory files (bin, etc.) in the VirtEnv folder)
 ```bash
-$ python3 -m venv VirtEnv/ --system-site-packages
+% python3 -m venv VirtEnv/ --system-site-packages
 ```
 
 And then source to the virtual environemnt to activate it
 ```bash
-$ source VirtEnv/bin/activate
+% source VirtEnv/bin/activate
 ```
 
 You are now working in the virtual environment! This will be reflected in the command prompt.
 ```bash
-(VirtEnv) $
+(VirtEnv) %
 ```
 
 You should make sure that VirtEnv is using the correct version of Python:
 ```bash
-(VirtEnv) $ python --version
+(VirtEnv) % python --version
 Python 3.9.6
 ```
 
@@ -117,11 +117,11 @@ We use the stable release of HOOMD-blue (v2.9.7), available with installation in
 
 In a new Terminal window (i.e. NOT in VirtEnv) move to the HOOMDblue folder
 ```bash
-$ cd repositories/HOOMDblue
+% cd repositories/HOOMDblue
 ```
 and download the tar file
 ```bash
-$ curl -O https://glotzerlab.engin.umich.edu/Downloads/hoomd/hoomd-v2.9.7.tar.gz
+% curl -O https://glotzerlab.engin.umich.edu/Downloads/hoomd/hoomd-v2.9.7.tar.gz
 ```
 
 Once the file has downloaded you can close this Terminal window.
@@ -146,24 +146,24 @@ You are now ready to install HOOMD-blue! These instructions are from the [HOOMD-
 
 Move to the new hoomd-v2.9.7 folder
 ```bash
-(VirtEnv) $ cd hoomd-v2.9.7
+(VirtEnv) % cd hoomd-v2.9.7
 ```
 Make a build directory and move to it
 ```bash
-(VirtEnv) $ mkdir build && cd build
+(VirtEnv) % mkdir build && cd build
 ```
 Configure (ignoring the GPU requirements)<br>
 *Note: This may give you a warning for developers. As long as there are no errors the configuration is successful and you can safely ignore the warning.*
 ```bash
-(VirtEnv) $ cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"`
+(VirtEnv) % cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"`
 ```
 Compile
 ```bash
-(VirtEnv) $ make -j4
+(VirtEnv) % make -j4
 ```
 And install HOOMD-blue into your Python environment
 ```bash
-(VirtEnv) $ make install
+(VirtEnv) % make install
 ```
 
 HOOMD-blue is now installed in VirtEnv!
@@ -172,7 +172,7 @@ HOOMD-blue is now installed in VirtEnv!
 
 *Note: If prompted, you can install NumPy or other required Python packages with pip*
 ```bash
-$ pip install NumPy
+% pip install NumPy
 ```
 <br>
 
@@ -182,17 +182,17 @@ You should now create a directory to house your future simulations in the HOOMDb
 
 Exit the virtual environment
 ```bash
-(VirtEnv) $ deactivate
+(VirtEnv) % deactivate
 ```
 Move back up to the HOOMDblue directory
 ```bash
-$ cd ..
-$ pwd
+% cd ..
+% pwd
 /Users/your_username/repositories/HOOMDblue
 ```
 Make a new directory for simulations
 ```bash
-$ mkdir sims
+% mkdir sims
 ```
 <br>
 

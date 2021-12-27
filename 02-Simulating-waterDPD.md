@@ -20,32 +20,34 @@ To get started using HOOMD-blue for colloids simulations, run a dissipative part
 ## Getting `waterDPD.py`
 
 If you haven't already, clone this repository (or a fork of this repository) to your "repositories" directory.<br>
-*Note: For help setting up command line Git with Github, see the* [MacOS Setup guide](/System-Setup/01-MacOS-Setup.md#git).
+*Note: For help setting up command line Git with Github, see the* [Git and Github setup guide](/Programming-Resources/Git-Setup.md).
 ```bash
-$ cd repositories/
-$ git clone https://github.com/rob10campbell/PRoPS-colloids_setup.git
+% cd repositories/
+% git clone https://github.com/rob10campbell/PRoPS-colloids_setup.git
 ```
 Move to the simulations directory in your "HOOMDblue" repository and make a directory for the water simulation
 ```bash
-$ cd ~/repostiories/HOOMDblue/sims/
-$ mkdir water
+% cd ~/repostiories/HOOMDblue/sims/
+% mkdir water
 ```
 Move to the "water" directory and copy `waterDPD.py` into that directory from the cloned copy of this repository
 ```bash
-$ cd water
-$ cp ~/repositories/PRoPS-colloids_setup/waterDPD.py waterDPD.py
-$ ls
+% cd water
+% cp ~/repositories/PRoPS-colloids_setup/waterDPD.py waterDPD.py
+% ls
 waterDPD.py
 ```
 <br>
 
 ## About waterDPD.py
 
-After downloading `waterDPD.py` you can exam it with an integrated development environment (IDE) such as [Eclipse](https://www.eclipse.org/downloads/) or [Pycharm](https://www.jetbrains.com/pycharm/), or with a built-in text editor such as [Vim](https://www.vim.org/)
+After downloading `waterDPD.py` you can examine it with an integrated development environment (IDE) such as [Spyder](https://www.spyder-ide.org/), [Eclipse](https://www.eclipse.org/downloads/), or [Pycharm](https://www.jetbrains.com/pycharm/), or with a built-in text editor such as [Vim](https://www.vim.org/)
+To examine the file with Vim, in the Terminal use the command
 ```bash
-$ vim waterDPD.py
+% vim waterDPD.py
 ```
-*Note: If you are viewing or editing* `waterDPD.py` *in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command* `:set number` *or* `:set nu`
+*Note: If you are viewing or editing* `waterDPD.py` *in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command* `:set number` *or* `:set nu`<br>
+(for more information on Vim, start at the [MacOS Setup guide](/System-Setup/01-MacOS-Setup.md#text-editors)
 
 You will see that the `waterDPD.py` Python script is divided into 4 sections:
 1. Importing a list of packages
@@ -56,13 +58,13 @@ You will see that the `waterDPD.py` Python script is divided into 4 sections:
 This is our standard framework for writing colloids simulation scripts. 
 <br>
 <br>
-If you look more closely at the 4th section ("Total INITIALIZE") you will see that the code:<br>
+If you look more closely at the 4th section ("Total INITIALIZE") you will see that the code performs the following steps:<br>
 * Initializes HOOMD-blue
 ```python
 29 #################        Total INITIALIZATION        ##############
 30 hoomd.context.initialize("");
 ```
-* Creates a random distribtion (scroll right in the box below to see the full code)
+* Creates a random distribution (scroll right in the box below to see the full code)
 ```python
 31 hoomd.deprecated.init.create_random(N=N_Solvents, box=hoomd.data.boxdim(Lx=L_X, Ly=L_Y, Lz=L_Z), name='A', min_dist=0., seed=randomint(1, 101), dimensions=3)
 32
@@ -70,7 +72,7 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 34 groupA = hoomd.group.type(name='groupA', type='A');
 35
 ```
-* Sets up the dissipative particle dynamics (DPD) interactions (where `gamma`, `A` and temperature (via `KT`) are the only required variables for calculating the forces, and `r_cut` is the cutoff distance after which two particles are deemed too far away to interact with each other).
+* Sets up the dissipative particle dynamics (DPD) interactions (where `gamma`, `A` and temperature (the energy `KT`: Boltzman constant times temperature) are the only required variables for calculating the forces, and `r_cut` is the cutoff distance after which two particles are deemed too far away to interact with each other).
 ```python
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=simulation_seed);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
@@ -99,7 +101,9 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 47 hoomd.run(N_time_steps);
 ```
 
-*Note: The `.gsd` and `.log` filetypes are the main outputs we want to generate with all our simulations.**
+**Note: The `.gsd` and `.log` filetypes are the main outputs we want to generate with all our simulations.**
+
+There's a lot going on here, but for now just focus on understanding how many steps there are in our code, with a rough idea of what each one does. This simulation is relatively "simple" (it's only one type of particle, water), but the basic outline of what happens will be the same even when we add colloidal particles and other simulation steps.
 
 Now that you have examined the `waterDPD.py` script, close the file (in Vim, `esc` `:q`) and try running the simulation.
 <br>
@@ -108,30 +112,30 @@ Now that you have examined the `waterDPD.py` script, close the file (in Vim, `es
 
 Go back to the "HOOMDblue" directory and activate the virtual environment
 ```bash
-$ cd ..
-$ cd ..
-$ pwd
+% cd ..
+% cd ..
+% pwd
 /Users/your_username/repositories/HOOMDblue
-$ source VirtEnv/bin/activate
-(VirtEnv) $
+% source VirtEnv/bin/activate
+(VirtEnv) %
 ```
 You can now move back to the directory for the water simulation and run `waterDPD.py`.<br>
 *Note:* `waterDPD.py` *intentionally imports several packages when it is run. You will likely be prompted to install some of these packages before you can run the file (e.g. to install gsd, use* `pip install gsd`*). After you have installed any missing packages, try running the file again.*
 ```bash
-(VirtEnv) $ cd sims/water/
-(VirtEnv) $ python3 waterDPD.py
+(VirtEnv) % cd sims/water/
+(VirtEnv) % python3 waterDPD.py
 ```
 This should launch HOOMD-blue, display the file, and then run the file.
 
 Successfully running the file will add two new output files to the directory: `Equilibrium.gsd` and `Pressure_xy.log`<br>
 You can check that this worked by viewing the files currently in this folder with the command `ls`
 ```bash
-(VirtEnv) $ ls
+(VirtEnv) % ls
 Equilibrium.gsd	Pressure_xy.log	waterDPD.py
 ```
 You can open `Pressure_xy.log` with Vim or another text editor to see the recorded temperature and pressure at each timestep. 
 ```bash
-(VirtEnv) $ vim Pressure_xy.log
+(VirtEnv) % vim Pressure_xy.log
 ```
 For example, the first 4 lines should look something like this (although the numbers will be different)
 ```vim
@@ -174,6 +178,11 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 
 ## Next Steps
 
+*Background Reading:*<br>
+To learn more about how we use DPD simulations for colloidal gels, see [Viscosity measurement techniques in Dissipative Particle Dynamics](https://doi.org/10.1016/j.cpc.2015.05.027) (2017) <br>
+And for more background on DPD simulations in general, see [Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation](https://doi.org/10.1063/1.474784) (1997)
+
+*Exploring HOOMD-blue's Capabilities:*<br>
 Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in the "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)" repository from HOOMD-blue's developers.
 <br>
 <br>
