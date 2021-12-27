@@ -27,7 +27,7 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 3. [The VMD Installation Guide](/03-VMD-Install-Guide.md)
 
-4. The guide to visualizing `.gsd` files in VMD: [Using VMD](/04-Using-VMD.md)
+4. An introdcution to visualizing `.gsd` files in VMD: [Using VMD](/04-Using-VMD.md)
 
 5. The guide to analyzing `.log` files in R: [Log Analysis with R](/05-Log-Analysis-with-R.md) (in progress)
 
