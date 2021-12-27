@@ -2,9 +2,9 @@
 
 This is a collection of programming resources that can help you get started with the tools you need to do research in the [PRoPS Group] simulating colloids with [HOOMD-blue].
 
-Our work currently relies on familiarity with the command line, Python, R, and C++, as well as MacOS. All of us were new to at least some of these things when we started working in the PRoPS group. This directory contains some resources (either online or as PDFs) that have been useful for learning these topics.
+Our simulations use a variety of tools and programming languages. All of us were new to at least some of these things when we started working in the PRoPS group, and we're still exploring new things that might make our research easier/better! This directory contains some resources (either online or as PDFs) that have been useful for learning these skills.
 
-[Last Update: August 2021]
+[Last Update: December 2021]
 
 This guide was compiled by Rob Campbell.
 
