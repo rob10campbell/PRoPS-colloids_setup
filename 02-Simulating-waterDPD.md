@@ -179,8 +179,10 @@ Once you have made these changes you can go back up to the "INPUTS" section and 
 ## Next Steps
 
 *Background Reading:*<br>
-To learn more about how we use DPD simulations for colloidal gels, see [Viscosity measurement techniques in Dissipative Particle Dynamics](https://doi.org/10.1016/j.cpc.2015.05.027) (2017) <br>
-And for more background on DPD simulations in general, see [Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation](https://doi.org/10.1063/1.474784) (1997)
+To learn more about how we use DPD simulations for colloidal gels, see: 
+* [Viscosity measurement techniques in Dissipative Particle Dynamics](https://doi.org/10.1016/j.cpc.2015.05.027) (2017) <br>
+And for more background on DPD simulations in general, see: 
+* [Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation](https://doi.org/10.1063/1.474784) (1997)
 
 *Exploring HOOMD-blue's Capabilities:*<br>
 Now that you are familiar with using HOOMD-blue to run the `waterDPD.py` example, you can get more comfortable with HOOMD-blue's capabilities by working through the examples in the "[Introducing HOOMD-blue](https://github.com/glotzerlab/hoomd-examples/tree/master/00-Introducing-HOOMD-blue)" repository from HOOMD-blue's developers.

@@ -132,7 +132,7 @@ Enter insert mode (by pressing "i") and copy the following text into that file (
 # to be stored in the login keychain, enabling automatic key signing.
 pinentry-program /usr/local/bin/pinentry-mac
 ```
-(save and exit the file with `:wq`)
+(save and exit the file by hitting the `esc` key and then entering `:wq`)
 
 Sign a test message so pinentry-mac can store your password in the keychain
 ```bash
