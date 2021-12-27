@@ -46,6 +46,8 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 
 ### Git
 
+* [Git and Github Setup Recommendations and Tips](/Programming-Resources/Git-Setup.md) compiled as part of this repository
+
 * [Git Cheat Sheet](https://github.com/rob10campbell/PRoPS-colloids_setup/blob/main/Programming-Resources/git-cheat-sheet_USletter.pdf) (PDF)
 
 * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
