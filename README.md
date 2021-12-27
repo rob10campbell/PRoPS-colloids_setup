@@ -5,14 +5,16 @@ This is a how-to guide for getting setup to do colloids simulations in the [PRoP
 [PRoPS Group]: https://web.inortheastern.edu/complexfluids/
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
-[Last Update: August 2021]
+[Last Update: December 2021]
 <br>
 <br>
 ## Before you Begin
 
-For programming resources to help you with the command line, VIM, Python, R, C++, Git, and other skills that are useful for our work, see the [Programming Resources folder](/Programming-Resources).
+The [System Setup folder](/System-Setup) contains information for choosing a laptop or other workstation and steps for setting up a new MacOS computer before installing HOOMD-blue.
 
-For advice on choosing a workstation and setting up a new MacOS computer for HOOMD-blue simulations (including steps for setting up Git and Github) see the [System Setup folder](/System-Setup)
+The [Programming Resources folder](/Programming-Resources) contains a variety of resources that can help you with the command line, VIM, Python, R, C++, Git/Github, and other skills that are useful for our work.
+
+Once you have received your computer, the remaining files should help you install HOOMD-blue and VMD and give you the information you need to get started with colloids simulations!
 <br>
 <br>
 ## Installing Software and Running Simulations
@@ -34,6 +36,3 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 7. [The Guide to Accessing the Discovery Cluster](/07-Accessing-Discovery.md)
 
 8. *The guide to running simulations on Discovery (to be added)*
-<br>
-<br>
-Additional files can be added in the future, as needed.
