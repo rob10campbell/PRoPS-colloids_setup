@@ -1,6 +1,6 @@
 # Git and Github Setup Recommendations and Tips
 
-This is a guide to setting up command-line Git on a MacOS computer for backing up code implementing version management in command line programming.
+This is a guide to setting up command-line Git on a MacOS computer for backing up code and implementing version management in command line programming.
 
 [Last Update: December 2021]
 
@@ -22,11 +22,11 @@ Once you have an account, you should [create a new repository](https://docs.gith
 <br>
 ## Install Git on the command line
 
-If you need more information about working on the command line, I recommend the first few lectures from ["The Missing Semester of Your CS Education"](https://missing.csail.mit.edu/). You can also look at our [MacOS System Setup Recommendations and Tips](/System-Setup/01-MacOS-Setup.md) and the early steps of the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for a quick review.
+If you need more information about working on the command line, I recommend the first few lectures from ["The Missing Semester of Your CS Education"](https://missing.csail.mit.edu/). You can also look at our [MacOS System Setup Recommendations and Tips](/System-Setup/01-MacOS-Setup.md) and the early steps of the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for a quick review. This guide assumes you are using a zsh Terminal on MacOS.
 
 Open Terminal to the home directory and use the command line to create a new directory where you want to store your Github repositories. This directory can also store non-Github files, for example it could be the "src" or "repositories" directory in your home directory, or you could create a new a "Github" specific directory. The directory does not need to be in the home directory (you could put it in another subfolder, or as a subfolfer in "repositories" etc.) but putting it in the home directory typically makes it easiest to access).
 
-Move to the directory you chose/created and initialize Git with the command
+Move to the directory you chosen/created and initialize Git with the command
 ```bash
 % git init
 ```
