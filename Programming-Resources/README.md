@@ -89,12 +89,17 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 * [RStudio Cheat Sheet: ggplot2] \(a more powerful data visualization package than base R's plot function)
 
+* *R for everyone : advanced analytics and graphics* by Jared Lander (available as an E-book from the [NU Library](https://onesearch.library.northeastern.edu/primo-explore/search?vid=NU))
+
+* [R for Reproducible Scientific Analysis] \(Software Carpentry)
+
 [R for Data Science course on LinkedIn Learning]: https://www.linkedin.com/learning/learning-r-2/r-for-data-science?u=74653650
 [R Essential Training: Wrangling and Visualizing Data]: https://www.linkedin.com/learning/r-essential-training-wrangling-and-visualizing-data?contextUrn=urn%3Ali%3AlearningCollection%3A6820781619499036673&u=74653650
 [R Essential Training Part 2: Modeling Data]: https://www.linkedin.com/learning/r-essential-training-part-2-modeling-data?contextUrn=urn%3Ali%3AlearningCollection%3A6820781619499036673&u=74653650
 [A note on for-loops in R]: https://stackoverflow.com/questions/2908822/speed-up-the-loop-operation-in-r
 [RStudio Cheat Sheets]: https://github.com/rstudio/cheatsheets
 [RStudio Cheat Sheet: ggplot2]: https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf
+[R for Reproducible Scientific Analysis]: https://swcarpentry.github.io/r-novice-gapminder/
 <br>
 
 
