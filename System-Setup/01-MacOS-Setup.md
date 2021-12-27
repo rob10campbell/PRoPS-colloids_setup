@@ -97,6 +97,7 @@ Vim is powerful, but difficult to get used to because of its unintuitive default
 * The command `:q` will quit a file that has not been edited
 * The command `:q!` will quit a file that has been edited WITHOUT saving changes
 * The command `:wq` will save (write) and quit a file that has been edited
+
 For more on using Vim, see the lectures in ["The Missing Semester of Your CS Education"](https://missing.csail.mit.edu/) and our other [Vim Programming Resources](/Programming-Resources#vim)
 <br>
 
@@ -112,9 +113,7 @@ HOOMD-blue requires [cmake](https://cmake.org/), which you can go ahead and inst
 
 MacOS comes with Python 2 pre-installed, but you **DO NOT** want to use this Python. Not only do we want to use Python 3, rather than Python 2, but the pre-installed version of Python 2 is used by your computer internally, and so it's best not to mess with it. 
 
-One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects, then you may want to install [pyenv](https://github.com/pyenv/pyenv) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv for that and can instead use the built-in venv option. More on that in the [HOOMD-blue Installation Guide](../01-HOOMDblue-Install-Guide.md).
-
-If you are using pyenv, see the [pyenv website](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
+One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects, then you may want to install [pyenv](https://github.com/pyenv/pyenv) and/or [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/index.html) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv or virtualenvwrapper for that, you can instead use the built-in venv option. There is more on venv in the [HOOMD-blue Installation Guide](../01-HOOMDblue-Install-Guide.md). If you are using pyenv, see the [pyenv website](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
 
 Another popular option is to use the package and environment manager [conda](https://docs.conda.io/en/latest/) via Miniconda (the basic installation) or Anaconda (a larger installation with 7500+ packages included). Conda is also not required for using HOOMD-blue. If you are using conda, see the [conda website for installation steps](https://docs.conda.io/en/latest/).
 
@@ -144,10 +143,10 @@ While you can write and edit scripts with a text editor, you will likely want to
 
 It is recommended that you download [Eclipse](https://www.eclipse.org/downloads/) for C++ programming.
 
-You can also use Eclipse for developing Python code, but you may be better off with a dedicated Python IDE. For working on MacOS, people frequently recommend [PyCharm](https://www.jetbrains.com/pycharm/), tho members of our lab currently prefer [Spyder](https://www.spyder-ide.org/). (For help setting up Spyder, chat to Soohee or Milad)
+You can also use Eclipse for developing Python code, but you may be better off with a dedicated Python IDE. For working on MacOS, people frequently recommend [PyCharm](https://www.jetbrains.com/pycharm/), although members of our lab currently prefer [Spyder](https://www.spyder-ide.org/). (For help setting up Spyder, chat to Soohee or Milad)
 <br>
 <br>
 ## Git and Github
 
-Git is a version management tool, especially useful for collaborating with others on shared code. If you're interested in using Github and need help setting up command-line Git, you can check out the separate [guide to setting up Git](/Programming-Resources/Git-Setup.md) in the Programming Resources directory
+Git is a version management tool, especially useful for collaborating with others on shared code. If you're interested in using Github and need help setting up command-line Git, you can check out the separate [guide to setting up Git](/Programming-Resources/Git-Setup.md) in the Programming Resources directory.
 
