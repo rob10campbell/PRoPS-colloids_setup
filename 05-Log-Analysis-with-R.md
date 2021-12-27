@@ -145,7 +145,7 @@ lines(x = c(-100, 2000), y = c(0, 0), lty=2, col='red', lwd=2)
 ```
 This should start noisy but eventually even out to an oscillation around 0.
 
-Remember that we're plotting something more specific than just "pressure." Pressure is a tensor with multiple directions, and if you look back at `waterDPD.py` you'll remember that we specifically chose in `hoomd.analyze` to log the pressure in the x-y direction. This was chosen so that we could eventually look at shear stress (tau = -P), but there's no shear yet. Our `waterDPD.py` does not include a shearing term. The first step of a shearing simulation will also be to bring the system to equilibrium, which is all that `waterDPD.py` currently does. At equilibrium the pressure in the x-y direction (-shear) should oscillate around 0 (in our case, between -0.5 and 0.5).
+Remember that we're plotting something more specific than just "pressure." Pressure is a tensor with multiple directions, and if you look back at `waterDPD.py` you'll remember that we specifically chose in `hoomd.analyze` to log the pressure in the x-y direction. This was chosen so that we could eventually look at shear stress (tau = -P), but there's no shear yet. Our `waterDPD.py` does not include a shearing term. The first step of a shearing simulation will also be to bring the system to equilibrium, which is all that `waterDPD.py` currently does. At equilibrium the pressure in the x-y direction (negative shear) should oscillate around 0 (in our case, between -0.5 and 0.5).
 
 You can also check this by looking back at `summary(P.df)`. The average pressure is indeed close to 0 (our example is -0.016007). If you run the simulation for longer, say 10,000 timesteps, you should get much closer to 0.
 <br>
@@ -183,9 +183,9 @@ Temperature is conserved by the dissipative force, which you can modify with gam
 
 To test this, go back to `waterDPD.py` and lower gamma significantly (gamma=0.1) and rerun the simulation. In RStudio, plot the temperature to see the results.
 
-Even after 10,000 timesteps, the simulation should still struggle to get down to a temperature of 0.1. For this simulation with a gamma this low, it probably needs 30,000-40,000 timesteps to stabilize. And remember, conserving temperature (to achieve equilibrium) is only the first step before simulating shear or anything else.
+Even after 10,000 timesteps, the simulation should still struggle to get down to a temperature of KT=0.1. For this simulation with a gamma this low it will probably need 30,000-40,000 timesteps to stabilize. And remember, stabilizing temperature (to achieve equilibrium) is only the first step before simulating shear or anything else.
 
-Rerunning the pressure plot should also show more instability with peaks easily reaching -0.1/0.1 in the later parts of the simulation.
+Rerunning the pressure (i.e. negative shear) plot at this low gamma should also show more instability, with peaks easily reaching -0.1/0.1 in the later parts of the simulation.
 
 This should help demonstrate how important it will be to find the right balance of values to enter into our simulations, to both accurately model a system and to minimize the time needed to complete a simulation.
 
