@@ -39,7 +39,7 @@ waterDPD.py
 ```
 <br>
 
-## About waterDPD.py
+## About `waterDPD.py`
 
 After downloading `waterDPD.py` you can examine it with an integrated development environment (IDE) such as [Spyder](https://www.spyder-ide.org/), [Eclipse](https://www.eclipse.org/downloads/), or [Pycharm](https://www.jetbrains.com/pycharm/), or with a built-in text editor such as [Vim](https://www.vim.org/)
 To examine the file with Vim, in the Terminal use the command
@@ -47,7 +47,7 @@ To examine the file with Vim, in the Terminal use the command
 % vim waterDPD.py
 ```
 *Note: If you are viewing or editing* `waterDPD.py` *in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command* `:set number` *or* `:set nu`<br>
-(for more information on Vim, start at the [MacOS Setup guide](/System-Setup/01-MacOS-Setup.md#text-editors)
+(for more information on Vim basics, see the [MacOS Setup guide](/System-Setup/01-MacOS-Setup.md#text-editors))
 
 You will see that the `waterDPD.py` Python script is divided into 4 sections:
 1. Importing a list of packages
@@ -64,7 +64,7 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 29 #################        Total INITIALIZATION        ##############
 30 hoomd.context.initialize("");
 ```
-* Creates a random distribution (scroll right in the box below to see the full code)
+* Creates a random distribution of solvent (water) particles inside a simulation box (scroll right in the box below to see the full code)
 ```python
 31 hoomd.deprecated.init.create_random(N=N_Solvents, box=hoomd.data.boxdim(Lx=L_X, Ly=L_Y, Lz=L_Z), name='A', min_dist=0., seed=randomint(1, 101), dimensions=3)
 32
@@ -72,7 +72,7 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 34 groupA = hoomd.group.type(name='groupA', type='A');
 35
 ```
-* Sets up the dissipative particle dynamics (DPD) interactions (where `gamma`, `A` and temperature (the energy `KT`: Boltzman constant times temperature) are the only required variables for calculating the forces, and `r_cut` is the cutoff distance after which two particles are deemed too far away to interact with each other).
+* Sets up the dissipative particle dynamics (DPD) interactions for those particle (where `gamma`, `A` and temperature (represented as the energy `KT`: Boltzman constant (k) times temperature) are the only required variables for calculating the forces, and `r_cut` is the cutoff distance after which two particles are deemed too far away to interact with each other).
 ```python
 36 dpd = hoomd.md.pair.dpd(r_cut= 1 * r_c, nlist=nl, kT=KT, seed=simulation_seed);
 37 dpd.pair_coeff.set('A', 'A', r_cut= 1.0 * r_c, A=25, gamma=4.5);
@@ -105,7 +105,7 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 
 There's a lot going on here, but for now just focus on understanding how many steps there are in our code, with a rough idea of what each one does. This simulation is relatively "simple" (it's only one type of particle, water), but the basic outline of what happens will be the same even when we add colloidal particles and other simulation steps.
 
-Now that you have examined the `waterDPD.py` script, close the file (in Vim, `esc` `:q`) and try running the simulation.
+Now that you have examined the `waterDPD.py` script, close the file (in Vim, hit `esc` and then enter `:q`) and try running the simulation.
 <br>
 <br>
 ## Running a Simulation
