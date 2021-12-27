@@ -33,6 +33,8 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 6. A guide to installing our modifications to HOOMD-blue: [Modifying HOOMD-blue](/06-Modifying-HOOMDblue.md)
 
-7. [The Guide to Accessing the Discovery Cluster](/07-Accessing-Discovery.md)
+7. An overview of the steps involved in colloid gelation and shearing: [Gelation and Shearing](/07-Gelation-and-Shearing.md)
 
-8. *The guide to running simulations on Discovery (to be added)*
+8. [The Guide to Accessing "Discovery"](/08-Accessing-Discovery.md) (Northeastern's HPC cluster)
+
+9. An introduction to running HPC simulations: [Slurm and Disco](/09-Slurm-and-Disco.md)
