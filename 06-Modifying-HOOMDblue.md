@@ -53,10 +53,29 @@ To finish installing the modifications, use Terminal to go to the installation o
 (VirtEnv) % make -j4
 (VirtEnv) % make install
 ```
-	
 
+## Next Steps
 
+You should now have [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md), run a [basic DPD simulation of water](/02-Simulating-waterDPD.md), [installed](/03-VMD-Install-Guide.md) and [worked with](/04-Using-VMD.md) VMD to visualize your simulation, [run basic checks on the simulation](/05-Log-Analysis-with-R.md) using R to verify it ran correctly, and modified a version of HOOMD-blue for more advanced simulations.
 
+*Background Reading*<br>
+If you haven't already, you should read the following papers:
 
+Background on DPD
+* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
+* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
 
+Background on more advanced simulations
+* "[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]" (2017)
+* "[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]" (2020)
+* "[Life and death of colloidal bonds control the rate-dependent rheology of gels]" (2021)
 
+[Viscosity measurement techniques in Dissipative Particle Dynamics]:https://doi.org/10.1016/j.cpc.2015.05.027
+[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]:https://doi.org/10.1063/1.474784
+[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]:https://doi.org/10.1103/PhysRevLett.118.048003
+[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]:https://doi.org/10.1016/j.mtadv.2019.100026
+[Life and death of colloidal bonds control the rate-dependent rheology of gels]:https://doi.org/10.1038/s41467-021-24416-x
+
+*Running More Complex Simulations*
+
+* See the overview on [gelation and shearing simulations](/07-Gelation-and-Shearing.md) for guidance on running more complex simulations.
