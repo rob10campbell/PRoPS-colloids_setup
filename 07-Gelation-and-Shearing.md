@@ -34,24 +34,24 @@ There are 7 steps to making a colloidal gel and shearing it:
 
 Gelation (see [About Gelation Simulations](/07-Gelation-and-Shearing.md#about-gelation-simulations) for details)
 
-[1]- [Run the gelation simulation](/07-Gelation-and-Shearing.md#running-a-gelation-simulation) (with a Python script using HOOMD-blue)
+[1]- [Run the gelation simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) (with a Python script using HOOMD-blue)
 
-[2]- Check that the simulation reached a quasi-steady state without errors 
+[2]- [Check that the simulation](/07-Gelation-and-Shearing.md#2-checking-gelation) reached a quasi-steady state without errors 
 
-[3]- \(*IF gelation was run in segments*) Combine the data from all the gelation simulation restarts and update the particle interaction lifetimes across all gelation simulation restarts
+[3]- \(*IF gelation was run in segments*) [Update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes) across all gelation simulation restarts and combine any additional simulation data for analysis
 
 Shearing (see [About Shearing Simulations](/07-Gelation-and-Shearing.md#about-shearing-simulations) for details)
 
-[4]- Shear the gel from quasi-steady state (with a Python script using HOOMD-blue)
+[4]- [Shear the gel](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation) from quasi-steady state (with a Python script using HOOMD-blue)
 
-[5]- Check that the sheared gel has reached a new quasi-steady state
+[5]- [Check that the sheared gel](/07-Gelation-and-Shearing.md#5-checking-shearing) has reached a new quasi-steady state
 
-[6]- \(*IF gelation was run in segments*) Use the updated lifetimes from step [3] to update the particle interaction lifetimes in the shearing simulation
+[6]- \(*IF gelation was run in segments*) Use the updated lifetimes from step [3] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#5-6-updating-shear-lifetimes) in the shearing simulation
 
-[7]- \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to update the particle interaction lifetimes in the remaining shearing simulation restarts
+[7]- \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#5-6-updating-shear-lifetimes) in the remaining shearing simulation restarts
 <br>
 
-## [1] About Gelation Simulations
+## About Gelation Simulations
 
 Our gelation simulations are meso-scale simlations of attractive colloidal particles in a given volume fraction (phi), with a typical colloid particles radius of ~1micron. We do not do molecular dynamics. We also do not do continuum simulations, our solvent is also simulated as particles (typically representing small groups of molecules). Less that 0.5% of the simulation cost goes to simulating colloidal particles; by far the largest factor in simulation cost is the **number of solvent particles**. Simulations with high volume fractions of colloidal particles will therefore have LOWER simulation costs (and typically gel faster).
 
@@ -82,7 +82,7 @@ Our simulations typically use water as a solvent, with each type A particle repr
 Type B particles are simulated as hard spheres that do not overlap with other particles. As noted above, our colloids are typically ~1 micron in diameter, although we define size within the simulation relativistically.
 <br>
 
-## Running a Gelation Simulation
+## [1] Running a Gelation Simulation
 
 A gelation simulation follows roughly the same format as our [DPD simulation of water](/02-Simulating-waterDPD.md): 
 * Initialize a simulation box with a random distribution of particles (allowing particles to overlap)
@@ -96,17 +96,19 @@ A gelation simulation follows roughly the same format as our [DPD simulation of 
 ***A Note on Parallelization***<br>
 HOOMD-blue supports some parallelization options; unfortunately, it seems that our modifications currently break them. We have attempted to fix this but as of yet it is NOT possible to run these simulations in parallel and accurately track all particle interactions. All of our simulations MUST be run serially; therefore, large gelation simulations will take upwards of 1-2 months to run on the Discovery cluster. To do that, we must run the simulation in segments. Each gelation simulation is run for about 3 days, generating 11 frames of data, and then stopped. The next day the simulation can be restarted from frame 10 (giving us a potential comparison between frame 11 and frame 2 to verify that the simulation is continuing from where it left off without error). This process is repeated for the number of restarts needed to reach a quasi-steady state (typically somewhere between 9-13). Once all of the restarts are completed and the gel is confirmed to have 
 
-## Checking Gelation
+## [2] Checking Gelation
 
 A gel is completed when 
 (see [Log Analysis with R](/05-Log-Analysis-with-R.md))
 
-## Updating Lifetimes
+## [3] Updating Lifetimes
 
 ## About Shearing Simulations
 
 About shearing simulations.
 
-## Checking Shearing
+## [4] Running a Shearing Simulation
 
-## Updating Shear Lifetimes
+## [5] Checking Shearing
+
+## [6]-[7] Updating Shear Lifetimes
