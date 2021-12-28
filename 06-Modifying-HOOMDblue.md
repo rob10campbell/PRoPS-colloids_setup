@@ -62,13 +62,13 @@ You should now have [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md), run 
 If you haven't already, you should read the following papers:
 
 * Background on DPD
- * "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
- * "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
+	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
+	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
 
 * Background on more advanced simulations
- * "[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]" (2017)
- * "[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]" (2020)
- * "[Life and death of colloidal bonds control the rate-dependent rheology of gels]" (2021)
+	* "[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]" (2017)
+	* "[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]" (2020)
+	* "[Life and death of colloidal bonds control the rate-dependent rheology of gels]" (2021)
 
 [Viscosity measurement techniques in Dissipative Particle Dynamics]:https://doi.org/10.1016/j.cpc.2015.05.027
 [Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]:https://doi.org/10.1063/1.474784
