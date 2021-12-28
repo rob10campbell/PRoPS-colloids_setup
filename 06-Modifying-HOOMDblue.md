@@ -58,8 +58,7 @@ To finish installing the modifications, use Terminal to go to the installation o
 
 You should now have [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md), run a [basic DPD simulation of water](/02-Simulating-waterDPD.md), [installed](/03-VMD-Install-Guide.md) and [worked with](/04-Using-VMD.md) VMD to visualize your simulation, [run basic checks on the simulation](/05-Log-Analysis-with-R.md) using R to verify it ran correctly, and modified a version of HOOMD-blue for more advanced simulations.
 
-*Background Reading*<br>
-If you haven't already, you should read the following papers:
+*Background Reading:* If you haven't already, you should read the following papers:
 
 * Background on DPD
 	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
@@ -76,6 +75,6 @@ If you haven't already, you should read the following papers:
 [Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]:https://doi.org/10.1016/j.mtadv.2019.100026
 [Life and death of colloidal bonds control the rate-dependent rheology of gels]:https://doi.org/10.1038/s41467-021-24416-x
 
-*Running More Complex Simulations*
+*Running More Complex Simulations:*
 
 * See the overview on [gelation and shearing simulations](/07-Gelation-and-Shearing.md) for guidance on running more complex simulations.
