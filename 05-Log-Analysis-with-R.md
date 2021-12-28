@@ -195,7 +195,7 @@ This should help demonstrate how important it will be to find the right balance 
 ## Next Steps
 
 *Background Reading:*
-* As recommended previously (after running `waterDPD.py` for the first time), you can learn more about the DPD model we are using (with discussion about adding shearing to the simulation) in "[Viscosity measurement techniques in Dissipative Particle Dynamics](https://www.sciencedirect.com/science/article/abs/pii/S0010465515002076)" (2017)
+* As recommended previously (after running `waterDPD.py` for the first time), you can learn more about the DPD model we are using (with discussion about adding shearing to the simulation) in "[Viscosity measurement techniques in Dissipative Particle Dynamics](https://www.sciencedirect.com/science/article/abs/pii/S0010465515002076)" (2015)
 
 *Learning R:*
 * If you would like to learn more about using R, check out the LinkedIn Learning courses and other resources listed in the [Programming Resources](/Programming-Resources#r)
