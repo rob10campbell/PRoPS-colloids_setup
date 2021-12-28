@@ -32,9 +32,9 @@ For more background on these simulations, see the following papers:
 
 There are 7 steps to making a colloidal gel and shearing it:
 
-[1] Run the gelation simulation (with a Python script using HOOMD-blue)
+[1] [Run the gelation simulation](/07-Gelation-and-Shearing.md#) (with a Python script using HOOMD-blue)
 
-[2] Check that the simulation reached a quasi-steady state (see [Log Analysis with R](/05-Log-Analysis-with-R.md))
+[2] Check that the simulation reached a quasi-steady state without errors 
 
 [3] \(*IF gelation was run in segments*) Combine the data from all the gelation simulation restarts and update the particle interaction lifetimes across all gelation simulation restarts
 
@@ -47,7 +47,7 @@ There are 7 steps to making a colloidal gel and shearing it:
 [7] \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to update the particle interaction lifetimes in the remaining shearing simulation restarts
 <br>
 
-## Gelation simulations
+## About gelation simulations
 
 Our gelation simulations are meso-scale simlations of attractive colloidal particles in a given volume fraction (phi), with a typical colloid particles radius of ~1micron. We do not do molecular dynamics. We also do not do continuum simulations, our solvent is also simulated as particles (typically representing small groups of molecules). Less that 0.5% of the simulation cost goes to simulating colloidal particles; by far the largest factor in simulation cost is the **number of solvent particles**. Simulations with high volume fractions of colloidal particles will therefore have LOWER simulation costs (and typically gel faster).
 
@@ -76,6 +76,9 @@ We also need to define the particle types. A basic colloidal simulation has two 
 Our simulations typically use water as a solvent, with each type A particle representing 3 water molecules loosely bound together in a sphere. This is important to note because it does allow type A particles to overlap slightly at the surface of one and other (and with the surface of colloidal particles) without the simulation becoming non-physical. Any small part of the type A sphere that overlaps with another surface can be explained as the space between water molecules. That said, these particles should not cluster inside the center of colloidal particles, which is non-physical and would indicate an error in the simulation. 
 
 Type B particles are simulated as hard spheres that do not overlap with other particles. As noted above, our colloids are typically ~1 micron in diameter, although we define size within the simulation relativistically.
+<br>
+
+## Running a Gelation Simulation
 
 A gelation simulation follows roughly the same format as our [DPD simulation of water](/02-Simulating-waterDPD.md): 
 * Initialize a simulation box with a random distribution of particles (allowing particles to overlap)
@@ -86,6 +89,12 @@ A gelation simulation follows roughly the same format as our [DPD simulation of 
 * Define the outputs (e.g. GSD, LOG, etc.)
 * Run the simulation!
 
+A gel is completed when 
+
+(see [Log Analysis with R](/05-Log-Analysis-with-R.md))
+
+**A Note on Parallelization**<br>
+HOOMD-blue supports some parallelization options; unfortunately, it seems that our modifications currently break them. We have attempted to fix this but as of yet it is NOT possible to run these simulations in parallel and accurately track all particle interactions. All of our simulations MUST be run serially; therefore, large gelation simulations will take upwards of 1-2 months to run on the Discovery cluster. To do that, we must run the simulation in segments. Each gelation simulation is run for about 3 days, generating 11 frames of data, and then stopped. The next day the simulation can be restarted from frame 10 (giving us a potential comparison between frame 11 and frame 2 to verify that the simulation is continuing from where it left off without error). This process is repeated for the number of restarts needed to reach a quasi-steady state (typically somewhere between 9-13). Once all of the restarts are completed and the gel is confirmed to have 
 
 
 ## Shearing
