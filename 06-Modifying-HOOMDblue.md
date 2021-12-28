@@ -28,14 +28,13 @@ These file are written in C++. If you are new to C/C++, you will notice that the
 
 To install the modifications:
 
-You will need to copy two sets of modified files into two different folders in the version of HOOMD-blue that you are modifying. This can be easily done in either Terminal or Finder.<br>
-*NOTE: Some of these files are new, some of them overwrite exisiting `.cc` and `.h` files*
+You will need to copy two sets of modified files into two different folders in the version of HOOMD-blue that you are modifying. This can be easily done in either Terminal or Finder.*NOTE: Some of these files are new, some of them overwrite exisiting `.cc` and `.h` files*
 
-Go to the version of HOOMD-blue that you want to update (e.g. the `hoomd-v2.9.7/` directory).
+* Go to the version of HOOMD-blue that you want to update (e.g. the `hoomd-v2.9.7/` directory).
 
-Copy all the files in the `Nabi_HOOMDblue-extensions/hoomd` directory into your version of HOOMD-blue's `hoomd` directory (e.g. `hoomd-v2.9.7/hoomd`).
+* Copy all the files in the `Nabi_HOOMDblue-extensions/hoomd` directory into your version of HOOMD-blue's `hoomd` directory (e.g. `hoomd-v2.9.7/hoomd`).
 
-Inside your version of HOOMD-blue's `hoomd` directory you will also find the `md` directory. Copy all the files in the `Nabi_HOOMDblue-extensions/md` direcotry into your version of HOOMD-blue's `md` directory (e.g. `hoomd-v2.9.7/hoomd/md`).
+* Inside your version of HOOMD-blue's `hoomd` directory you will also find the `md` directory. Copy all the files in the `Nabi_HOOMDblue-extensions/md` direcotry into your version of HOOMD-blue's `md` directory (e.g. `hoomd-v2.9.7/hoomd/md`).
 
 After copying these files, you will need to recomple (make -j4) and reinstall (make install) HOOMD-blue. These steps are shown below, you can also revist them in the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md#installing-hoomd-blue). <br>
 *Note: You will likely receive several warnings about pybind11 during the compilation and installation steps; however, these warnings can safely be ignored (only worry about any errors!)*
