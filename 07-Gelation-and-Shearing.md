@@ -46,9 +46,9 @@ Shearing (see [About Shearing Simulations](/07-Gelation-and-Shearing.md#about-sh
 
 [5]- [Check that the sheared gel](/07-Gelation-and-Shearing.md#5-checking-shearing) has reached a new quasi-steady state
 
-[6]- \(*IF gelation was run in segments*) Use the updated lifetimes from step [3] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#5-6-updating-shear-lifetimes) in the shearing simulation
+[6]- \(*IF gelation was run in segments*) Use the updated lifetimes from step [3] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the shearing simulation
 
-[7]- \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#5-6-updating-shear-lifetimes) in the remaining shearing simulation restarts
+[7]- \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the remaining shearing simulation restarts
 <br>
 
 ## About Gelation Simulations
