@@ -201,7 +201,7 @@ This should help demonstrate how important it will be to find the right balance 
 * If you would like to learn more about using R, check out the LinkedIn Learning courses and other resources listed in the [Programming Resources](/Programming-Resources#r)
 
 *Preparing for Shearing:*
-* As described in the paper above, we use the Lees-Edwards boundary condition. Implementing this boundary condition with full particle tracking in HOOMD-blue required some modification of HOOMD-blue's standard shearing process. Before running a shearing simulation, see the guide to [Modifying HOOMD-blue](/06-Modifying-HOOMDblue.md) for next steps.
+* As described in the paper above, we use the Lees-Edwards boundary condition. Implementing this boundary condition with full particle tracking in HOOMD-blue required some modification of HOOMD-blue's standard shearing process. Before running more complex simulations, see the guide to [Modifying HOOMD-blue](/06-Modifying-HOOMDblue.md) for next steps.
 
 
  

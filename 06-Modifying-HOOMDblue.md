@@ -2,6 +2,9 @@
 
 This is a guide to installing the PRoPS group's modifications to HOOMD-blue for particle interaction tracking across Lees-Edwards boundary conditions in colloidal gels. These modifications will allow us to use attractive solid spheres, shear a system with Lees-Edwards boundary conditions, calculate particle interaction lifetimes, and output the decomposed stresses and shear stresses from a simulation.
 
+Before modifying HOOMD-blue you must install the base version HOOMD-blue. See the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for information on installing the base version of HOOMD-blue.<br>
+**Note: It is recommended that you ALWAYS have two verions of HOOMD-blue installed on your computer, the base HOOMD-blue and a modified HOOMD-blue.**
+
 [Last Update: December 2021]
 
 The modifications to HOOMD-blue were developed by Mohammad (Nabi) Nabizadeh as part of his PhD thesis. This guide was compiled by Rob Campbell.
