@@ -51,7 +51,7 @@ Shearing (see [About Shearing Simulations](/07-Gelation-and-Shearing.md#about-sh
 [7]- \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to update the particle interaction lifetimes in the remaining shearing simulation restarts
 <br>
 
-## About Gelation Simulations
+## [1] About Gelation Simulations
 
 Our gelation simulations are meso-scale simlations of attractive colloidal particles in a given volume fraction (phi), with a typical colloid particles radius of ~1micron. We do not do molecular dynamics. We also do not do continuum simulations, our solvent is also simulated as particles (typically representing small groups of molecules). Less that 0.5% of the simulation cost goes to simulating colloidal particles; by far the largest factor in simulation cost is the **number of solvent particles**. Simulations with high volume fractions of colloidal particles will therefore have LOWER simulation costs (and typically gel faster).
 
@@ -96,9 +96,17 @@ A gelation simulation follows roughly the same format as our [DPD simulation of 
 ***A Note on Parallelization***<br>
 HOOMD-blue supports some parallelization options; unfortunately, it seems that our modifications currently break them. We have attempted to fix this but as of yet it is NOT possible to run these simulations in parallel and accurately track all particle interactions. All of our simulations MUST be run serially; therefore, large gelation simulations will take upwards of 1-2 months to run on the Discovery cluster. To do that, we must run the simulation in segments. Each gelation simulation is run for about 3 days, generating 11 frames of data, and then stopped. The next day the simulation can be restarted from frame 10 (giving us a potential comparison between frame 11 and frame 2 to verify that the simulation is continuing from where it left off without error). This process is repeated for the number of restarts needed to reach a quasi-steady state (typically somewhere between 9-13). Once all of the restarts are completed and the gel is confirmed to have 
 
+## Checking Gelation
+
 A gel is completed when 
 (see [Log Analysis with R](/05-Log-Analysis-with-R.md))
+
+## Updating Lifetimes
 
 ## About Shearing Simulations
 
 About shearing simulations.
+
+## Checking Shearing
+
+## Updating Shear Lifetimes
