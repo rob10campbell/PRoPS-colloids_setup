@@ -32,19 +32,19 @@ For more background on these simulations, see the following papers:
 
 There are 7 steps to making a colloidal gel and shearing it:
 
-	[1] Run the gelation simulation (with a Python script using HOOMD-blue)
+[1] Run the gelation simulation (with a Python script using HOOMD-blue)
 
-	[2] Check that the simulation reached a quasi-steady state (see [Log Analysis with R](/05-Log-Analysis-with-R.md))
+[2] Check that the simulation reached a quasi-steady state (see [Log Analysis with R](/05-Log-Analysis-with-R.md))
 
-	[3] \(*IF gelation was run in segments*) Combine the data from all the gelation simulation restarts and update the particle interaction lifetimes across all gelation simulation restarts
+[3] \(*IF gelation was run in segments*) Combine the data from all the gelation simulation restarts and update the particle interaction lifetimes across all gelation simulation restarts
 
-	[4] Shear the gel from quasi-steady state (with a Python script using HOOMD-blue)
+[4] Shear the gel from quasi-steady state (with a Python script using HOOMD-blue)
 
-	[5] Check that the sheared gel has reached a new quasi-steady state
+[5] Check that the sheared gel has reached a new quasi-steady state
 
-	[6] \(*IF gelation was run in segments*) Use the updated lifetimes from step [3] to update the particle interaction lifetimes in the shearing simulation
+[6] \(*IF gelation was run in segments*) Use the updated lifetimes from step [3] to update the particle interaction lifetimes in the shearing simulation
 
-	[7] \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to update the particle interaction lifetimes in the remaining shearing simulation restarts
+[7] \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to update the particle interaction lifetimes in the remaining shearing simulation restarts
 <br>
 
 ## Gelation simulations
