@@ -152,7 +152,7 @@ A shearing simulation requires the same inputs as the gelation simulation, plus
 * the number of strains, N_strains (usually N_strains = 1 for yielding behavior and N_strains = 10 to reach quasi-steady state)
 Typically all other parameters will be kept the same between gelation and shearing simulations, but there may be times (for example, at very high shear rates) where you need to lower the DPD timestep (dt) to accomodate larger forces. This shouldn't physically change with shear rate, but practically the simulation becomes too noisy to effectively average between timesteps ] (i.e. lubrication forces get too large from velocity differences (shear rate), and you need more data (more particles) to balance that out and decrease the noise).
 <br>
-<br>
+
 ## [4] Running a Shearing Simulation
 
 A shearing simulation follows the same DPD steps as a gelation simulation, with a modified run command to account for our changes to the `box_resize` function:
