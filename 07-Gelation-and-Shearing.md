@@ -19,17 +19,17 @@ There are 7 steps to making a colloidal gel and shearing it:
 
 \[2] [Check that the simulation](/07-Gelation-and-Shearing.md#2-checking-gelation) reached a quasi-steady state without errors 
 
-(*IF gelation was run in segments*)
+(*IF gelation was run in segments*)<br>
 \[3] [Update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes) across all gelation simulation restarts and combine any additional simulation data needed for analysis
 
 \[4] [Shear the gel](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation) from quasi-steady state (with a Python script using HOOMD-blue)
 
 \[5] [Check that the sheared gel](/07-Gelation-and-Shearing.md#5-checking-shearing) has reached a new quasi-steady state
 
-(*IF gelation was run in segments*)
+(*IF gelation was run in segments*)<br>
 \[6] Use the updated lifetimes from step [3] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the shearing simulation
 
-(*IF shearing was run in segments*)
+(*IF shearing was run in segments*)<br>
 \[7] Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the remaining shearing simulation restarts
 <br>
 <br>
