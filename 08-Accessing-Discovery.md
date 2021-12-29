@@ -4,7 +4,7 @@ This is a guide to getting setup to use the Discovery Cluster at Northeastern Un
 
 This guide is optimized for MacOS.
 
-[Last Update: August 2021]
+[Last Update: December 2021]
 
 This guide was compiled by Rob Campbell.
 
@@ -24,13 +24,14 @@ Once you have been granted access to Discovery you should have both a home folde
 
 You can login to your Discovery home folder from your Terminal shell with the command
 ```bash
-$ ssh -Y campbell.r@login.discovery.neu.edu
+% ssh -Y campbell.r@login.discovery.neu.edu
 ```
-And by entering your MyNortheastern username and password.
+And by entering your MyNortheastern username and password.<br>
+*NOTE: The "-Y" parameter allows you to use applications with X11 and GUI interfaces. It is not strictly necessary to include this parameter if you are only using the command line, but it is good practice to remember it for when you do need it.*
 
 You can then move to the `scratch` folder with
 ```bash
-$ cd /scratch/your_username
+% cd /scratch/your_username
 ```
 
 To learn more about connecting to Discovery, including setting up passwordless SSH, see [Connecting to Discovery](https://rc-docs.northeastern.edu/en/latest/get_started/connect.html#mac) on the Discovery docs.
@@ -51,15 +52,15 @@ As a member of the PRoPS Group you should have access to the `props` directory o
 
 After connecting to Discovery, you can check this with
 ```bash
-$ cd /work/props
+% cd /work/props
 ```
 
 If you do not have permission to access this directory contact RC Help.
 
 After you get access to `/work/props` you can create your own folder for your projects
 ```bash
-$ cd /work/props
-$ mkdir your_name
+% cd /work/props
+% mkdir your_name
 ```
 <br>
 
@@ -80,13 +81,13 @@ You can also transfer small files from your computer to Discovery on the termina
 
 For example, to transfer files to your `/scratch` space, use the command:
 ```bash
-$ scp filename yourusername@xfer.discovery.neu.edu:/scratch/yourusername
+% scp filename yourusername@xfer.discovery.neu.edu:/scratch/yourusername
 ```
 The Discovery documentation includes more details about [transfering files](https://rc-docs.northeastern.edu/en/latest/using-discovery/transferringdata.html), including options for SSHFS.
 
 The *recommended* method for transfering files (especially large data files) is with Globus. You can learn more about how to set up a Globus account and enable Globus' command line tools on the [Using Globus](https://rc-docs.northeastern.edu/en/latest/using-discovery/globus.html#using-globus) page in the Discovery documentation.
 <br>
 <br>
-## Advice for Running Simulations on Discovery
+## Next Steps
 
-[to be added]
+Once you have access to Discovery and are familiar with the basics you can begin running simulations on Discovery. See the [introduction to HPC simulations](/09-Slurm-and-Disco.md) for more information.
