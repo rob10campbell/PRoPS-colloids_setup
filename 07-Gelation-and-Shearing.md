@@ -119,7 +119,9 @@ To check if a gelation simulation has reached a quasi-steady state (and formed a
 
 Our past work found that small improvements in gelation do not affect the rheology, so if the average contact number appears more-or-less stable for 3 or more simulation restarts (~9 days of simulation time!) you can be pretty confident that gelation is completed and the system will not change significantly with more simulation time.
 
-In addition to checking that the colloidal particles have formed a gel, you should check that the simulation has maintained equilibrium, i.e. average system temperature throughout the simulation should be constant, and the and the average pressure in the x-y direction (the negative shear stress) should be zero. See [Log Analysis with R](/05-Log-Analysis-with-R.md) for more details on making these checks.
+In addition to checking that the colloidal particles have formed a gel, you should check that the simulation has maintained equilibrium, i.e. average system temperature throughout the simulation should be constant, and the and the average pressure in the x-y direction (the negative shear stress) should be zero. 
+
+See [Log Analysis with R](/05-Log-Analysis-with-R.md) for more details on making these checks.
 <br>
 <br>
 ## [3] Updating Lifetimes
@@ -196,9 +198,11 @@ This covers the basic outline of colloidal gel simulations! The rest is up to yo
 
 *HPC Computing:*
 * See the remaining guides for information about [accessing](//08-Accessing-Discovery.md) Northeastern's HPC cluster, "Discovery," and [working with](/09-Slurm-and-Disco.md) HPC simulations.
+<br>
 
-*Background Reading:*<br>
-For more background on DPD simulations of colloidal gel rheology, see the following papers
+*Background Reading:*
+
+If you haven't already, you should review the following papers for more background on DPD simulations of colloidal gel rheology
 * Background on DPD
 	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
 	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
