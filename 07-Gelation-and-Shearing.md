@@ -6,41 +6,20 @@ This guide is optizimed for MacOS. Before running gelation or shearing simulatio
 
 [Last Update: December 2021]
 
-These workflows were developed by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
+These workflows were developed by Mohammad (Nabi) Nabizadehi as part of his PhD thesis. This guide was compiled by Rob Campbell.
 <br>
-
-## Background
-
-For more background on these simulations, see the following papers:
-
-* Background on DPD
-	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
-	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
-
-* Background on simulating colloidal gel rheology
-	* "[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]" (2017)
-	* "[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]" (2020)
-	* "[Life and death of colloidal bonds control the rate-dependent rheology of gels]" (2021)
-
-[Viscosity measurement techniques in Dissipative Particle Dynamics]:https://doi.org/10.1016/j.cpc.2015.05.027
-[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]:https://doi.org/10.1063/1.474784
-[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]:https://doi.org/10.1103/PhysRevLett.118.048003
-[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]:https://doi.org/10.1016/j.mtadv.2019.100026
-[Life and death of colloidal bonds control the rate-dependent rheology of gels]:https://doi.org/10.1038/s41467-021-24416-x
 
 ## Overview 
 
-There are 7 steps to making a colloidal gel and shearing it:
+Details [about simulating the gelation of colloidal particlese](/07-Gelation-and-Shearing.md#about-gelation-simulations) and [shearing a colloidal gel](/07-Gelation-and-Shearing.md#about-shearing-simulations) are described in separate sections, below.
 
-Gelation (see [About Gelation Simulations](/07-Gelation-and-Shearing.md#about-gelation-simulations) for details)
+There are 7 steps to making a colloidal gel and shearing it:
 
 [1]- [Run the gelation simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) (with a Python script using HOOMD-blue)
 
 [2]- [Check that the simulation](/07-Gelation-and-Shearing.md#2-checking-gelation) reached a quasi-steady state without errors 
 
-[3]- \(*IF gelation was run in segments*) [Update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes) across all gelation simulation restarts and combine any additional simulation data for analysis
-
-Shearing (see [About Shearing Simulations](/07-Gelation-and-Shearing.md#about-shearing-simulations) for details)
+[3]- \(*IF gelation was run in segments*) [Update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes) across all gelation simulation restarts and combine any additional simulation data needed for analysis
 
 [4]- [Shear the gel](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation) from quasi-steady state (with a Python script using HOOMD-blue)
 
@@ -80,6 +59,26 @@ We also need to define the particle types. A basic colloidal simulation has two 
 Our simulations typically use water as a solvent, with each type A particle representing 3 water molecules loosely bound together in a sphere. This is important to note because it does allow type A particles to overlap slightly at the surface of one and other (and with the surface of colloidal particles) without the simulation becoming non-physical. Any small part of the type A sphere that overlaps with another surface can be explained as the space between water molecules. That said, these particles should not cluster inside the center of colloidal particles, which is non-physical and would indicate an error in the simulation. 
 
 Type B particles are simulated as hard spheres that do not overlap with other particles. As noted above, our colloids are typically ~1 micron in diameter, although we define size within the simulation relativistically.
+
+If you'd like to make changes to specific particles (for example, fix their position to form a wall or change mass, velocity, diameter, etc.), an easy way to do this is to define the system as variable you can interact with. For example, for the `waterDPD.py` system, you would set
+```python
+system = hoomd.deprecated.init.create_random(N=N_Solvents, box=hoomd.data.boxdim(Lx=L_X, Ly=L_Y, Lz=L_Z), name='A', min_dist=0., seed=random.randint(1, 101), dimensions=3)
+```
+You can use other parameters to extract specific types of information from the system. For example, to access position, use `getPosition`
+```python
+pos = system.particles.pdata.getPosition 
+```
+and further specify a specific coordinate with
+```python
+x = pos.x
+y = pos.y
+z = pos.z
+```
+To change position of a particle to the origin, use `setPosition`
+```python
+system.particles.pdata.setPosition(0, pos, True)
+```
+*Note: we use the `set` and `get` commands to access these parameters because in C++ `system` is defined as a private class (to prevent these attributes from being easily/accidentally changed by the user)*
 <br>
 
 ## [1] Running a Gelation Simulation
@@ -96,19 +95,91 @@ A gelation simulation follows roughly the same format as our [DPD simulation of 
 ***A Note on Parallelization***<br>
 HOOMD-blue supports some parallelization options; unfortunately, it seems that our modifications currently break them. We have attempted to fix this but as of yet it is NOT possible to run these simulations in parallel and accurately track all particle interactions. All of our simulations MUST be run serially; therefore, large gelation simulations will take upwards of 1-2 months to run on the Discovery cluster. To do that, we must run the simulation in segments. Each gelation simulation is run for about 3 days, generating 11 frames of data, and then stopped. The next day the simulation can be restarted from frame 10 (giving us a potential comparison between frame 11 and frame 2 to verify that the simulation is continuing from where it left off without error). This process is repeated for the number of restarts needed to reach a quasi-steady state (typically somewhere between 9-13). Once all of the restarts are completed and the gel is confirmed to have 
 
+You can output a variety of parameters, but we usually output:
+* A GSD file with particle position information
+* A LOG file with Pressure_xy (negative shear stress) and temperature information
+* Static colloid-colloid pair data from each timestep
+	* Unique tags for each particle in the simulation
+	* Unique tags for each bond formed between particles; however, these tags are NOT always retained accurately (a bug somewhere in the code causes these values to duplicate)
+	* particle interaction (bond) lifetime (the number of timesteps 2 given particles have been in contact); if a bond breaks the lifetime resets to zero
+	* virial stresses for each particle interaction
+* A dynamic record of bond formation and breaking between timesteps (ata on the additional interactions that happen between timesteps (each timestep here is 100,000). The bond formation and breaking information between timesteps (HistoryBin)
+* Output files recording the progress of each simulation (to verify there were no errors or other interruptions and the simulation ran compeltely)
+<br>
+
 ## [2] Checking Gelation
 
-A gel is completed when 
-(see [Log Analysis with R](/05-Log-Analysis-with-R.md))
+To check if a gelation simulation has reached a quasi-steady state (and formed a space spanning gel), plot the average coordination number (AKA contact number, the number of other particles a given particle is "bonded" to) over time. At a quasi-steady state this number should be near constant, usually around <Z> = 6 (octahedral structure) or sometimes <Z> = 12 (close-packing: fcc or hcp) at very high volume fractions. The average coordination number will not reach a true plateau because there will always be some changes (i.e. "bond" breaking, formation, and lower Z values) at the gel surface, where free colloid particles behave like a part of the Newtonian solvent. Instead it should reach a very gradual (near-plateau) slope, with minimal changes for several simulation times. You can also check the system by plotting the contact distribution (probability vs. contact number), which should produce a roughly Gaussian curve. Both of these checks are usually done in R.
+
+Our past work found that small improvements in gelation do not affect the rheology, so if the average contact number appears more-or-less stable for 3 or more simulation restarts (~9 days of simulation time!) you can be pretty confident that gelation is completed and the system will not change significantly with more simulation time.
+
+In addition to checking that the colloidal particles have formed a gel, you should check that the simulation has maintained equilibrium, i.e. average system temperature throughout the simulation should be constant, and the and the average pressure in the x-y direction (the negative shear stress) should be zero. See [Log Analysis with R](/05-Log-Analysis-with-R.md) for more details on making these checks.
+<br>
 
 ## [3] Updating Lifetimes
+
+After a gel has reached a quasi-steady state it is important to make sure that the lifetime data is correct. If a gel has been created in a single simulation, without restarts, then this step will not be necessary; howevere, since most of our gels are created in sequential simulation restarts on the Discovery cluster (where the lifetime of the system resets to zero at the start of each restart), you usually will need to update the lifetime data from one restart to the next. This is easiest to do in one step after all the restarts have been completed. This analysis is typically done in R.
+
+If you are recording other information (like a HistoryBin.csv file), this lifetime data will ALSO need to be updated.
+
+There are several considerations to be made when updating the lifetimes:
+1. Data from the last simulation restart may not be correctly numbered. 
+	* In a simulation witout restarts, data is saved to a generic file (i.e. GelationData.csv). At the start of a restart, this data is copied to a labeled file (GelationData_After_Gelation_0.csv) to make room for the new data; therefore, there will usually be a file "missing" from the last restart (saved as GelationData.csv and not yet relabeled). If you want to use this data in your analysis you should copy it to a new file named correctly in sequence (for easy addition).
+2. There is data from extra timesteps. We need to remove these.
+	* Each gelation simulation runs for one frame longer than needed (so we have a comparison frame if we need to re-verify that the simulation has picked up where it left off); therefore we usually remove the data from this last frame. *NOTE: This number of frames may vary if the simulation was interrupted, so you should use Python and HOOMD-blue to check how many frames are in the GSD file from each restart before doing this step*
+3. There are issues with the bond-labeleing step in our simulations, therefore you should always update bonds using the tags for the individual particles involved, not the bond-tag.
+4. We only need to update the lifetimes of particle interactions that did not break between frames, and this needs to be done sequentially through all the frames of a restart.
+<br>
 
 ## About Shearing Simulations
 
 About shearing simulations.
+<br>
 
 ## [4] Running a Shearing Simulation
 
+Running shear simulations.
+
+Outputs
+* Isolated virial and kinetic energy files are used for shearing, but since we are not shearing the gel during gelation these files should usually be empty (and do not contain useful information at this stage, regardless)
+
+<br>
+
 ## [5] Checking Shearing
 
+Checking shearing.
+<br>
+
 ## [6]-[7] Updating Shear Lifetimes
+
+Updating shear lifetimes.
+<br>
+
+## Background
+
+For more background on these simulations, see the following papers:
+
+* Background on DPD
+	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
+	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
+
+* Background on simulating colloidal gel rheology
+	* "[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]" (2017)
+	* "[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]" (2020)
+	* "[Life and death of colloidal bonds control the rate-dependent rheology of gels]" (2021)
+
+[Viscosity measurement techniques in Dissipative Particle Dynamics]:https://doi.org/10.1016/j.cpc.2015.05.027
+[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]:https://doi.org/10.1063/1.474784
+[Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]:https://doi.org/10.1103/PhysRevLett.118.048003
+[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]:https://doi.org/10.1016/j.mtadv.2019.100026
+[Life and death of colloidal bonds control the rate-dependent rheology of gels]:https://doi.org/10.1038/s41467-021-24416-x
+
+## Overview 
+
+There are 7 steps to making a colloidal gel and shearing it:
+
+Gelation (see [About Gelation Simulations](/07-Gelation-and-Shearing.md#about-gelation-simulations) for details)
+
+[1]- [Run the gelation simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) (with a Python script using HOOMD-blue)
+
+
