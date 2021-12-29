@@ -15,7 +15,7 @@ Details [about simulating the gelation of colloidal particlese](/07-Gelation-and
 
 There are 7 steps to making a colloidal gel and shearing it:
 
-[[1]](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation)] Run the gelation simulation (with a Python script using HOOMD-blue)
+[[1]](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) Run the gelation simulation (with a Python script using HOOMD-blue)
 
 [[2]](/07-Gelation-and-Shearing.md#2-checking-gelation) Check that the simulation reached a quasi-steady state without errors 
 
