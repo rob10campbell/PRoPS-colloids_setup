@@ -169,12 +169,26 @@ Typically we output the same files as from a gelation simulation, with the possi
 <br>
 ## [5] Checking Shearing
 
-Checking shearing.
+To check if a shearing simulation has reached a quasi-steady state you should see how the system has evolved over time, plotting stress (the negative of pressure in the x-y direction) vs. strain, the velocity profile over time, the average coordination number (\<Z>) vs. strain, and coordination number distribution vs. strain.
+
+Here strain is the shear rate times time (where time is the number of timesteps times the DPD timestep, dt).
+
+To reduce the noise from Brownian motion in the system, you should plot local averages for sections of the system, rather than all the particles individually.
+
+series of horizontal layers (slices of the y-plane) and average the information for all particles in each of these layers. 
+
+For the stress-strain curve, average the pressure for a subset of timesteps. For example, in a system with 10,000 colloidal particles that reached one strain (N_strains = 1) after 400,000 timesteps, you might want to average the pressure data for every 10,000 timesteps). A plot of the negative pressure (shear stress) vs. strain should then show yielding within the first strain time (N_strains = 1) and then eventually reach a constant (steady state) value (usually after ~N_strains = 10).
+
+For the velocity profile, divide the system into a series of horizontal layers (slices of the y-plane) and average the information for all the particles in each of these layers. It is a good idea to have an odd number of layers, in case you need to check for simulation errors at the center of the simulation box. Then plotting velocity vs. y-position (now layer number) for all timesteps. This should lead to a linear profile (straight line sloping upwards) for Newtonian fluids, and a more S-like curve (curving convexly upwards from the base to the center, before curving concavely to the top of the box) for non-Newtonian colloidal systems.
+
+The average coordination number and coordination number distributions should not vary significantly from the steady state gel. 
 <br>
 <br>
 ## [6]-[7] Updating Shear Lifetimes
 
-Updating shear lifetimes.
+Similar to the gelation simulation restarts in [step [3]](/07-Gelation-and-Shearing.md#3-updating-lifetimes), the shearing simulation starts from t=0, and any particle interaction lifetime information will need to be updated to account for the "bond" lifetimes that were present at start of the simulation (when the gel had reached a quasi-steady state). This process is roughly the same as updating the lifetimes across restarts, except the initial data comes from the quasi-steady state gel simulation data used to initialize the shearing simulation.
+
+If the shearing simulation you are working with was long enough that it also needed to be run in restarts, then once you update the first restart of the shearing simulation you will need to use that data to update the remaining restarts.
 <br>
 <br>
 ## Additional Background
