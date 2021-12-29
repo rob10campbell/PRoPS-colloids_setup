@@ -8,7 +8,7 @@ This guide is optizimed for MacOS. Before running gelation or shearing simulatio
 
 These workflows were developed by Mohammad (Nabi) Nabizadehi as part of his PhD thesis. This guide was compiled by Rob Campbell.
 <br>
-
+<br>
 ## Overview 
 
 Details [about simulating the gelation of colloidal particlese](/07-Gelation-and-Shearing.md#about-gelation-simulations) and [shearing a colloidal gel](/07-Gelation-and-Shearing.md#about-shearing-simulations) are described in separate sections, below.
@@ -29,10 +29,12 @@ There are 7 steps to making a colloidal gel and shearing it:
 
 [7]- \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the remaining shearing simulation restarts
 <br>
-
+<br>
 ## About Gelation Simulations
 
-Our gelation simulations are meso-scale simlations of attractive colloidal particles in a given volume fraction (phi), with a typical colloid particles radius of ~1micron. We do not do molecular dynamics. We also do not do continuum simulations, our solvent is also simulated as particles (typically representing small groups of molecules). Less that 0.5% of the simulation cost goes to simulating colloidal particles; by far the largest factor in simulation cost is the **number of solvent particles**. Simulations with high volume fractions of colloidal particles will therefore have LOWER simulation costs (and typically gel faster).
+Our gelation simulations are meso-scale simlations of attractive colloidal particles in a given volume fraction (phi), with a typical colloid particles radius of ~1micron. We do not do molecular dynamics. We also do not do continuum simulations, our solvent is also simulated as particles (typically representing small groups of molecules). 
+
+Less that 0.5% of the simulation cost goes to simulating colloidal particles; by far the largest factor in simulation cost is the **number of solvent particles**. Simulations with high volume fractions of colloidal particles will therefore have LOWER simulation costs (and typically gel faster).
 
 Our simulatuions capture local interactions that also represent large scale system properties. We ensure this relationship between local and large-scale properties by using:
 * Lees-Edwards boundary conditions (as discussed when [describing our modifications to HOOMD-blue](/06-Modifying-HOOMDblue.md))
@@ -43,7 +45,7 @@ Our simulatuions capture local interactions that also represent large scale syst
 
 The simulation advances through time in intervals defined by a DPD timestep (dt). The choice of kT and dt are interconnected. Particle motion (and therefore particle interaction) varies with the magnitude of the Brownian forces (as calculated from temperature kT). The magnitude of this motion will affect the timestep that is needed to capture meaningful changes in the system. For general particle simulations researchers usually use kT = 0.5, but for colloids a lower kT = 0.1 is a bit better. If you're simulating a Newtonian fluid like water, then kT = 1 would be okay. You can even go as high as kT = 10 for some simulations, but at that point you usually have to start decreasing the timestep in order to capture enough interaction details.
 
-Our particles' attractiveness is set by the parameters "D0" and "alpha" in the Morse Potential energy function. People report gels at D0 values as low as 4kT, but for faster simulation times we start higher (at 6kT). *NOTE: 6kT already requires around twice the simulation time as higher kT values, and we expect 4kT would be even longer* 
+Interparticle attraction is set by the parameters "D0" and "alpha" in the Morse Potential energy function. This could represent a variety of attraction types, and the simulation does not depend on a specific physical mecahnicsm (electrostatics, depletion, etc.). People report gels at D0 values as low as 4kT, but for faster simulation times we start higher (at 6kT). *NOTE: 6kT already requires around twice the simulation time as higher kT values, and we expect 4kT would be even longer* 
 
 Our code therefore requires the following inputs:
 * Volume fraction "phi"
@@ -52,9 +54,9 @@ Our code therefore requires the following inputs:
 * The cut off distance for particle interaction "r_cut" (typically ~0.1)
 * The number of particles in a unit volume: number density "rho" (typically set to 3)
 * The colloidal radius (typically set to 1, for a particle volume of 4/3 pi r cubed, or ~4.18879)
-* Two DPD parameters: "A" (the conservative coefficient) and "gamma" (for dissipative force) *NOTE: Our DPD force is a combination of conservative force, dissipative force, and random force. We do not need to set parameters for the random force because it is Brownian (i.e. calculated directly from temperature)*=
+* Two DPD parameters: "A" (the conservative coefficient) and "gamma" (for dissipative force) *NOTE: Our DPD force is a combination of conservative force, dissipative force, and random force. We do not need to set parameters for the random force because it is Brownian (i.e. calculated directly from temperature)*
 
-We also need to define the particle types. A basic colloidal simulation has two "types" of particles, "type A" (solvent) particles and "type B" (colloid particles). In addition to using these type classes to define different interparticle interactions, they can also be used in VMD to load segments of the total simulation (reducing the cost of visualization and allowing for greater clarity visualizing only colloid-colloid interactions). You can add additional particle types for multi-component systems, to build walls in the system, etc. 
+We also need to define the particle types. A basic colloidal simulation has two "types" of particles, "type A" (solvent) particles and "type B" (colloid particles). In addition to using these type classes to define different interparticle interactions, they can also be used in VMD to load segments of the total simulation (reducing the cost of visualization and allowing for greater clarity visualizing only colloid-colloid interactions, etc.). You can add additional particle types for multi-component systems, to build walls in the system, etc. 
 
 Our simulations typically use water as a solvent, with each type A particle representing 3 water molecules loosely bound together in a sphere. This is important to note because it does allow type A particles to overlap slightly at the surface of one and other (and with the surface of colloidal particles) without the simulation becoming non-physical. Any small part of the type A sphere that overlaps with another surface can be explained as the space between water molecules. That said, these particles should not cluster inside the center of colloidal particles, which is non-physical and would indicate an error in the simulation. 
 
@@ -80,7 +82,7 @@ system.particles.pdata.setPosition(0, pos, True)
 ```
 *Note: we use the `set` and `get` commands to access these parameters because in C++ `system` is defined as a private class (to prevent these attributes from being easily/accidentally changed by the user)*
 <br>
-
+<br>
 ## [1] Running a Gelation Simulation
 
 A gelation simulation follows roughly the same format as our [DPD simulation of water](/02-Simulating-waterDPD.md): 
@@ -95,7 +97,7 @@ A gelation simulation follows roughly the same format as our [DPD simulation of 
 ***A Note on Parallelization***<br>
 HOOMD-blue supports some parallelization options; unfortunately, it seems that our modifications currently break them. We have attempted to fix this but as of yet it is NOT possible to run these simulations in parallel and accurately track all particle interactions. All of our simulations MUST be run serially; therefore, large gelation simulations will take upwards of 1-2 months to run on the Discovery cluster. To do that, we must run the simulation in segments. Each gelation simulation is run for about 3 days, generating 11 frames of data, and then stopped. The next day the simulation can be restarted from frame 10 (giving us a potential comparison between frame 11 and frame 2 to verify that the simulation is continuing from where it left off without error). This process is repeated for the number of restarts needed to reach a quasi-steady state (typically somewhere between 9-13). Once all of the restarts are completed and the gel is confirmed to have 
 
-You can output a variety of parameters, but we usually output:
+You can output a variety of parameters depending on the simulation goal. Typically we output:
 * A GSD file with particle position information
 * A LOG file with Pressure_xy (negative shear stress) and temperature information
 * Static colloid-colloid pair data from each timestep
@@ -103,24 +105,24 @@ You can output a variety of parameters, but we usually output:
 	* Unique tags for each bond formed between particles; however, these tags are NOT always retained accurately (a bug somewhere in the code causes these values to duplicate)
 	* particle interaction (bond) lifetime (the number of timesteps 2 given particles have been in contact); if a bond breaks the lifetime resets to zero
 	* virial stresses for each particle interaction
-* A dynamic record of bond formation and breaking between timesteps (ata on the additional interactions that happen between timesteps (each timestep here is 100,000). The bond formation and breaking information between timesteps (HistoryBin)
-* Output files recording the progress of each simulation (to verify there were no errors or other interruptions and the simulation ran compeltely)
+* A dynamic record of bond formation and breaking between timesteps (HistoryBin.csv)
+* A record of the simulation progress (to verify there were no errors or other interruptions, and the simulation ran compeltely)
 <br>
 
 ## [2] Checking Gelation
 
-To check if a gelation simulation has reached a quasi-steady state (and formed a space spanning gel), plot the average coordination number (AKA contact number, the number of other particles a given particle is "bonded" to) over time. At a quasi-steady state this number should be near constant, usually around <Z> = 6 (octahedral structure) or sometimes <Z> = 12 (close-packing: fcc or hcp) at very high volume fractions. The average coordination number will not reach a true plateau because there will always be some changes (i.e. "bond" breaking, formation, and lower Z values) at the gel surface, where free colloid particles behave like a part of the Newtonian solvent. Instead it should reach a very gradual (near-plateau) slope, with minimal changes for several simulation times. You can also check the system by plotting the contact distribution (probability vs. contact number), which should produce a roughly Gaussian curve. Both of these checks are usually done in R.
+To check if a gelation simulation has reached a quasi-steady state (and formed a space spanning gel), plot the average coordination number \<Z> (AKA contact number, the number of other particles a given particle is interacting with) over time. At a quasi-steady state this number should be near constant, usually around \<Z> = 6 (octahedral structure) or sometimes \<Z> = 12 (close-packing: fcc or hcp) at very high volume fractions. The average coordination number will not reach a true plateau because there will always be some changes (i.e. "bond" breaking, "bond" formation, and lower Z values) at the gel surface, where free colloid particles behave more like a part of the Newtonian solvent. Instead it should reach a very gradual (near-plateau) slope, with minimal changes for several simulation times. You can also check the system by plotting the contact distribution (probability vs. contact number), which should produce a roughly Gaussian curve. Both of these checks are usually done in R.
 
 Our past work found that small improvements in gelation do not affect the rheology, so if the average contact number appears more-or-less stable for 3 or more simulation restarts (~9 days of simulation time!) you can be pretty confident that gelation is completed and the system will not change significantly with more simulation time.
 
 In addition to checking that the colloidal particles have formed a gel, you should check that the simulation has maintained equilibrium, i.e. average system temperature throughout the simulation should be constant, and the and the average pressure in the x-y direction (the negative shear stress) should be zero. See [Log Analysis with R](/05-Log-Analysis-with-R.md) for more details on making these checks.
 <br>
-
+<br>
 ## [3] Updating Lifetimes
 
 After a gel has reached a quasi-steady state it is important to make sure that the lifetime data is correct. If a gel has been created in a single simulation, without restarts, then this step will not be necessary; howevere, since most of our gels are created in sequential simulation restarts on the Discovery cluster (where the lifetime of the system resets to zero at the start of each restart), you usually will need to update the lifetime data from one restart to the next. This is easiest to do in one step after all the restarts have been completed. This analysis is typically done in R.
 
-If you are recording other information (like a HistoryBin.csv file), this lifetime data will ALSO need to be updated.
+If you are recording other timestep-dependent information (like a HistoryBin.csv file), those lifetimes will ALSO need to be updated.
 
 There are several considerations to be made when updating the lifetimes:
 1. Data from the last simulation restart may not be correctly numbered. 
@@ -135,27 +137,26 @@ There are several considerations to be made when updating the lifetimes:
 
 About shearing simulations.
 <br>
-
+<br>
 ## [4] Running a Shearing Simulation
 
 Running shear simulations.
 
 Outputs
 * Isolated virial and kinetic energy files are used for shearing, but since we are not shearing the gel during gelation these files should usually be empty (and do not contain useful information at this stage, regardless)
-
 <br>
 
 ## [5] Checking Shearing
 
 Checking shearing.
 <br>
-
+<br>
 ## [6]-[7] Updating Shear Lifetimes
 
 Updating shear lifetimes.
 <br>
-
-## Background
+<br>
+## Additional Background
 
 For more background on these simulations, see the following papers:
 
@@ -173,13 +174,4 @@ For more background on these simulations, see the following papers:
 [Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]:https://doi.org/10.1103/PhysRevLett.118.048003
 [Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]:https://doi.org/10.1016/j.mtadv.2019.100026
 [Life and death of colloidal bonds control the rate-dependent rheology of gels]:https://doi.org/10.1038/s41467-021-24416-x
-
-## Overview 
-
-There are 7 steps to making a colloidal gel and shearing it:
-
-Gelation (see [About Gelation Simulations](/07-Gelation-and-Shearing.md#about-gelation-simulations) for details)
-
-[1]- [Run the gelation simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) (with a Python script using HOOMD-blue)
-
 
