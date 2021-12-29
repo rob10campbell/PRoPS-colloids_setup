@@ -15,19 +15,19 @@ Details [about simulating the gelation of colloidal particlese](/07-Gelation-and
 
 There are 7 steps to making a colloidal gel and shearing it:
 
-\[[1](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation)] [Run the gelation simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) (with a Python script using HOOMD-blue)
+[[1]](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation)] Run the gelation simulation (with a Python script using HOOMD-blue)
 
-\[2] [Check that the simulation](/07-Gelation-and-Shearing.md#2-checking-gelation) reached a quasi-steady state without errors 
+[[2]](/07-Gelation-and-Shearing.md#2-checking-gelation) Check that the simulation reached a quasi-steady state without errors 
 
-\[3] (*IF gelation was run in segments*) [Update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes) across all gelation simulation restarts
+[[3]](/07-Gelation-and-Shearing.md#3-updating-lifetimes) (*IF gelation was run in segments*) Update the particle interaction lifetimes across all gelation simulation restarts
 
-\[4] [Shear the gel](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation) from quasi-steady state (with a Python script using HOOMD-blue)
+[[4]](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation) Shear the gel from quasi-steady state (with a Python script using HOOMD-blue)
 
-\[5] [Check that the sheared gel](/07-Gelation-and-Shearing.md#5-checking-shearing) has reached a new quasi-steady states
+[[5]](/07-Gelation-and-Shearing.md#5-checking-shearing) has reached a new quasi-steady states
 
-\[6] (*IF gelation was run in segments*) Use the updated lifetimes from step [3] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the shearing simulation
+[[6]](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) (*IF gelation was run in segments*) Use the updated lifetimes from step [3] to update the particle interaction lifetimes in the shearing simulation
 
-\[7] (*IF shearing was run in segments*) Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the remaining shearing simulation restarts
+[[7]](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) (*IF shearing was run in segments*) Use the updated lifetimes from step [6] to update the particle interaction lifetimes in the remaining shearing simulation restarts
 <br>
 <br>
 ## About Gelation Simulations
