@@ -190,10 +190,14 @@ Similar to the gelation simulation restarts in [step [3]](/07-Gelation-and-Shear
 If the shearing simulation you are working with was long enough that it also needed to be run in restarts, then once you update the first restart of the shearing simulation you will need to use that data to update the lifetimes of the remaining restarts.
 <br>
 <br>
-## Additional Background
+## Next Steps
 
-For more background on DPD simulations of colloidal gel rheology, see the following papers:
+This covers the basic outline of colloidal gel simulations! The rest is up to you and your research.
 
+*HPC Computing:*
+* See the remaining guides for information about [accessing](//08-Accessing-Discovery.md) Northeastern's HPC cluster, "Discovery," and [working with](/09-Slurm-and-Disco.md) HPC simulations.
+
+*Background Reading:* For more background on DPD simulations of colloidal gel rheology, see the following papers
 * Background on DPD
 	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
 	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
@@ -208,4 +212,5 @@ For more background on DPD simulations of colloidal gel rheology, see the follow
 [Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]:https://doi.org/10.1103/PhysRevLett.118.048003
 [Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]:https://doi.org/10.1016/j.mtadv.2019.100026
 [Life and death of colloidal bonds control the rate-dependent rheology of gels]:https://doi.org/10.1038/s41467-021-24416-x
+
 
