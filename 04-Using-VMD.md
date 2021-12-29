@@ -132,7 +132,7 @@ If you did not change the default destination your file will have saved to your 
 ## More Visualization Display Settings
 
 There are a number of other useful changes you can make from **VMD Main** in the "Display" menu:
-* Change the viewing angle between "Perspective" and "Orthographic" *NOTE: you will probably want to use orthographic more often*
+* Change the viewing angle between "Perspective" and "Orthographic" *NOTE: you will want to use the Orthographic viewing angle most of the time*
 * Adjust the lighting angle by turing on/off "Light 0" "Light 1" "Light 2" and "Light 3"
 * Change the location of the axes, or turn them off, in the "Axes" menu
 * Switch the "Rendermode" to "GLSL" for higher resolution images (try it with the "Sphere Scale" set back to "1.0" in the **Graphical Representations** window)
