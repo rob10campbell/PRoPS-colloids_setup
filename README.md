@@ -37,4 +37,4 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 8. [The Guide to Accessing "Discovery"](/08-Accessing-Discovery.md) (Northeastern's HPC cluster)
 
-9. An introduction to running HPC simulations: [Slurm and Disco](/09-Slurm-and-Disco.md)
+9. An [introduction to running HPC simulations](/09-Slurm-and-Disco.md)
