@@ -15,19 +15,22 @@ Details [about simulating the gelation of colloidal particlese](/07-Gelation-and
 
 There are 7 steps to making a colloidal gel and shearing it:
 
-[1]- [Run the gelation simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) (with a Python script using HOOMD-blue)
+\[1] [Run the gelation simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation) (with a Python script using HOOMD-blue)
 
-[2]- [Check that the simulation](/07-Gelation-and-Shearing.md#2-checking-gelation) reached a quasi-steady state without errors 
+\[2] [Check that the simulation](/07-Gelation-and-Shearing.md#2-checking-gelation) reached a quasi-steady state without errors 
 
-[3]- \(*IF gelation was run in segments*) [Update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes) across all gelation simulation restarts and combine any additional simulation data needed for analysis
+(*IF gelation was run in segments*)
+\[3] [Update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes) across all gelation simulation restarts and combine any additional simulation data needed for analysis
 
-[4]- [Shear the gel](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation) from quasi-steady state (with a Python script using HOOMD-blue)
+\[4] [Shear the gel](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation) from quasi-steady state (with a Python script using HOOMD-blue)
 
-[5]- [Check that the sheared gel](/07-Gelation-and-Shearing.md#5-checking-shearing) has reached a new quasi-steady state
+\[5] [Check that the sheared gel](/07-Gelation-and-Shearing.md#5-checking-shearing) has reached a new quasi-steady state
 
-[6]- \(*IF gelation was run in segments*) Use the updated lifetimes from step [3] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the shearing simulation
+(*IF gelation was run in segments*)
+\[6] Use the updated lifetimes from step [3] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the shearing simulation
 
-[7]- \(*IF shearing was run in segments*) Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the remaining shearing simulation restarts
+(*IF shearing was run in segments*)
+\[7] Use the updated lifetimes from step [6] to [update the particle interaction lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes) in the remaining shearing simulation restarts
 <br>
 <br>
 ## About Gelation Simulations
@@ -153,7 +156,7 @@ A shearing simulation requires the same inputs as the gelation simulation, plus
 
 Typically all other parameters will be kept the same between gelation and shearing simulations, but there may be times (for example, at very high shear rates) where you need to lower the DPD timestep (dt) to accomodate larger forces. This shouldn't physically change with shear rate, but practically the simulation becomes too noisy to effectively average between timesteps ] (i.e. lubrication forces get too large from velocity differences (shear rate), and you need more data (more particles) to balance that out and decrease the noise).
 <br>
-
+<br>
 ## [4] Running a Shearing Simulation
 
 A shearing simulation follows the same DPD steps as a gelation simulation, with a modified run command to account for our changes to the `box_resize` function:
@@ -197,7 +200,8 @@ This covers the basic outline of colloidal gel simulations! The rest is up to yo
 *HPC Computing:*
 * See the remaining guides for information about [accessing](//08-Accessing-Discovery.md) Northeastern's HPC cluster, "Discovery," and [working with](/09-Slurm-and-Disco.md) HPC simulations.
 
-*Background Reading:* For more background on DPD simulations of colloidal gel rheology, see the following papers
+*Background Reading:*<br>
+For more background on DPD simulations of colloidal gel rheology, see the following papers
 * Background on DPD
 	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
 	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
