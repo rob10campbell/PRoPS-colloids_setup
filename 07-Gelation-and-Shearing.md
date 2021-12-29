@@ -51,6 +51,7 @@ Our code therefore requires the following inputs:
 * Volume fraction "phi"
 * "D0" (normalized by kT) and "alpha" from the Morse Potential energy function
 * The unit energy (normalized by system temperature) kT
+* The DPD timestep dt (typically 0.01)
 * The cut off distance for particle interaction "r_cut" (typically ~0.1)
 * The number of particles in a unit volume: number density "rho" (typically set to 3)
 * The colloidal radius (typically set to 1, for a particle volume of 4/3 pi r cubed, or ~4.18879)
@@ -135,7 +136,7 @@ There are several considerations to be made when updating the lifetimes:
 
 ## About Shearing Simulations
 
-About shearing simulations.
+A shearing simulation starts from the final simulation restart of a gelation simulations (i.e. a quasi-steady state gel) and applies a shear rate to the upper and lower (+Y and -Y) boundaries of the simulation box. This requires [the modifications we made to HOOMD-blue](/06-Modifying-HOOMDblue.md). This shear strain is propogated through the gel using the Velocity-Verlet algorithm, and particle interaction infomration must be tracked across all the periodic boundaries of the simulation box.
 <br>
 <br>
 ## [4] Running a Shearing Simulation
