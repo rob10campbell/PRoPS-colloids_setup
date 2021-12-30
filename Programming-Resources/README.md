@@ -105,4 +105,10 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 ## C/C++
 
+## HPC
 
+### Slurm
+
+* [Slurm Workload Manager website](https://slurm.schedmd.com/documentation.html) (with links to tutorials and a quick start guide)
+
+* [Slurm Commands Summary](https://slurm.schedmd.com/pdfs/summary.pdf) (PDF)
