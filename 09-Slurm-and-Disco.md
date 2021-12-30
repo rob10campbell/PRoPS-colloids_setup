@@ -7,7 +7,8 @@ This guide is optimized for MacOS. See the [Guide to Accessing Discovery](/08-Ac
 [Last Update: December 2021]
 
 This guide was compiled by Rob Campbell.
-
+<br>
+<br>
 ## Installing HOOMD-blue on Discovery
 
 Before running simulations on Discovery your should install your own version of HOOMD-blue. If shared-storage space on `/work/props` becomes an issue we may switch to common installations, but for now you are free to install your own in your folder on `/work/props`.
@@ -54,7 +55,7 @@ Finally, move to the hoomd-v2.9.7 folder and create (and move to) the build fold
 (VirtEnv) [yourusername@login-00 hoomd-v2.9.7]$ mkdir build && cd build
 (VirtEnv) [yourusername@login-00 build]$ cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"` 
 (VirtEnv) [yourusername@login-00 build]$ make -j4
-(VirtEnv) [yourusername@login-00 HOOMD-blue]$ make install 
+(VirtEnv) [yourusername@login-00 build]$ make install 
 ```
 ***NOTE: These last 2 steps can take several hours***
 
@@ -62,6 +63,58 @@ Once you have installed the base version of HOOMD-blue you will want to modify i
 
 It is recommended that you always have a version of the base HOOMD-blue AND the modified HOOMD-blue installed on your computer for debugging. It is up to you if you want to have both installed on Discovery as well.
 
+When you are finished with the installation you should also unload the modules you are no longer using
+```bash
+
+[yourusername@login-00 HOOMD-blue]$ module list
+  1) discovery/2021-10-06   2) python/3.8.1           3) cmake/3.18.1
+[yourusername@login-00 HOOMD-blue]$ module unload python/3.8.1
+[yourusername@login-00 HOOMD-blue]$ module unload cmake/3.18.1
+[yourusername@login-00 HOOMD-blue]$ module list
+  1) discovery/2021-10-6
+```
+<br>
+
 ## Scheduling a Job with Slurm
 
-It is best practice to use a bash file (i.e. `exec.bash`) to submitting a job on Discovery. This file will use the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html) to manage the job.
+It is best practice to use a bash file (i.e. `exec.bash`) to submitting a job on Discovery. This file will use the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html) to manage the job (see the [Programming Resources](/Programming-Resources#slurm) for more resources on Slurm).
+
+You can also view an example [exec.bash]() file. (to be added)
+
+Make sure that your job matches the [limits/requirements for the partition you are working on](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html).
+
+In a bash file, `#` marks a bash command and `##` marks a comment.
+
+Every line with #sbatch means you are specifying an attribute related to the job. Typical requests include
+* `--time=days-hours:min:sec` the length of time requested: all parameters are a number, hours must be less than 24, min and sec less than 60
+* `--job-name` your reference name for the job
+* `--mem` requested memory allocation
+* `--gres` for setting GPU options (commented out in the example file)
+* `--output=Output.%j.out` the name for output files (containing the progress output typically displayed in the Terminal when a job is running, here instead saved to a file you can view later). In this example this is set to "Output.jobnumber"
+* `-p` or `--partition` the partition you want to work on (short=general)
+
+In previous times there was an issue with Discovery where you had to specify the desired CPU architecture for your job using `--constraint`, but this has been fixed and choosing a specific architecture is now optional
+
+After all of the #sbatch commands have been set, enter the commands you want run on Discovery. Typically this will be
+* load any required software modules
+* source into your virtual environment
+* run your simulation
+
+For regular HOOMD-blue simulations the only module you will need to load is python (i.e. python/3.8.1).
+
+**NOTE: It is recommended that you specify the exact path of the installation of python in your virtual environment, just to be absolutely sure Discovery does not default to the installation on the shared drive when running your simulation.**
+<br>
+<br>
+## Monitoring a Running Job
+
+You can use squeue to view your current jobs, displaying the job number, partition it is running on, job name, the user running the job, the status (running/pending, etc.), the time the job has been running, the number of nodes being used, and a list of the specific node IDs
+```bash
+[yourusername@login-00 ~ ]$ squeue -u yourusername
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+```
+
+
+
+
+
+
