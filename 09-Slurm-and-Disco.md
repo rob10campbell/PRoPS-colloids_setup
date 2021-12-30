@@ -77,25 +77,26 @@ When you are finished with the installation you should also unload the modules y
 
 ## Scheduling a Job with Slurm
 
-It is best practice to use a bash file (i.e. `exec.bash`) to submitting a job on Discovery. This file will use the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html) to manage the job (see the [Programming Resources](/Programming-Resources#slurm) for more resources on Slurm).
+It is best practice to use a bash file (i.e. `exec.bash`) to submitting a job on Discovery. This file will use the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html) to manage the job. More information about Slurm is available in the [Discovery documentation](https://rc-docs.northeastern.edu/en/latest/using-discovery/usingslurm.html) and in this repository's [Programming Resources](/Programming-Resources#slurm).
 
-You can also view an example [exec.bash]() file. (to be added)
+You can also view an example [exec.bash](/exec.bash) file.
 
 Make sure that your job matches the [limits/requirements for the partition you are working on](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html).
 
 In a bash file, `#` marks a bash command and `##` marks a comment.
 
 Every line with #sbatch means you are specifying an attribute related to the job. Typical requests include
+* `--nodes` the number of nodes requested (commented out in the example because we are not using parallel code)
 * `--time=days-hours:min:sec` the length of time requested: all parameters are a number, hours must be less than 24, min and sec less than 60
 * `--job-name` your reference name for the job
 * `--mem` requested memory allocation
 * `--gres` for setting GPU options (commented out in the example file)
 * `--output=Output.%j.out` the name for output files (containing the progress output typically displayed in the Terminal when a job is running, here instead saved to a file you can view later). In this example this is set to "Output.jobnumber"
-* `-p` or `--partition` the partition you want to work on (short=general)
+* `-p` or `--partition` the partition you want to work on (short=general) *NOTE: Only use one of these flags, "partition" or "p"*
 
-In previous times there was an issue with Discovery where you had to specify the desired CPU architecture for your job using `--constraint`, but this has been fixed and choosing a specific architecture is now optional
+At one point there was an issue with Discovery where you had to specify the desired CPU architecture for your job using `--constraint`, but this has been fixed and choosing a specific architecture is now optional
 
-After all of the #sbatch commands have been set, enter the commands you want run on Discovery. Typically this will be
+After all of the #sbatch commands have been set, enter the commands you want the job to run on Discovery. Typically this will be
 * load any required software modules
 * source into your virtual environment
 * run your simulation

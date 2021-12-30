@@ -88,6 +88,33 @@ The Discovery documentation includes more details about [transfering files](http
 The *recommended* method for transfering files (especially large data files) is with Globus. You can learn more about how to set up a Globus account and enable Globus' command line tools on the [Using Globus](https://rc-docs.northeastern.edu/en/latest/using-discovery/globus.html#using-globus) page in the Discovery documentation.
 <br>
 <br>
+## Loading Existing Software
+
+Discovery has a large catalog of software available for use on the `shared` drive. In addition to installing your own software onto Discovery, you can load existing modules to use common software packages.
+
+Check your currently loaded software with 
+```bash
+[yourusername@login-00 HOOMD-blue]$ module list
+  1) discovery/2021-10-6
+```
+(You should ALWAYS see the module needed to interact with discovery loaded on your login node)
+
+You can also view all available modules
+```bash
+[yourusername@login-00 HOOMD-blue]$ module avail
+```
+Load a specific module
+```bash
+[yourusername@login-00 HOOMD-blue]$ module load module-name
+```
+And unload a module
+```bash
+[yourusername@login-00 HOOMD-blue]$ module unload module-name
+```
+More information about modules is available in the [Discovery documentation](https://rc-docs.northeastern.edu/en/latest/software/modules.html).
+<br>
+<br>
 ## Next Steps
 
 Once you have access to Discovery and are familiar with the basics you can begin running simulations on Discovery. See the [introduction to HPC simulations](/09-Slurm-and-Disco.md) for more information.
+
