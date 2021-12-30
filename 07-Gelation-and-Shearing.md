@@ -93,7 +93,7 @@ A gelation simulation follows roughly the same format as our [DPD simulation of 
 * [*NEW*] Set the different particle types (i.e. "type A", "type B", etc.) with `hoomd.group.type()` 
 * Use DPD (as set by `A`, `gamma`, and the cutoff-radius `r_cut`) to calculate the interactions between particles. *NOTE: Our DPD model uses a combination of conservative force, dissipative force, and random force. We do not need to set parameters for the random force because it is Brownian (i.e. calculated directly from temperature)*
 	* This step will now specify the interactions between multiple sets of particle types (i.e. A-A, A-B, and B-B)
-* Choose what to happens after one timestep (i.e. standard integration or Velocity-Verlet integration `nve`) and set the time interval for this (dt = 0.01)
+* Choose what to happens after one timestep (i.e. standard integration with the Velocity-Verlet algorithm `nve`) and set the time interval for this (dt = 0.01)
 * Define the outputs (e.g. GSD, LOG, etc.)
 * Run the simulation!
 
@@ -163,7 +163,7 @@ A shearing simulation follows the same DPD steps as a gelation simulation, with 
 * Initialize a neighboring list (the neighboring list method will vary with your choice of system; for our simulations we found that the tree method offers significant speed improvements over the cell method)
 * Set the different particle types (i.e. "type A", "type B", etc.) with `hoomd.group.type()` 
 * Use DPD (as set by `A`, `gamma`, and the cutoff-radius `r_cut`) to calculate the interactions between particles, and specify these parameters for the different sets of particle interactions (A-A, A-B, B-B, etc.)
-* Choose what to happens after one timestep (i.e. standard integration or Velocity-Verlet integration `nve`) and set the time interval for this (dt = 0.01)
+* Choose what to happens after one timestep (i.e. standard integration with the Velocity-Verlet algorithm `nve`) and set the time interval for this (dt = 0.01)
 * Define the outputs (e.g. GSD, LOG, etc.)
 * Run the system in a loop that accounts for our changes to the `box_resize` function
 
