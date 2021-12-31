@@ -94,7 +94,7 @@ Every line with #sbatch means you are specifying an attribute related to the job
 * `--output=Output.%j.out` the name for output files (containing the progress output typically displayed in the Terminal when a job is running, here instead saved to a file you can view later). In this example this is set to "Output.jobnumber"
 * `-p` or `--partition` the partition you want to work on (short=general) *NOTE: Only use one of these flags, "partition" or "p"*
 
-When you are planning a job, we recommend that you request more time than you need (i.e. plan a job that takes 3 days to run and request 5 days on the long partition). This gives you time to fix the simulation if anything goes wrong. Just remember to end your job when it's finished so you free up the resources for other users!
+When you are planning a job, we recommend that you request more time than you need (i.e. plan a job that takes 3 days to run and request the maximum time (5 days) on the long partition to run it). This gives you built in time to fix the simulation if anything goes wrong. Just remember to end your job when it's finished so you free up the resources for other users!
 
 At one point there was an issue with Discovery where you had to specify the desired CPU architecture for your job using `--constraint`, but this has been fixed and choosing a specific architecture is now optional
 
