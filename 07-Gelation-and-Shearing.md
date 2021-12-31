@@ -144,7 +144,7 @@ There are several considerations to be made when updating the lifetimes:
 
 ## About Shearing Simulations
 
-A shearing simulation starts from the final simulation restart of a gelation simulations (i.e. a quasi-steady state gel). You must load the entire gelation simulation ("type A" solvent particles AND "type B" colloid particles, typically saved as `all_particles.gsd`) to make sure that there are no non-physical overlaps between particles when the system is initialized.
+A shearing simulation starts from the final simulation restart of a gelation simulations (i.e. a quasi-steady state gel). You must load the entire gelation simulation (you must have position information for colloid AND solvent particles) to make sure that there are no non-physical overlaps between particles when the system is initialized (i.e. no solvent particles appear in the center of a colloid particle).
 
 Once initialized, the simulation applies a velocity equal to the shear rate at the upper and lower (+Y and -Y) boundaries of the simulation box, and the shear is then propogated through the gel via the interparticle interactions (DPD forces) using the Velocity-Verlet algorithm. This requires [the modifications we made to HOOMD-blue](/06-Modifying-HOOMDblue.md) to ensure that all particle interaction infomration is correctly tracked across all the periodic boundaries of the simulation box.
 
@@ -154,7 +154,8 @@ By tracking these particle interactions we get to track and detangle the contrib
 
 A shearing simulation requires the same inputs as the gelation simulation, plus
 * a shear rate 
-* the number of strains, N_strains (usually N_strains = 1 for yielding behavior and N_strains = 10 to reach quasi-steady state)
+* the number of strains, N_strains (usually N_strains = 1 for yielding behavior and N_strains = 10 to reach quasi-steady state in a simulation box around L = 60)
+**NOTE: The size of the simulation box will affect the number of strains needed to reach quasi-steady state.** 
 
 Typically all other parameters will be kept the same between gelation and shearing simulations, but there may be times (for example, at very high shear rates) where you need to lower the DPD timestep (dt) to accomodate larger forces. This shouldn't physically change with shear rate, but practically the simulation becomes too noisy to effectively average between timesteps ] (i.e. lubrication forces get too large from velocity differences (shear rate), and you need more data (more particles) to balance that out and decrease the noise).
 <br>
@@ -181,7 +182,8 @@ Here strain is the shear rate times time (where time is the number of timesteps 
 
 To reduce the noise from Brownian motion in the system, you should calculate local averages for sections of the system, rather than work with all the particles individually.
 
-For the stress-strain curve, average the pressure for a subset of timesteps. For example, in a system with 10,000 colloidal particles that reached one strain (N_strains = 1) after 400,000 timesteps, you might want to average the pressure data for every 10,000 timesteps). A plot of the negative pressure (shear stress) vs. strain should then show yielding within the first strain time (N_strains = 1) and then eventually reach a constant (steady state) value (usually after ~N_strains = 10).
+For the stress-strain curve, average the pressure for a subset of timesteps. For example, in a system with 10,000 colloidal particles that reached one strain (N_strains = 1) after 400,000 timesteps, you might want to average the pressure data for every 10,000 timesteps). A plot of the negative pressure (shear stress) vs. strain should then show yielding within the first strain time (N_strains = 1) and then eventually reach a constant (steady state) value (usually after ~N_strains = 10).<br>
+*NOTE: For small simulations (with small numbers of particles) there will be nonsense (non-physical) stress overshoots during the startup flow. This is caused by the particles at the edge of the simulation, which in small simulations make up an unusually large percentage of the system. The flow behavior of these edge particles thus contributes more to the average flow behavior of the system than it should for the simulation to accurately depict bulk behavior.*
 
 For the velocity profile, divide the system into a series of horizontal layers (slices of the y-plane) and average the information for all the particles in each of these layers. It is a good idea to have an odd number of layers, in case you need to check for simulation errors at the center of the simulation box. Then plotting velocity vs. y-position (now layer number) for all timesteps. This should lead to a linear profile (straight line sloping upwards) for Newtonian fluids, and a more S-like curve (curving convexly upwards from the base to the center, before curving concavely to the top of the box) for non-Newtonian colloidal systems.
 
@@ -190,9 +192,9 @@ Until the gel is broken up, the average coordination number should remain close 
 <br>
 ## [6]-[7] Updating Shear Lifetimes
 
-Similar to the gelation simulation restarts in [step [3]](/07-Gelation-and-Shearing.md#3-updating-lifetimes), the shearing simulation starts from t=0, and any particle interaction lifetime information will need to be updated to account for the "bond" lifetimes that were present at start of the simulation (when the gel had reached a quasi-steady state). This process is roughly the same as updating the lifetimes across restarts, except the initial data comes from the quasi-steady state gel simulation data used to initialize the shearing simulation.
+Similar to the gelation simulation restarts described in [step [3]](/07-Gelation-and-Shearing.md#3-updating-lifetimes), the shearing simulation starts from t=0, and the particle interaction lifetime information in the first frame of the simulation will need to be updated to account for the "bond" lifetimes that were present in the quasi-steady state gel. This process is roughly the same as updating the lifetimes across restarts, except that the initial data comes from the quasi-steady state gel simulation used to initialize the shearing simulation, and is not a part of the shearing simulation itself.
 
-If the shearing simulation you are working with was long enough that it also needed to be run in restarts, then once you update the first restart of the shearing simulation you will need to use that data to update the lifetimes of the remaining restarts.
+If the shearing simulation you are working with was long enough that it also needed to be run in restarts, then once you update the first restart of the shearing simulation you will need to use that data to update the lifetimes of the remaining restarts (in the same way we updated the gelation restarts).
 <br>
 <br>
 ## Next Steps
