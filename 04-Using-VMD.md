@@ -126,6 +126,8 @@ The default file type is TGA (a raster graphics file format). You can save or ex
 If you did not change the default destination your file will have saved to your home folder. <br>
 ***Note: Re-rendering a file with the same name will overwrite an existing file without warning.***
 
+VMD is best at rendering a single image, rather than exporting video, so generally speaking the best way to make a high-quality video of a VMD visualization is to save each frame as an image and then assemble the animation with QuickTime Player's built-in "Open Image Sequence" option.
+
 **Pro Tip**: Whenever you're working on something in VMD and get a view that seems visually pleasing, render it and save it! Just in case. Visualizations are extremely useful for presentations and papers, but they can be time consuming to recreate. Better to have something ready to show off, just in case you need it.
 <br>
 <br>
