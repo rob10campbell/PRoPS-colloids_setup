@@ -13,7 +13,7 @@ Before modifying HOOMD-blue you must install the base version HOOMD-blue. See th
 The modifications to HOOMD-blue were developed by Mohammad (Nabi) Nabizadeh as part of his PhD thesis. This guide was compiled by Rob Campbell.
 <br>
 <br>
-## Modification Background
+## Why Make Modifications
 
 Our simulations use periodic boundaries so that we can apply our results to the behavior of a larger physical system. Even though our simulation has a relatively small number of particles that would only make up one piece of a larger system, the periodic boundaries allow us to generalize how the particles will behave across a larger region of material with similar structure. 
 
@@ -24,7 +24,7 @@ We have made modifications to HOOMD-blue's C++ base code that allow us to fully 
 To briefly summarize, the simulation box is surrounded by copies (images) in the X and Y directions. A shear rate is applied by moving the top and bottom images (+Y and -Y) at opposing velocities (+V and -V) with respect to the simulation box. This velocity is propogated through the simulation box by the dissipative force (i.e. friction) component of the DPD forces that define particle interactions. The effect of the dissipative force (and resulting changes to particle position and velocity) is implemented in the Velocity-Verlet algorithm, a 2-step integration implemented through modifications to the `TwoStepNVE.cc` file. This algorithm updates the position and velocity of a particle based on the DPD forces. In traditional CFD integration is performed as a single step (from timestep N to N+1). In the Velocity-Verlet 2-step integration particle position is completely updated in Step 1, but the velocity is only updated by about one-half timestep (the velocity is scaled by the parameter lambda, which we define as 0.5). This results in a second force calculation step (Step 2), where the forces are calculated again for the second one-half timestep (and position is unchanged). At the end of both integration steps, one full timestep has occured, particle interactions (bonds) are formed or broken, and the calculation can begin again for the next timestep. This two-step process is an efficient way to smoothe particle motion in the simulation without significantly increasing simulation costs.
 <br>
 <br>
-## Making Modifications
+## Installing Our Existing Modifications
 
 The modifications described above were developed by Mohammad (Nabi) Nabizadeh and are collected in the `Nabi_HOOMDblue-extensions` folder on Discovery. As mentioned above, these modifications allow us to simulate attractive solid spheres, shear a system with Lees-Edwards boundary conditions, calculate particle interaction lifetimes, and output the decomposed stresses and shear stresses from a simulation.
 
@@ -56,6 +56,26 @@ To finish installing the modifications, use Terminal to go to the installation o
 (VirtEnv) % make -j4
 (VirtEnv) % make install
 ```
+
+## Implementing The Modifications (Linking Python and C++)
+
+For now our modifications have been written so that the entire simulation is run from a **single** Python file. Unfortunately, due to some difficult-to-resolve errors with pybind11, several new classes used in the modified C++ code could not be saved as true C++ classes. Until this is resolved or the simulations are modified to run from 2 input files, the new (custom) DPD classes are given aliases. Most of them are saved as interaction parameters for dummy particles (particles that otherwise do not exist, or do not interact, in our simulations). For example, the modifications may need to call the interaction potential, which we set in our Python code as `D0`. To make this value accessible from the C++ without defining a new C++ class, we save D0 as a parameter in the `dpd.pair.coeff.set()` for a particle interaction that does not occur in our simulations. This interaction parameters (in this case, `A`) is now an alias for `D0`.
+
+**THIS IS IMPORTANT TO NOTE** because it means our base code is written to assume that there are NO wall particles and NO charged particles (the only interactions are between A-A, A-B, and B-B particles types). If you need to add either of these features, then the modifications to HOOMD-blue will need to be updated, accordingly. (Most of the aliases are called in the `PotentialPairDPDThermo.h` file)
+
+Below is a full list of the aliases used to call different parameters:
+* shear_Rate: called as the charge of particle zero (d_charge.data[0]) [This change is made in the C++ code only]
+* start_lifetime_write_timestep (the start point for recording lifetimes): saved as the DPD parameter `gamma` for particle types C-D
+* eta0: (the solvent AKA background viscosity): saved as the DPD parameter `A` for particle types A-W
+* N_Wall (the number of wall particles): saved as the DPD parameter `gamma` for particle types A-W
+* D0 (the attraction strength): saved as the DPD parameter `A` for particle types B-W
+* alpha (AKA "a" or "kappa" the range of attraction, used with D0 in the Morse Potential calculation): saved as the DPD parameter `gamma` for particle types B-W
+* r0 (the minimum inter-particle distance): saved as the DPD parameter `A` for particle types C-W
+* LIFETIME_FileWrite_Period (the interval at which we record particle-interaction (bond) lifetimes): saved as the DPD parameter `gamma` for particle types C-W
+* Write_Energy_Period_DPD (the interval at which to record the energy component of shear stress): saved as the DPD parameter `A` for particle types D-W
+* Write_One_Time_Virial_Lifetime (the interval for recording the virial component of shear stress): saved as the DPD parameter `gamma` for particle types D-W
+* Contact_Force (used to set colloid-colloid hard-sphere interactions): saved as the DPD parameter `A` for particle types W-W
+* BDPeriod (the interval to record bond data): saved as the DPD parameter `gamma` for particle types W-W
 
 ## Next Steps
 
