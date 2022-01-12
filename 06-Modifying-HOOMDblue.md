@@ -56,6 +56,7 @@ To finish installing the modifications, use Terminal to go to the installation o
 (VirtEnv) % make -j4
 (VirtEnv) % make install
 ```
+<br>
 
 ## Implementing The Modifications (Linking Python and C++)
 
@@ -76,6 +77,7 @@ Below is a full list of the aliases used to call different parameters:
 * Write_One_Time_Virial_Lifetime (the interval for recording the virial component of shear stress): saved as the DPD parameter `gamma` for particle types D-W
 * Contact_Force (used to set colloid-colloid hard-sphere interactions): saved as the DPD parameter `A` for particle types W-W
 * BDPeriod (the interval to record bond data): saved as the DPD parameter `gamma` for particle types W-W
+<br>
 
 ## Next Steps
 
