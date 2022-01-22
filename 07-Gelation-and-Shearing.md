@@ -4,11 +4,26 @@ This is an overview of the workflows for running gelation and shearing simulatio
 
 This guide is optizimed for MacOS. Before running gelation or shearing simulations you should have already [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md), run a [basic DPD simulation of water](/02-Simulating-waterDPD.md), [installed](/03-VMD-Install-Guide.md) and [worked with](/04-Using-VMD.md) VMD to visualize your simulation, [run basic checks on the simulation](/05-Log-Analysis-with-R.md) using R to verify it ran correctly, and [modified a version of HOOMD-blue](/06-Modifying-HOOMDblue.md) for more advanced simulations.
 
-[Last Update: December 2021]
+[Last Update: January 2022]
 
 These workflows were developed by Mohammad (Nabi) Nabizadehi as part of his PhD thesis. This guide was compiled by Rob Campbell.
 <br>
+
+## Contents
+1. [Overview](/07-Gelation-and-Shearing.md#overview) 
+2. [About Gelation Simulations](/07-Gelation-and-Shearing.md#about-gelation-simulations)
+3. [[1] Running a Gelation Simulation](/07-Gelation-and-Shearing.md#1-running-a-gelation-simulation)
+4. [[2] Checking Gelation](/07-Gelation-and-Shearing.md#2-checking-gelation)
+5. [[3] Updating Lifetimes](/07-Gelation-and-Shearing.md#3-updating-lifetimes)
+6. [About Shearing Simulations](/07-Gelation-and-Shearing.md#about-shearing-simulations)
+7. [[4] Running a Shearing Simulation](/07-Gelation-and-Shearing.md#4-running-a-shearing-simulation)
+8. [[5] Checking Shearing](/07-Gelation-and-Shearing.md#5-checking-shearing)
+9. [[6]-[7] Updating Shear Lifetimes](/07-Gelation-and-Shearing.md#6-7-updating-shear-lifetimes)
+10. [Next Steps](/07-Gelation-and-Shearing.md#next-steps)
+
+
 <br>
+
 ## Overview 
 
 Details [about simulating the gelation of colloidal particlese](/07-Gelation-and-Shearing.md#about-gelation-simulations) and [shearing a colloidal gel](/07-Gelation-and-Shearing.md#about-shearing-simulations) are described in separate sections, below.
