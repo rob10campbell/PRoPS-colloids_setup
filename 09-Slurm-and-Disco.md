@@ -4,7 +4,7 @@ This is a guide to the basics of running colloids simulations on Discovery, Nort
 
 This guide is optimized for MacOS. See the [Guide to Accessing Discovery](/08-Accessing-Discovery.md) and for prerequisites. This guide also assumes that you are familiar with the other content in this repository and know how to run DPD simulations of colloids.
 
-[Last Update: December 2021]
+[Last Update: January 2022]
 
 This guide was compiled by Rob Campbell.
 <br>
@@ -18,19 +18,24 @@ This guide was compiled by Rob Campbell.
 
 ## Common Installations of HOOMD-blue Available on Discovery
 
-There are two versions of HOOMD-blue installed on Discovery for common use by the PRoPS group. Both versions are located in `/work/props/HOOMD-blue/`
-* HOOMDv2.9.7-basic is the standard installation of HOOMD-blue version 2.9.7 (the stable version our simulations were developed on)
+There are two versions of HOOMD-blue installed on Discovery for common use by the PRoPS group. <br>
+Both versions are located in `/work/props/HOOMD-blue/`
+* `HOOMDv2.9.7-basic` is the standard installation of HOOMD-blue version 2.9.7 (the stable version our simulations were developed on)
 	* to use this version:
 		* `load module python/3.8.1` (or the latest version)
 		* `source /work/props/HOOMD-blue/HOOMDv2.9.7-basic/VirtEnv-HOOMD-basic/bin/activate` to enter the virtual environment
 		* `which python` to double check that you are indeed using this installation of python and not the version from Discovery's shared module
-* HOOMDv2.9.7-mod is a version of HOOMD-blue with Nabi's modifications for Lees-Edwards boundary conditions installed 
+
+* `HOOMDv2.9.7-mod` is a version of HOOMD-blue with Nabi's modifications for Lees-Edwards boundary conditions installed 
 	* to use this version:
 		* `load module python/3.8.1` (or the latest version)
 		* `source /work/props/HOOMD-blue/HOOMDv2.9.7-mod/VirtEnv-HOOMD-mod/bin/activate` to enter the virtual environment
 		* `which python` to double check that you are indeed using this installation of python and not the version from Discovery's shared modulei
 
-Example templates of the files needed to run a gelation simulation (`gelation-template.py`) or a shearing simulation (`shearing-template.py`), as well as an example bash script for scheduling jobs with #sbatch (`exec-template.bash`) and a copy of all files needed for standard modifications (stored in `mod-files`), are availble in the folder `/work/props/HOOMD-blue/scripts-and-mods`
+* `scripts-and-mods` is for script templates and storing copies of standard modification files. Currently this includes:
+	* example templates for the files needed to run a gelation simulation (`gelation-template.py`) or a shearing simulation (`shearing-template.py`)
+	* an example bash script for scheduling a job (`exec-template.bash`)
+	* a copy of all files needed for our standard modifications to HOOMD-blue (stored in `mod-files/Nabi_HOOMDblue_extensions`)
 
 **NOTE:** If you would like to use a different version of HOOMD-blue or make additional modifications, install your own version in your folder `/work/props/` or discuss with the group about setting up an additional common installation.
 <br>
