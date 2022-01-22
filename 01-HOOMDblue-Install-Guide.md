@@ -12,6 +12,16 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 <br>
 
+## Contents
+1. [Prerequisites](/01-HOOMDblue-Install-Guide.md#prerequisites)
+2. [Setting Up Source Repositories](/01-HOOMDblue-Install-Guide.md#setting-up-source-repositories)
+3. [Creating a Python Virtual Environment](/01-HOOMDblue-Install-Guide.md#creating-a-python-virtual-environment)
+4. [Acquiring HOOMD-blue](/01-HOOMDblue-Install-Guide.md#acquiring-hoomd-blue)
+5. [Installing HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd-blue)
+6. [Creating a Simulations Directory](/01-HOOMDblue-Install-Guide.md#creating-a-simulations-directory)
+7. [Next Steps](/01-HOOMDblue-Install-Guide.md#next-steps)
+
+
 ## Prerequisites
 
 Required for installation:
@@ -176,7 +186,7 @@ HOOMD-blue is now installed in VirtEnv!
 ```
 <br>
 
-# Creating a Simulations Directory
+## Creating a Simulations Directory
 
 You should now create a directory to house your future simulations in the HOOMDblue repository.
 
