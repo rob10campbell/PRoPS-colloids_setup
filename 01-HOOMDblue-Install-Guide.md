@@ -10,7 +10,6 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 
 [HOOMD-blue]: https://glotzerlab.engin.umich.edu/hoomd-blue
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
-<br>
 
 ## Contents
 1. [Prerequisites](/01-HOOMDblue-Install-Guide.md#prerequisites)
@@ -20,7 +19,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 5. [Installing HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd-blue)
 6. [Creating a Simulations Directory](/01-HOOMDblue-Install-Guide.md#creating-a-simulations-directory)
 7. [Next Steps](/01-HOOMDblue-Install-Guide.md#next-steps)
-
+<br>
 
 ## Prerequisites
 
