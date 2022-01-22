@@ -4,11 +4,21 @@ This is a guide to getting setup to use the Discovery Cluster at Northeastern Un
 
 This guide is optimized for MacOS.
 
-[Last Update: December 2021]
+[Last Update: January 2022]
 
 This guide was compiled by Rob Campbell.
 
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
+
+## Contents
+1. [Getting Access](/08-Accessing-Discovery.md#getting-access)
+2. [Connecting to Discovery](/08-Accessing-Discovery.md#connecting-to-discovery)
+3. [Learning How to Use Discovery](/08-Accessing-Discovery.md#learning-how-to-use-discovery)
+4. [Getting Access to the `work` Directory](/08-Accessing-Discovery.md#getting-access-to-the-work-directory)
+5. [Requesting Access to Additonal Partitions](/08-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
+6. [Copying files to Discovery](/08-Accessing-Discovery.md#copying-files-to-discovery)
+7. [Loading Existing Software](/08-Accessing-Discovery.md#loading-existing-software)
+8. [Next Steps](/08-Accessing-Discovery.md#next-steps)
 <br>
 
 ## Getting Access
