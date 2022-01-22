@@ -12,6 +12,15 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
+
+## Contents
+1. [Simulating Water](/02-Simulating-waterDPD.md#simulating-water)
+2. [Getting `waterDPD.py`](/02-Simulating-waterDPD.md#getting-waterdpdpy)
+3. [About `waterDPD.py`](/02-Simulating-waterDPD.md#about-waterdpdpy)
+4. [Running a Simulation](/02-Simulating-waterDPD.md#running-a-simulation)
+5. [Modifying waterDPD.py](/02-Simulating-waterDPD.md#modifying-waterdpdpy)
+6. [Next Steps](/02-Simulating-waterDPD.md#next-steps)
+
 <br>
 
 ## Simulating Water
