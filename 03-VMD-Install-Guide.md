@@ -4,13 +4,25 @@ This is a guide to installing the  Visual Molecular Dynamics ([VMD]) software, a
 
 This guide is for optimized for MacOS. 
 
-[Last Update: December 2021]
+[Last Update: January 2022]
 
 The standard implementation of HOOMD-blue and it's associate visualizations were adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
 [VMD]: https://www.ks.uiuc.edu/Research/vmd/
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
+
+## Contents
+1. [Prerequisites](/03-VMD-Install-Guide.md#prerequisites)
+2. [Acquiring VMD](/03-VMD-Install-Guide.md#acquiring-vmd)
+3. [Installing VMD](/03-VMD-Install-Guide.md#installing-vmd)
+4. [The VMD Interface](/03-VMD-Install-Guide.md#the-vmd-interface)
+5. [Prepare VMD for Manually Installing Plugins](/03-VMD-Install-Guide.md#prepare-vmd-for-manually-installing-plugins)
+6. [Acquiring the GSD Plugin](/03-VMD-Install-Guide.md#acquiring-the-gsd-plugin)
+7. [Installing the GSD Plugin](/03-VMD-Install-Guide.md#installing-the-gsd-plugin)
+8. [Adding the GSD Plugin to the Original VMD Application](/03-VMD-Install-Guide.md#adding-the-gsd-plugin-to-the-original-vmd-application)
+9. [Opening GSD Files with VMD](/03-VMD-Install-Guide.md#opening-gsd-files-with-vmd)
+10. [Next Steps](/03-VMD-Install-Guide.md#next-steps)
 <br>
 
 ## Prerequisites
