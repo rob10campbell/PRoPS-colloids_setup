@@ -10,8 +10,10 @@ This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
-
-
+1. [Common Installations of HOOMD-blue Available on Discovery](/09-Slurm-and-Disco.md#common-installations-of-hoomd-blue-available-on-discovery)
+2. [Installing HOOMD-blue on Discovery](/09-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
+3. [Scheduling a Job with Slurm](/09-Slurm-and-Disco.md#scheduling-a-job-with-slurm)
+4. [Monitoring a Running Job](/09-Slurm-and-Disco.md#monitoring-a-running-job)
 <br>
 
 ## Common Installations of HOOMD-blue Available on Discovery
@@ -26,14 +28,16 @@ There are two versions of HOOMD-blue installed on Discovery for common use by th
 	* to use this version:
 		* `load module python/3.8.1` (or the latest version)
 		* `source /work/props/HOOMD-blue/HOOMDv2.9.7-mod/VirtEnv-HOOMD-mod/bin/activate` to enter the virtual environment
-		* `which python` to double check that you are indeed using this installation of python and not the version from Discovery's shared module
+		* `which python` to double check that you are indeed using this installation of python and not the version from Discovery's shared modulei
+
+Example templates of the files needed to run a gelation simulation (`gelation-template.py`) or a shearing simulation (`shearing-template.py`), as well as an example bash script for scheduling jobs with #sbatch (`exec-template.bash`) and a copy of all files needed for standard modifications (stored in `mod-files`), are availble in the folder `/work/props/HOOMD-blue/scripts-and-mods`
 
 **NOTE:** If you would like to use a different version of HOOMD-blue or make additional modifications, install your own version in your folder `/work/props/` or discuss with the group about setting up an additional common installation.
 <br>
 <br>
 ## Installing HOOMD-blue on Discovery
 
-Before running simulations on Discovery your should install your own version of HOOMD-blue. If shared-storage space on `/work/props` becomes an issue we may switch to common installations, but for now you are free to install your own in your folder on `/work/props`.
+In addition to the common installations of HOOMD-blue already available, you can install your own version of HOOMD-blue in your folder on `/work/props`.
 ***NOTE: This installation process can take several hours***
 
 Go to the your folder on the `work` directory and create a new folder for your installation of HOOMD-blue.
@@ -82,8 +86,6 @@ Finally, move to the hoomd-v2.9.7 folder and create (and move to) the build fold
 ***NOTE: These last 2 steps can take several hours***
 
 Once you have installed the base version of HOOMD-blue you will want to modify it with the files described in [Modifying HOOMD-blue](/06-Modifying-HOOMDblue.md). Copy those files into your new installation of HOOMD-blue and then recompile and reinstall the software to make sure you are running the correct version (this should be faster than the first installation).
-
-It is recommended that you always have a version of the base HOOMD-blue AND the modified HOOMD-blue installed on your computer for debugging. It is up to you if you want to have both installed on Discovery as well.
 
 When you are finished with the installation you should also unload the modules you are no longer using
 ```bash
