@@ -8,11 +8,19 @@ Before modifying HOOMD-blue you must install the base version HOOMD-blue. See th
 
 **Note: It is recommended that you ALWAYS have two verions of HOOMD-blue installed on your computer, the base HOOMD-blue and a modified HOOMD-blue.**
 
-[Last Update: December 2021]
+[Last Update: January 2022]
 
 The modifications to HOOMD-blue were developed by Mohammad (Nabi) Nabizadeh as part of his PhD thesis. This guide was compiled by Rob Campbell.
 <br>
+
+## Contents
+## Why Make Modifications
+## Installing Our Existing Modifications
+## Implementing The Modifications (Linking Python and C++)
+## Next Steps
+
 <br>
+
 ## Why Make Modifications
 
 Our simulations use periodic boundaries so that we can apply our results to the behavior of a larger physical system. Even though our simulation has a relatively small number of particles that would only make up one piece of a larger system, the periodic boundaries allow us to generalize how the particles will behave across a larger region of material with similar structure. 
@@ -26,7 +34,7 @@ To briefly summarize, the simulation box is surrounded by copies (images) in the
 <br>
 ## Installing Our Existing Modifications
 
-The modifications described above were developed by Mohammad (Nabi) Nabizadeh and are collected in the `Nabi_HOOMDblue-extensions` folder on Discovery. As mentioned above, these modifications allow us to simulate attractive solid spheres, shear a system with Lees-Edwards boundary conditions, calculate particle interaction lifetimes, and output the decomposed stresses and shear stresses from a simulation.
+The modifications described above were developed by Mohammad (Nabi) Nabizadeh and are collected in the `Nabi_HOOMDblue-extensions` folder [on Discovery](/09-Slurm-and-Disco.md). As mentioned above, these modifications allow us to simulate attractive solid spheres, shear a system with Lees-Edwards boundary conditions, calculate particle interaction lifetimes, and output the decomposed stresses and shear stresses from a simulation.
 
 These file are written in C++. If you are new to C/C++, you will notice that there are `.cc` and `.h` files with the same names. A `.cc` file contains an implementation that is then called by the header (`.h`) file. Technically the `.cc` file is optional and everything can be included in the header, but the separation of a code into `.cc` and `.h` files is frequently considered best practice. You will need both the `.cc` and `.h` files to modify your version of HOOMD-blue.
 
@@ -58,7 +66,7 @@ To finish installing the modifications, use Terminal to go to the installation o
 ```
 <br>
 
-## Implementing The Modifications (Linking Python and C++)
+## Modifying The Existing Modifications
 
 For now our modifications have been written so that the entire simulation is run from a **single** Python file. Unfortunately, due to some difficult-to-resolve errors with pybind11, several new classes used in the modified C++ code could not be saved as true C++ classes. Until this is resolved or the simulations are modified to run from 2 input files, the new (custom) DPD classes are given aliases. Most of them are saved as interaction parameters for dummy particles (particles that otherwise do not exist, or do not interact, in our simulations). For example, the modifications may need to call the interaction potential, which we set in our Python code as `D0`. To make this value accessible from the C++ without defining a new C++ class, we save `D0` as a parameter in the `dpd.pair.coeff.set()` for a particle interaction that does not occur in our simulations. That interaction parameter (in this case, `A`) is then used as an alias for `D0` in HOOMD-blue's code.
 
