@@ -32,12 +32,13 @@ Both versions are located in `/work/props/HOOMD-blue/`
 		* `source /work/props/HOOMD-blue/HOOMDv2.9.7-mod/VirtEnv-HOOMD-mod/bin/activate` to enter the virtual environment
 		* `which python` to double check that you are indeed using this installation of python and not the version from Discovery's shared modulei
 
-* `scripts-and-mods` is for script templates and storing copies of standard modification files. Currently this includes:
+Additionally, there is a folder for script templates and stored copies of standard modification files.
+* `scripts-and-mods` currently includes:
 	* example templates for the files needed to run a gelation simulation (`gelation-template.py`) or a shearing simulation (`shearing-template.py`)
 	* an example bash script for scheduling a job (`exec-template.bash`)
 	* a copy of all files needed for our standard modifications to HOOMD-blue (stored in `mod-files/Nabi_HOOMDblue_extensions`)
 
-**NOTE:** If you would like to use a different version of HOOMD-blue or make additional modifications, install your own version in your folder `/work/props/` or discuss with the group about setting up an additional common installation.
+**NOTE:** If you would like to use a different version of HOOMD-blue or make additional modifications, **install your own version** in your folder in `/work/props/` or discuss with the group about setting up an additional common installation.
 <br>
 <br>
 ## Installing HOOMD-blue on Discovery
