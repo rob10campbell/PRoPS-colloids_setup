@@ -4,13 +4,28 @@ This is a brief introduction to using [VMD] to visulaize the results of [HOOMD-b
 
 This guide is optimized for MacOS. See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/03-VMD-Install-Guide.md) for help installing VMD.
 
-[Last Updated: December 2021].
+[Last Updated: January 2022].
 
 Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
 [VMD]: https://www.ks.uiuc.edu/Research/vmd/
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
+
+## Contents
+1. [The VMD Interface](/04-Using-VMD.md#the-vmd-interface)
+2. [Opening a GSD file with VMD](/04-Using-VMD.md#opening-a-gsd-file-with-vmd)
+3. [Understanding the Default Visualization](/04-Using-VMD.md#understanding-the-default-visualization)
+4. [Changing Lines to Spheres](/04-Using-VMD.md#changing-lines-to-spheres)
+5. [Simulation Playback in **VMD Main**](/04-Using-VMD.md#simulation-playback-in-vmd-main)
+6. [Rotation and Zoom](/04-Using-VMD.md#rotation-and-zoom)
+7. [Modifying Visualization Graphics](/04-Using-VMD.md#modifying-visualization-graphics)
+8. [Changing the Background Color](/04-Using-VMD.md#changing-the-background-color)
+9. [Rendering an Image](/04-Using-VMD.md#rendering-and-image)
+10. [More Visualization Display Settings](/04-Using-VMD.md#more-visualization-display-settings)
+11. [Other Tools](/04-Using-VMD.md#other-tools)
+12. [Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles)
+13. [Next Steps](/04-Using-VMD.md#next-steps)
 <br>
 
 ## The VMD Interface
@@ -105,7 +120,7 @@ In the **Color Controls** window go to the "Categories" list and select "Display
 If you like, you can change the default color for a given setting by clicking the "Default" button at the bottom of the screen after making your selection.
 <br>
 <br>
-## Rendering and Image
+## Rendering an Image
 
 Rendering your visualization allows you to save a snapshot of it. For a test rendering, go to the **Graphical Representations** window and set the "Coloring Method" to "ColorID" (any color of your choice) and the "Material" to "AOChalky" (you can also adjust the "Sphere Scale" and "Sphere Resolution" to your liking)
 
@@ -158,4 +173,9 @@ In general the VMD community is quite large, so there are a lot of resources ava
 Some recommended visualizations for colloid particles are:
 * Set the "Coloring Method" to "Velocity" to visualize shear flow
 * Use the "Periodic" tab in the **Graphical Representations** window to add 1 or 2 copies of the simulation box in the "+X" and "-X" direction to visualize flow 
-* Adust visualization settings in the "Z" axis and modify the lighting position to more accurately reprensent the volume fraction of a sample (i.e. add depth to the image). Set the coloring method to "Position/Z" and adjust the opacity and/or brightness of the particles along this axis. 
+* Adust visualization settings in the "Z" axis and modify the lighting position to more accurately reprensent the volume fraction of a sample (i.e. add depth to the image). Set the coloring method to "Position/Z" and adjust the opacity and/or brightness of the particles along this axis.
+<br>
+
+## Next Steps
+
+See the guide to [log analysis in R](/05-Log-Analysis-with-R.md) for an introduction to other ways to analyze a completed simulation.
