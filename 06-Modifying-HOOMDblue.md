@@ -14,10 +14,10 @@ The modifications to HOOMD-blue were developed by Mohammad (Nabi) Nabizadeh as p
 <br>
 
 ## Contents
-## Why Make Modifications
-## Installing Our Existing Modifications
-## Implementing The Modifications (Linking Python and C++)
-## Next Steps
+1. [Why Make Modifications](/06-Modifying-HOOMDblue.md#why-make-modifications)
+2. [Installing Our Existing Modifications](/06-Modifying-HOOMDblue.md#installing-our-existing-modifications)
+3. [Modifying The Existing Modifications](/06-Modifying-HOOMDblue.md#modifying-the-existing-modifications)
+4. [Next Steps](/06-Modifying-HOOMDblue.md#next-steps)
 
 <br>
 
@@ -68,9 +68,11 @@ To finish installing the modifications, use Terminal to go to the installation o
 
 ## Modifying The Existing Modifications
 
-For now our modifications have been written so that the entire simulation is run from a **single** Python file. Unfortunately, due to some difficult-to-resolve errors with pybind11, several new classes used in the modified C++ code could not be saved as true C++ classes. Until this is resolved or the simulations are modified to run from 2 input files, the new (custom) DPD classes are given aliases. Most of them are saved as interaction parameters for dummy particles (particles that otherwise do not exist, or do not interact, in our simulations). For example, the modifications may need to call the interaction potential, which we set in our Python code as `D0`. To make this value accessible from the C++ without defining a new C++ class, we save `D0` as a parameter in the `dpd.pair.coeff.set()` for a particle interaction that does not occur in our simulations. That interaction parameter (in this case, `A`) is then used as an alias for `D0` in HOOMD-blue's code.
+The modifications expect a **default code** written for a **specific type of system**. We assume that there are NO wall particles and NO charged particles (the only interactions are between A-A, A-B, and B-B particles types). If you need to add either of these features, then the modifications to HOOMD-blue will need to be updated, accordingly (mainly by adjusting the way aliases are called in the `PotentialPairDPDThermo.h` file)
 
-**THIS IS IMPORTANT TO NOTE** because it means our default code is written for a specific type of system. We assume that there are NO wall particles and NO charged particles (the only interactions are between A-A, A-B, and B-B particles types). If you need to add either of these features, then the modifications to HOOMD-blue will need to be updated, accordingly. (Most of the aliases are called in the `PotentialPairDPDThermo.h` file)
+The modifications were written so that the entire simulation is run from a **single** Python file. Unfortunately, due to some difficult-to-resolve errors with pybind11, several new classes used in the modified C++ code could not be saved as true C++ classes. Until this is resolved or the simulations are modified to run from 2 input files, the new (custom) DPD classes are given aliases. 
+
+Most of these aliases are saved as interaction parameters for dummy particles (particles that otherwise do not exist, or do not interact, in our simulations). For example, the modifications may need to call the interaction potential, which we set in our Python code as `D0`. To make this value accessible from the C++ without defining a new C++ class, we save `D0` as a parameter in the `dpd.pair.coeff.set()` for a particle interaction that does not occur in our simulations. That interaction parameter (in this case, `A`) is then used as an alias for `D0` in HOOMD-blue's code.
 
 Below is a full list of the aliases used to call different parameters:
 * shear_Rate: called as the charge of particle zero (d_charge.data[0]) [This change is made in the C++ code only]
