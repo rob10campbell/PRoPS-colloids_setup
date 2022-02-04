@@ -136,8 +136,13 @@ After all of the #sbatch commands have been set, enter the commands you want the
 For regular HOOMD-blue simulations the only module you will need to load is python (i.e. python/3.8.1).
 
 **NOTE: It is recommended that you specify the exact path of the installation of python in your virtual environment, just to be absolutely sure Discovery does not default to the installation on the shared drive when running your simulation.**
+
+Once you have completed your exec.bash script, you can run it with `sbatch`:
+```bash
+$ sbatch exec.bash
+```
 <br>
-<br>
+
 ## Monitoring a Running Job
 
 You can use squeue to view your current jobs, displaying the job number, partition it is running on, job name, the user running the job, the status (running/pending, etc.), the time the job has been running, the number of nodes being used, and a list of the specific node IDs
