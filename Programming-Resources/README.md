@@ -73,6 +73,10 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 ## Python
 
+* [Jupyter Notebooks and Jupyter Lab](https://jupyter.org/)
+
+* [Spyder IDE](https://www.spyder-ide.org/)
+
 <br>
 
 ## R
@@ -104,6 +108,10 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 
 ## C/C++
+
+* [C++ Language Tutorials/Overview](https://www.cplusplus.com/doc/tutorial/)
+
+* [Headers and Includes Overview](https://www.cplusplus.com/articles/Gw6AC542/) (why use `.cc` and `.h` files)
 
 ## HPC
 
