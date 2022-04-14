@@ -1,10 +1,14 @@
 ## System Setup Tips
 
-This folder contains advice on [hardware] selection and [MacOS system setup] steps proir to installing and using [HOOMD-blue] for colloids simulations in the [PRoPS Group].
+This folder contains advice for members of the [PRoPS Group] on: 
+1. [Hardware] selection
+2. [Managing Northeastern-purchased computers]
+3. [MacOS system setup] proir to starting colloids simulations
 
-[Last Update: December 2021]
+[Last Update: April 2022]
 
-[hardware]: ../System-Setup/00-Hardware.md
-[MacOS system setup]: ../System-Setup/01-MacOS-Setup.md
-[HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
+[Hardware]: ../System-Setup/00-Hardware.md
+[Managing Northeaster-purchased computers]: ../System-Setup/01-Jamf.md
+[MacOS system setup]: ../System-Setup/02-macOS-Setup.md
+
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
