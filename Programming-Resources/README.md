@@ -12,6 +12,15 @@ This guide was compiled by Rob Campbell.
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 <br>
 
+## Contents
+1. [Best Practices for Collaborating on Code](/Programming-Resources#best-practices-for-collaborating-on-code)
+2. [Foundational CS Skills](/Programming-Resources#foundational-cs-skills)
+3. [Python](/Programming-Resources#python)
+4. [R](/Programming-Resources#r)
+5. [C/C++](/Programming-Resources#cc)
+6. [HPC](/Programming-Resources#hpc)
+<br>
+
 ## Best Practices for Collaborating on Code
 
 * [Stealing Google's Coding Practices for Academia]<br>
