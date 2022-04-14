@@ -5,7 +5,7 @@ This is a how-to guide for getting setup to do colloids simulations in the [PRoP
 [PRoPS Group]: https://web.inortheastern.edu/complexfluids/
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
-[Last Update: January 2022]
+[Last Update: April 2022]
 <br>
 <br>
 ## Before you Begin
@@ -20,6 +20,8 @@ Once you have received your computer, the remaining files should help you instal
 ## Installing Software and Running Simulations
 
 These guides are numbered to follow the steps for getting set up with HOOMD-blue, VMD, and other related tools for running and analyzing simulation data:
+
+*NOTE: This guide is written for HOOMD-blue v2.9 and has not yet been updated for HOOMD-blue 3.0*
 
 1. [The HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md)
 
