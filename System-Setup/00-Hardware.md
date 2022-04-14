@@ -2,7 +2,7 @@
 
 This is a guide to choosing a computer for research simulating colloids with [HOOMD-blue] in the [PRoPS Group].
 
-[Last Update: August 2021]
+[Last Update: April 2022]
 
 This guide was compiled by Rob Campbell.
 
@@ -49,7 +49,7 @@ Our implementation of HOOMD-blue is currently CPU only, so you will not need a h
 
 Any reasonably current processor should be good enough for this work. Our group members currently use the 2018 Intel i7, 2020 Intel i7, and 2020 Intel i5 without issue.
 
-Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). We expect Apple silicon to be a great choice in the future. For 2021, pandemic-related chip-shortages have made it easier to get a hold of Intel Macs, so that is what we recommend this year.
+Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). We expect Apple silicon to be a great choice in the future. For 2021, pandemic-related chip-shortages made it easier to get a hold of Intel Macs, so that's what we recommended that year.
 <br>
 <br>
 ## Current Hardware Used by Group Members
