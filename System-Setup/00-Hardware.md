@@ -42,7 +42,7 @@ For storage, we recommend 500GB. Most data will be stored externally on the clus
 <br>
 ## GPU
 
-Our implementation of HOOMD-blue is currently CPU only (without parallelization) so you will not need a high performance GPU unless you intend to redevelop the code. HOOMD-blue has existing GPU options, but we found them difficult to set up in the past and chose not to use them at this time.
+Our implementation of HOOMD-blue is currently CPU only, so you will not need a high performance GPU unless you intend to redevelop the code. HOOMD-blue has existing GPU options, but we found them difficult to set up with our required modifications and chose not to use them at this time. You will also have access to other GPU options through Northeastern's high performance computing cluster ("Discovery"). 
 <br>
 <br>
 ## Processor
