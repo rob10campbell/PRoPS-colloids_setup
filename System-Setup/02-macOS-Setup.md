@@ -19,6 +19,7 @@ This guide was complied by Rob Campbell.
 6. [Python 3](/System-Setup/02-macOS-Setup.md#python-3)
 7. [IDEs](/System-Setup/02-macOS-Setup.md#ides)
 8. [Git and Github](/System-Setup/02-macOS-Setup.md#git-and-github)
+9. [Jupyter Lab](/System-Setup/02-macOS-Setup.md#jupyter-lab)
 <br>
 
 ## Terminal for Command Line Programming in MacOS
@@ -164,7 +165,7 @@ Git is a version management tool, especially useful for collaborating with other
 <br>
 ## Jupyter Lab
 
-Another useful tool for sharing code is Juptyer Lab (the updated version of Jupyter Notebooks). A Jupyter Notebook allows you to view and run code in code-blocks using a graphical interface in a web browser. You can also share your code with other users this way, and they can re-run the code to see how it works. Jupyter is a combination of the names of three programming languages: "[Julia](https://julialang.org/)", "[Python](https://www.python.org/)", and "[R](https://www.r-project.org/about.html)" (**JuPyt**e**R**), which it was originally designed for. You can now use Jupyter for any of these three programming languages, as well as others.
+Another useful tool for sharing code is [Project Jupyter](https://jupyter.org/) (i.e. Juptyer Lab the updated interface for Jupyter Notebooks). A Jupyter Notebook allows you to write, view, edit, run, and see outputs from code using code-blocks in a web browser. You can also share your code with other users this way, and they can re-run the code to see how it works. Jupyter is a combination of the names of three programming languages: "[Julia](https://julialang.org/)", "[Python](https://www.python.org/)", and "[R](https://www.r-project.org/about.html)" (**Ju**-**Pyt**-e-**R**), which it was originally designed for. You can now use Jupyter for any of these three programming languages, as well as others.
 
 You can learn more about Jupyter and try it online at their [website](https://jupyter.org/). You can then follow their instructions for installing Jupter Lab on your computer using the command line, as well as setting up the Kernels for the languages you are interested in.
 
