@@ -10,6 +10,17 @@ This guide was complied by Rob Campbell.
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 <br>
 
+## Contents
+1. [Terminal for Command Line Programming in MacOS](System-Setup/01-MacOS-Setup.md#terminal-for-command-line-programming-in-macos)
+2. [Xcode](System-Setup/01-MacOS-Setup.md#xcode)
+3. [Package Managers](System-Setup/01-MacOS-Setup.md#package-managers)
+4. [Text Editors](System-Setup/01-MacOS-Setup.md#text-editors)
+5. [Cmake](System-Setup/01-MacOS-Setup.md#cmake)
+6. [Python 3](System-Setup/01-MacOS-Setup.md#python-3)
+7. [IDEs](System-Setup/01-MacOS-Setup.md#ides)
+8. [Git and Github](System-Setup/01-MacOS-Setup.md#git-and-github)
+<br>
+
 ## Terminal for Command Line Programming in MacOS
 
 MacOS uses the Terminal application for command line programming. The Terminal app is located in the Utilities folder, and can be accessed by opening Finder and selecting Applications from the Favorites sidebar

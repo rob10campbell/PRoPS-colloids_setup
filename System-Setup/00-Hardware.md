@@ -10,6 +10,16 @@ This guide was compiled by Rob Campbell.
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 <br>
 
+## Contents
+1. [Operating System](System-Setup/00-Hardware.md#operating-system)
+2. [Laptop vs. Desktop](System-Setup/00-Hardware.md#laptop-vs-desktop)
+3. [Memory](/System-Setup/00-Hardware.md#memory)
+4. [Storage](System-Setup/00-Hardware.md#storage)
+5. [GPU](System-Setup/00-Hardware.md#gpu)
+6. [Processor](System-Setup/00-Hardware.md#processor)
+7. [Current Hardware Used by Group Members](/System-Setup/00-Hardware.md#current-hardware-used-by-group-members)
+<br>
+
 ## Operating System
 
 HOOMD-blue currently requires MacOS or Linux. MacOS is recommended because it is what current group members use, and what you can get the most help troubleshooting. That said, if you are familiar with Linux and prefer it over MacOS you can definitely choose to use a Linux machine.
@@ -42,7 +52,9 @@ Any reasonably current processor should be good enough for this work. Our group 
 Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). We expect Apple silicon to be a great choice in the future. For 2021, pandemic-related chip-shortages have made it easier to get a hold of Intel Macs, so that is what we recommend this year.
 <br>
 <br>
-## Current Hardware Used by Group Members (Fall 2021)
+## Current Hardware Used by Group Members
+
+[Last Update: Fall 2021]
 
 13-inch MacBook Pro 2018
 * Processor: 2.7 GHz Quad-Core Intel Core i7
