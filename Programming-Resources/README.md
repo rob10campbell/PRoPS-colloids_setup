@@ -2,9 +2,9 @@
 
 This is a collection of programming resources that can help you get started with the tools you need to do research in the [PRoPS Group] simulating colloids with [HOOMD-blue].
 
-Our simulations use a variety of tools and programming languages. All of us were new to at least some of these things when we started working in the PRoPS group, and we're still exploring new things that might make our research easier/better! This directory contains some resources (either online or as PDFs) that have been useful for learning these skills.
+Our simulations use a variety of tools and programming languages. All of us were new to at least some of these things when we started working in the PRoPS group, and we're still exploring new things that might make our research easier/better! This directory contains some general resources (either online or as PDFs) that have been useful for learning these skills.
 
-[Last Update: December 2021]
+[Last Update: April 2022]
 
 This guide was compiled by Rob Campbell.
 
@@ -112,6 +112,7 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 * [C++ Language Tutorials/Overview](https://www.cplusplus.com/doc/tutorial/)
 
 * [Headers and Includes Overview](https://www.cplusplus.com/articles/Gw6AC542/) (why use `.cc` and `.h` files)
+<br>
 
 ## HPC
 
