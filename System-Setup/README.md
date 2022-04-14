@@ -8,7 +8,7 @@ This folder contains advice for members of the [PRoPS Group] on:
 [Last Update: April 2022]
 
 [Hardware]: ../System-Setup/00-Hardware.md
-[Managing Northeaster-purchased computers]: ../System-Setup/01-Jamf.md
+[Managing Northeastern-purchased computers]: ../System-Setup/01-Jamf.md
 [MacOS system setup]: ../System-Setup/02-macOS-Setup.md
 
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
