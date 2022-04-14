@@ -1,10 +1,10 @@
 # HOOMD-blue Installation Guide
 
-This is a guide to installing [HOOMD-blue] for use in the [PRoPS Group]'s colloid simulations. Our implementation of HOOMD-blue is currently CPU only (no GPU components). 
+This is a guide to installing [HOOMD-blue] v2.9 for use in the [PRoPS Group]'s colloid simulations. Our implementation of HOOMD-blue is currently CPU only (no GPU components). We are in the process of switching over our modifications to work with HOOMD-blue v3.0, which should follow a similar installation procedure. Check with your colleagues about which version you should be using.
 
 This guide is optizimed for MacOS.
 
-[Last Update: January 2022]
+[Last Update: April 2022]
 
 The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
