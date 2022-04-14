@@ -37,7 +37,7 @@ Here is an example email template:
 >
 > Please let me know if you need any additional information from me and thank you very much for you help.
 </br>
-</br>
+
 ## Removing Jamf requires re-installing macOS
 
 Once IT confirms that your computer is unmanaged, you can remove Jamf. Unfortunately you do not have permission to do this. Instead you must erase the computer and reinstall macOS. If you have already used your computer, be sure to back it up with TimeMachine or copy any important files to an external hard drive or cloud storage, then follow [Apple's instructions on How to reinstall macOS](https://support.apple.com/en-us/HT204904).
