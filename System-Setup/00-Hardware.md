@@ -11,12 +11,12 @@ This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
-1. [Operating System](System-Setup/00-Hardware.md#operating-system)
-2. [Laptop vs. Desktop](System-Setup/00-Hardware.md#laptop-vs-desktop)
+1. [Operating System](/System-Setup/00-Hardware.md#operating-system)
+2. [Laptop vs. Desktop](/System-Setup/00-Hardware.md#laptop-vs-desktop)
 3. [Memory](/System-Setup/00-Hardware.md#memory)
-4. [Storage](System-Setup/00-Hardware.md#storage)
-5. [GPU](System-Setup/00-Hardware.md#gpu)
-6. [Processor](System-Setup/00-Hardware.md#processor)
+4. [Storage](/System-Setup/00-Hardware.md#storage)
+5. [GPU](/System-Setup/00-Hardware.md#gpu)
+6. [Processor](/System-Setup/00-Hardware.md#processor)
 7. [Current Hardware Used by Group Members](/System-Setup/00-Hardware.md#current-hardware-used-by-group-members)
 <br>
 

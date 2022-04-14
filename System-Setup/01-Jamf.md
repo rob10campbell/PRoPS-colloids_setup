@@ -11,7 +11,7 @@ This guide was compiled by Rob Campbell
 ## Contents
 1. [About Jamf](/System-Setup/01-Jamf.md#about-jamf)
 2. [Getting permission to remove Jamf](/System-Setup/01-Jamf.md#getting-permission-to-remove-jamf)
-3. [Removing Jamf requires reinstalling macOS](/System-Setup/01-Jamf.md#removing-jamf-requires-reinstalling-macos)
+3. [Removing Jamf requires re-installing macOS](/System-Setup/01-Jamf.md#removing-jamf-requires-re-installing-macos)
 <br>
 
 ## About Jamf
@@ -29,13 +29,13 @@ To get permission to remove Jamf you need to email IT Services (help@northeaster
 
 Here is an example email template:
 
-*Hello, I am a [graduate student/postdoc/etc] in the Mechanical Engineering Department (NUID #########) working with Prof. Safa Jamali.*
-
-*Prof. Jamali recently ordered a [Macbook Pro] for my research that arrived with Jamf Connect installed. The group has had issues managing the software we use for our research on Jamf administered devices in the past, and after discussing the situation with Prof. Jamali I would like to have this unmanaged by Jamf.*
-
-*The computer name is ###############*
-
-*Please let me know if you need any additional information from me and thank you very much for you help.*
+> Hello, I am a [graduate student/postdoc/etc] in the Mechanical Engineering Department (NUID #########) working with Prof. Safa Jamali.
+>
+> Prof. Jamali recently ordered a [Macbook Pro] for my research that arrived with Jamf Connect installed. The group has had issues managing the software we use for our research on Jamf administered devices in the past, and after discussing the situation with Prof. Jamali I would like to have this unmanaged by Jamf.
+>
+> The computer name is ###############
+>
+> Please let me know if you need any additional information from me and thank you very much for you help.
 </br>
 </br>
 ## Removing Jamf requires re-installing macOS

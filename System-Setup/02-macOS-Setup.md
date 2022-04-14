@@ -11,14 +11,14 @@ This guide was complied by Rob Campbell.
 <br>
 
 ## Contents
-1. [Terminal for Command Line Programming in MacOS](System-Setup/01-MacOS-Setup.md#terminal-for-command-line-programming-in-macos)
-2. [Xcode](System-Setup/01-MacOS-Setup.md#xcode)
-3. [Package Managers](System-Setup/01-MacOS-Setup.md#package-managers)
-4. [Text Editors](System-Setup/01-MacOS-Setup.md#text-editors)
-5. [Cmake](System-Setup/01-MacOS-Setup.md#cmake)
-6. [Python 3](System-Setup/01-MacOS-Setup.md#python-3)
-7. [IDEs](System-Setup/01-MacOS-Setup.md#ides)
-8. [Git and Github](System-Setup/01-MacOS-Setup.md#git-and-github)
+1. [Terminal for Command Line Programming in MacOS](/System-Setup/01-MacOS-Setup.md#terminal-for-command-line-programming-in-macos)
+2. [Xcode](/System-Setup/01-MacOS-Setup.md#xcode)
+3. [Package Managers](/System-Setup/01-MacOS-Setup.md#package-managers)
+4. [Text Editors](/System-Setup/01-MacOS-Setup.md#text-editors)
+5. [Cmake](/System-Setup/01-MacOS-Setup.md#cmake)
+6. [Python 3](/System-Setup/01-MacOS-Setup.md#python-3)
+7. [IDEs](/System-Setup/01-MacOS-Setup.md#ides)
+8. [Git and Github](/System-Setup/01-MacOS-Setup.md#git-and-github)
 <br>
 
 ## Terminal for Command Line Programming in MacOS
