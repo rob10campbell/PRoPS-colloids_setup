@@ -99,27 +99,28 @@ Below is a full list of the aliases used to call different parameters:
 * Write_One_Time_Virial_Lifetime (the interval for recording the virial component of shear stress): saved as the DPD parameter `gamma` for particle types D-W
 * Contact_Force (used to set colloid-colloid hard-sphere interactions): saved as the DPD parameter `A` for particle types W-W
 * BDPeriod (the interval to record bond data): saved as the DPD parameter `gamma` for particle types W-W
-
+<br>
+<br>
 If you would like to make additional modifications to the files (or make similar modification to another program), it may be useful to know what has been changed. You can see what the changes are by comparing the modified files with their original equivalents in HOOMD-blue v2.9. A basic outline of what has been changed is given below/
 
 There are 15 files (5 that belong in the `hoomd/` directory and 10 that belong in the `hoomd/md/` direcotry). Line numbers correspond to the *modified* files:
-* hoom/
-	* `BoxResizeUpdater.cc`: modify the box-wrapping (Line 105-106, 115120)
-	* `BoxResizeUpdater.h`: no change (included for consistency)
-	* `ComputeThermo.cc`: add `h_pos` and `d_charge` variables during thermo calculation (Line 211), add flags (Line 235), use slabbed positions (Line 238-259,281-314)
-	* `ComputeThermo.h`: include `writeKE.h` and use it in the temperature calculation step (Line 69)
-	* `writeKE.h`: a new file that creates the "KineticEnergy.csv" output (KE of each contact number (1-2) and for all solvents, as well as counters) 
+* hoomd/
+	* **`BoxResizeUpdater.cc`**: modify the box-wrapping (Line 105-106, 115120)
+	* **`BoxResizeUpdater.h`**: no change (included for consistency)
+	* **`ComputeThermo.cc`**: add `h_pos` and `d_charge` variables during thermo calculation (Line 211), add flags (Line 235), use slabbed positions (Line 238-259,281-314)
+	* **`ComputeThermo.h`**: include `writeKE.h` and use it in the temperature calculation step (Line 69)
+	* **`writeKE.h`**: a new file that creates the "KineticEnergy.csv" output (KE of each contact number (1-2) and for all solvents, as well as counters) 
 * hoomd/md
-	* `BondDataCSV.h`: a new file that creates the "BondData#.csv" file
-	* `EvaluatorPairDPDLJThermo.h`: makes changes to notify you if our new flags are updated during `evalForceEnergyThermo()` (Line 181-183)
-	* `EvaluatorPairDPDThermo.h`: makes changes to notify you if our new flags are updated during `evalForceEnergyThermo()` (Line 175-177), accounts for resolving particle overlaps (Line 205-229, 231-236, 238-240), adds colloid-colloid specific calculations (Line 242-259) lifetime calculations (Line 260-262) and hydrodynamics calculations (Line 263-304)
-	* `PotentialPairDPDThermo.h`: includes all the new header files that have been created, initialized the lifetime parameters (Line 69-77), counts colloids and initialized a lifetime object (Line 103-121), adds `h_diameter` and `d_charge` to the force arrays (Line 181-182), sets contact number (Line 192-202), resets the virial and contact number list before looping (Line 203-245), initializes diameter and radisu (Line 265-266), sets boundary conditions and seed (Line 295-303), modifies `dx` for surface-surface calculations (Line 307-356), changes the force and potential energy calculations (Line 367-372), removes special potential pair requirements (Line 378-380), adds new parameters to `evalForceEnergyThermo()` (Line 387-388), changes the virial calculation (Line 393-442), and adds `writeSingleTimeTagList()` (Line 472-499)
-	* `TwoStepNVE.cc`: adds `d_charge` and `Boxdims` (Line 89-91), initializes additional counters (Line 95-110), creates a new `MY_typej` for position calculations (Line 114-163), adds additional limits on particle movement for crossing boundaries (Line 193-219), and removes `getBoxdims` (Line 221)
-	* `TwoStepNVE.h`: no change (included for consistency)
-	* `distanceModification.h`: a new file for converting inter-particle distances to surface-surface measurements and resolving overlaps
-	* `forceContribution.h`: a new file for creating the "IsolatedVirial.csv" file
-	* `lifeTime.h`: a new file for creating output files related to inter-particle interaction lifetimes
-	* `writeVirials.h`: a ew file for creating the "Virials.csv" file 
+	* **`BondDataCSV.h`**: a new file that creates the "BondData#.csv" file
+	* **`EvaluatorPairDPDLJThermo.h`**: makes changes to notify you if our new flags are updated during `evalForceEnergyThermo()` (Line 181-183)
+	* **`EvaluatorPairDPDThermo.h`**: makes changes to notify you if our new flags are updated during `evalForceEnergyThermo()` (Line 175-177), accounts for resolving particle overlaps (Line 205-229, 231-236, 238-240), adds colloid-colloid specific calculations (Line 242-259) lifetime calculations (Line 260-262) and hydrodynamics calculations (Line 263-304)
+	* **`PotentialPairDPDThermo.h`**: includes all the new header files that have been created, initialized the lifetime parameters (Line 69-77), counts colloids and initialized a lifetime object (Line 103-121), adds `h_diameter` and `d_charge` to the force arrays (Line 181-182), sets contact number (Line 192-202), resets the virial and contact number list before looping (Line 203-245), initializes diameter and radisu (Line 265-266), sets boundary conditions and seed (Line 295-303), modifies `dx` for surface-surface calculations (Line 307-356), changes the force and potential energy calculations (Line 367-372), removes special potential pair requirements (Line 378-380), adds new parameters to `evalForceEnergyThermo()` (Line 387-388), changes the virial calculation (Line 393-442), and adds `writeSingleTimeTagList()` (Line 472-499)
+	* **`TwoStepNVE.cc`**: adds `d_charge` and `Boxdims` (Line 89-91), initializes additional counters (Line 95-110), creates a new `MY_typej` for position calculations (Line 114-163), adds additional limits on particle movement for crossing boundaries (Line 193-219), and removes `getBoxdims` (Line 221)
+	* **`TwoStepNVE.h`**: no change (included for consistency)
+	* **`distanceModification.h`**: a new file for converting inter-particle distances to surface-surface measurements and resolving overlaps
+	* **`forceContribution.h`**: a new file for creating the "IsolatedVirial.csv" file
+	* **`lifeTime.h`**: a new file for creating output files related to inter-particle interaction lifetimes
+	* **`writeVirials.h`**: a ew file for creating the "Virials.csv" file 
 <br>
 
 ## Next Steps
