@@ -1,8 +1,8 @@
 # Modifying HOOMD-blue 
 
-This is a guide to installing the [PRoPS Group](https://web.northeastern.edu/complexfluids/)'s modifications to [HOOMD-blue](http://glotzerlab.engin.umich.edu/hoomd-blue/) for improved particle interaction tracking across Lees-Edwards boundary conditions in colloidal gels. These modifications will allow you to simulate attractive solid spheres, shear a system with Lees-Edwards boundary conditions, calculate particle interaction lifetimes, and output the decomposed stresses and shear stresses from a simulation.
+This is a guide to installing the [PRoPS Group](https://web.northeastern.edu/complexfluids/)'s modifications to [HOOMD-blue](http://glotzerlab.engin.umich.edu/hoomd-blue/)v2.9 for tracking the lifetime of DPD particle interactions across Lees-Edwards boundary conditions. These modifications will allow you to simulate the formation of space spanning networks (gels) from attractive solid spheres. You can also use these modifications to track the particle interactions during shearing of a colloidal gel and output the decomposed stresses of the system; however, there are some non-physical errors in the stresses that are not yet fully resolved.
 
-This guide is optizimed for MacOS.
+This guide is optizimed for macOS. 
 
 Before modifying HOOMD-blue you must install the base version HOOMD-blue. See the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for information on installing the base version of HOOMD-blue.
 
@@ -15,26 +15,38 @@ The modifications to HOOMD-blue were developed by Mohammad (Nabi) Nabizadeh as p
 
 ## Contents
 1. [Why Make Modifications](/06-Modifying-HOOMDblue.md#why-make-modifications)
-2. [Installing Our Existing Modifications](/06-Modifying-HOOMDblue.md#installing-our-existing-modifications)
-3. [Modifying The Existing Modifications](/06-Modifying-HOOMDblue.md#modifying-the-existing-modifications)
-4. [Next Steps](/06-Modifying-HOOMDblue.md#next-steps)
+2. [What a Modified Simulation Does](/06-Modifying-HOOMDblue.md#what-a-modified-simulation-does)
+3. [Installing Our Existing Modifications](/06-Modifying-HOOMDblue.md#installing-our-existing-modifications)
+4. [Modifying The Existing Modifications](/06-Modifying-HOOMDblue.md#modifying-the-existing-modifications)
+5. [Next Steps](/06-Modifying-HOOMDblue.md#next-steps)
 
 <br>
 
 ## Why Make Modifications
 
-Our simulations use periodic boundaries so that we can apply our results to the behavior of a larger physical system. Even though our simulation has a relatively small number of particles that would only make up one piece of a larger system, the periodic boundaries allow us to generalize how the particles will behave across a larger region of material with similar structure. 
+Our simulations use periodic boundaries so that we can apply our results to the behavior of a larger physical system. The particles at the edge of the simulation box interact with a duplicate image of the particles at the other side of the box. This allows particles to cross the boundary without leaving the system (re-entering the simulation box from the opposite side). These type of boundaries are common and easily implemented in HOOMD-blue, but the way that we want to use them is different from HOOMD-blue's defaults and has caused some problems, especially when shearing the system.
 
-Our emphasis on tracking particle interactions and colloidal structure is a bit at odds with HOOMD-blue's built-in shearing approach. HOOMD-blue was written to apply shear as a horizontal deformation (tilting) of the simulation box. In 2D this appears as the box first deforming from a square to a parallelogram, and then using this deformation to update the position of the particles. Unfortunately, this tilting process can cause particle interaction information to be lost when a particle crosses the simulation box boundary. The tilting process does not update the positions of particles that cross a periodic simulation box boundary in a way that retains interaction information from before crossing that boundary, effectively breaking all previous interactions at the boundary. 
+We want to apply shear to the simulation box by dragging the top and bottom images across the Y-axis boundaries at a velocity equal to the shear rate. HOOMD-blue was not written to apply shear this way, instead it controls shear by changing the physical shape of the simulation box (a horizontal deformation) to update particle positions. In 2D this appears as the box "tilting," deforming from a square to a parallelogram, for 1 strain. The positions in the "tilted" parallelogram box are then used to update the position of the particles that have crossed the simulation box boundaries. 
 
-We have made modifications to HOOMD-blue's C++ base code that allow us to fully track all particle interactions in a simulation. These interactions are calculated with Lees-Edwards boundary conditions for the simulation box boundary, and the effect of shear is calculated as part of the DPD particle interaction step using the Velocity-Verlet integration method (as described in [Boromand, Jamali, and Maia 2015](https://www.sciencedirect.com/science/article/abs/pii/S0010465515002076)).
+This is extremely efficient for calculating a particle's new position when cross a Y-axis boundary of the simulation box; however, we need to make some changes to this process to be able to track the interactions with particles that cross a boundary like this.
 
-To briefly summarize, the simulation box is surrounded by copies (images) in the X and Y directions. A shear rate is applied by moving the top and bottom images (+Y and -Y) at opposing velocities (+V and -V) with respect to the simulation box. This velocity is propogated through the simulation box by the dissipative force (i.e. friction) component of the DPD forces that define particle interactions. The effect of the dissipative force (and resulting changes to particle position and velocity) is implemented in the Velocity-Verlet algorithm, a 2-step integration implemented through modifications to the `TwoStepNVE.cc` file. This algorithm updates the position and velocity of a particle based on the DPD forces. In traditional CFD integration is performed as a single step (from timestep N to N+1). In the Velocity-Verlet 2-step integration particle position is completely updated in Step 1, but the velocity is only updated by about one-half timestep (the velocity is scaled by the parameter lambda, which we define as 0.5). This results in a second force calculation step (Step 2), where the forces are calculated again for the second one-half timestep (and position is unchanged). At the end of both integration steps, one full timestep has occured, particle interactions (bonds) are formed or broken, and the calculation can begin again for the next timestep. This two-step process is an efficient way to smoothe particle motion in the simulation without significantly increasing simulation costs.
+To achieve this, Nabi made modifications to HOOMD-blue's C++ base code. These modifications have not been updated for HOOMD-blue v3.0 and can not be run using MPI or other parallelized approaches, but they do effectively track all the particle interactions (formation and breaking of bonds, etc.).
+<br>
+<br>
+## What a Modified Simulation Does
+
+Our simulations use Lees-Edwards boundary conditions for the simulation box boundary. The effect of shear flow is propogated through the system by each particle interaction (calculated as part of the DPD particle interaction step using the Velocity-Verlet integration method, as described in [Boromand, Jamali, and Maia 2015](https://www.sciencedirect.com/science/article/abs/pii/S0010465515002076)).
+
+This means that the simulation box is surrounded by copies (images) in the X and Y directions. A shear rate is applied by moving the top and bottom images (+Y and -Y) at opposing velocities (+V and -V) with respect to the simulation box. This velocity is propogated through the simulation box by the dissipative force (i.e. friction) component of the DPD forces that define particle interactions. 
+
+The effect of the dissipative force (and resulting changes to particle position and velocity) is then implemented in the Velocity-Verlet algorithm, a 2-step integration implemented through modifications to the `TwoStepNVE.cc` file. This algorithm updates the position and velocity of a particle based on the DPD forces. In traditional CFD integration is performed as a single step (from timestep N to N+1). In the Velocity-Verlet 2-step integration particle position is completely updated in Step 1, but the velocity is only updated by about one-half timestep (the velocity is scaled by the parameter lambda, which we define as 0.5). This results in a second force calculation step (Step 2), where the forces are calculated again for the second one-half timestep (and position is unchanged).
+
+At the end of both integration steps, one full timestep has occured, particle interactions (bonds) are formed or broken, and the calculation can begin again for the next timestep. This two-step process is an efficient way to smoothe particle motion in the simulation without significantly increasing simulation costs.
 <br>
 <br>
 ## Installing Our Existing Modifications
 
-The modifications described above were developed by Mohammad (Nabi) Nabizadeh and are collected in the `Nabi_HOOMDblue_extensions` folder [on Discovery](/09-Slurm-and-Disco.md). As mentioned above, these modifications allow us to simulate attractive solid spheres, shear a system with Lees-Edwards boundary conditions, calculate particle interaction lifetimes, and output the decomposed stresses and shear stresses from a simulation.
+The modifications described above were developed by Mohammad (Nabi) Nabizadeh and are collected in the `Nabi_HOOMDblue_extensions` folder [on Discovery](/09-Slurm-and-Disco.md).
 
 These file are written in C++. If you are new to C/C++, you will notice that there are `.cc` and `.h` files with the same names. A `.cc` file contains an implementation that is then called by the header (`.h`) file. Technically the `.cc` file is optional and everything can be included in the header, but the separation of a code into `.cc` and `.h` files is frequently considered best practice. You will need both the `.cc` and `.h` files to modify your version of HOOMD-blue.
 
