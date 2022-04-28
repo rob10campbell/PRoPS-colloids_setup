@@ -58,7 +58,7 @@ To examine the file with Vim, in the Terminal use the command
 % vim waterDPD.py
 ```
 *Note: If you are viewing or editing* `waterDPD.py` *in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command* `:set number` *or* `:set nu`<br>
-(for more information on Vim basics, see the [MacOS Setup guide](/System-Setup/01-MacOS-Setup.md#text-editors))
+(for more information on Vim basics, see the [macOS Setup guide](/System-Setup/02-macOS-Setup.md#text-editors) and the resources in [Foundational CS Skills](/Programming-Resources#foundational-cs-skills))
 
 You will see that the `waterDPD.py` Python script is divided into 4 sections:
 1. Importing a list of packages
