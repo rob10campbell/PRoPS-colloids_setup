@@ -101,7 +101,7 @@ If you look more closely at the 4th section ("Total INITIALIZE") you will see th
 ```python
 44 hoomd.dump.gsd(filename="Equilibrium.gsd", overwrite=True, period=1, group=all, dynamic=['attribute', 'momentum', 'topology'])
 ```
-* And `Pressure_xy.log` using the `hoomd.analyze` command. In line `46` the `quantities` option specifies what quantities are logged into the output file (for a full list of available quantities in `hoomd.analyze.log` see the [documentation](https://hoomd-blue.readthedocs.io/en/stable/module-hoomd-analyze.html#hoomd.analyze.log))
+* And `Pressure_xy.log` using the `hoomd.analyze` command. In line `46` the `quantities` option specifies what quantities are logged into the output file (for a full list of available quantities in `hoomd.analyze.log` see the [documentation](https://hoomd-blue.readthedocs.io/en/v2.9.7/module-hoomd-analyze.html#hoomd.analyze.log))
 ```python
 45 hoomd.analyze.log(filename='Pressure_xy.log', overwrite=True ,
 46                   quantities=['pressure_xy','temperature'],period=1)
