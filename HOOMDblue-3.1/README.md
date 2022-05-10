@@ -2,7 +2,7 @@
 
 This is a how-to guide for getting setup to do colloids simulations in the [PRoPS Group] using [HOOMD-blue]v3.1 and [MPI]
 
-WARNING: This guide is in the process of being updated for v3.1, IT IS INCOMPLETE. Contact Rob before using for information about what is ready to use.
+**WARNING: This guide is in the process of being updated for v3.1, IT IS INCOMPLETE. Contact Rob before using for information about what is ready to use**
 
 [PRoPS Group]: https://web.inortheastern.edu/complexfluids/
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
