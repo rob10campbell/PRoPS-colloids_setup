@@ -1,6 +1,5 @@
-# gelbot-mpi
+# Deepak mods list
 Modified version of HOOMD v3.1 optimized for colloidal gels
-test change
 
 ## Deepak's Modifications (April/May 2022)
 
@@ -42,5 +41,5 @@ List of files Deepak modified:
 	- ?? hoomd/update/CMakeLists.txt (April 4)
 	- ?? hoomd/update/__init__.py (April 4)
 	- ?? hoomd/update/remove_veldrift.py (April 7)
-- ?? hoomd/UpdaterRemoveVelDrift.h (Apr 7)
+- [ADD NEW FILE] hoomd/UpdaterRemoveVelDrift.h (Apr 7)
 
