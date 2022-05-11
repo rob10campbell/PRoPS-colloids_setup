@@ -4,8 +4,8 @@ Modified version of HOOMD v3.1 optimized for colloidal gels
 ## Deepak's Modifications (April/May 2022)
 
 List of files Deepak modified:
-- ?? hoomd/BoxResizeUpdater.cc (March 21)
-- ?? hoomd/Communicator.cc (April 7)
+- hoomd/BoxResizeUpdater.cc (March 21)
+- ~~hoomd/Communicator.cc (April 7)~~
 - hoomd/Communicator.h (April 15)
 - ?? hoomd/ComputeThermo.cc (Feb 16)
 - hoomd/ForceCompute.cc (May 1)
