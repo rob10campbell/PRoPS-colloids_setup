@@ -1,19 +1,14 @@
 # HOOMD-blue Installation Guide
 
-This is a guide to installing [HOOMD-blue v3.1] and [OpenMPI] for running colloid simulations in the [PRoPS Group]. This implementation of HOOMD-blue is CPU only (no GPU components).
-
-This software is available for use on Discovery in the directory `/work/props/HOOMDblue/`
+This is a guide to installing [HOOMD-blue] v2.9 for use in the [PRoPS Group]'s colloid simulations. Our implementation of HOOMD-blue is currently CPU only (no GPU components). We are in the process of switching over our modifications to work with HOOMD-blue v3.0, which should follow a similar installation procedure. Check with your colleagues about which version you should be using.
 
 This guide is optizimed for MacOS.
 
-[Last Update: May 2022]
+[Last Update: April 2022]
 
-*HOOMD-blue v2.9 was adapted for colloids simulations by Mohammad (Nabi) Nabizadeh.* <br>
-*These modifications were updated for HOOMD-blue v3.0 and MPI by Dr. Deepak Mangal.* <br>
-*This guide was compiled by Rob Campbell.*
+The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
-[HOOMD-blue v3.1]: https://hoomd-blue.readthedocs.io/en/v3.1.0/index.html
-[OpenMPI]: https://www.open-mpi.org/
+[HOOMD-blue]: https://glotzerlab.engin.umich.edu/hoomd-blue
 [PRoPS Group]: https://web.northeastern.edu/complexfluids/
 
 ## Contents
@@ -30,23 +25,16 @@ This guide is optizimed for MacOS.
 
 Required for installation:
 * MacOS or Linux (this guide is optimized for MacOS)
-* C++17 capable compiler (HOOMD-blue v3.1 is tested with gcc 7, 8, 9, 10, 11, and clang 6, 7, 8, 9, 10, 11, 12, 13)
-* CMake >= 3.9
+* C++11 capable compiler (HOOMD-blue is tested with gcc 4.8, 5.5, 6.4, 7, 8, 9, clang 5, 6, 7, 8)
+* CMake >= 2.8.10.1
 * Eigen >= 3.2
+* Python >= 3.5
 * pybind11 >= 2.2
-* Python >= 3.6
 * NumPy >= 1.7
-
-For MPI parallel execution
-* MPI (HOOMD-blue v3.1 is tested with OpenMPI, MVAPICH)
-* cereal >= 1.1
 
 Both clang and gcc should be included with Xcode on MacOS. MacOS also includes Python 2, but you will need to install Python 3 separately. Python 3 and the other prerequisites can be installed using [Homebrew](https://brew.sh/) or another package manager (NumPy and pybind11 are also easily installed for Python using pip, see note on virtual environments below). 
 
 *Note: It is not recommended to install HOOMD-blue prerequisites with conda. See the* [HOOMD-blue](https://hoomd-blue.readthedocs.io/en/stable/installation.html) *installation page for advice on using conda.*
-<br>
-<br>
-***UPDATES END HERE***
 <br>
 <br>
 ## Setting Up Source Repositories
