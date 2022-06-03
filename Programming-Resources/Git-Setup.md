@@ -1,6 +1,6 @@
 # Git and Github Setup Recommendations and Tips
 
-This is a guide to setting up command-line Git on a MacOS computer for backing up code and implementing version management in command line programming.
+This is a guide to setting up command-line Git on a macOS computer for backing up code and implementing version management in command line programming.
 
 [Last Update: December 2021]
 
@@ -9,7 +9,7 @@ This guide was complied by Rob Campbell.
 
 ## Git
 
-Git is a version management tool, especially useful for collaborating with others on shared code. You can use Git locally, on your computer, via the command line (or Terminal, on MacOS) to work with files stored remotely on Github. By using Git to synch the local and remote copies of your files you automatically keep a record of all the changes you make (making it easy to revert to previous versions), and you can easily share the remote copy with a collaborator. If two or more people are working on the same file (or set of files) in a remote Github repository, Git helps keep track of who makes which changes. It also helps you merge changes from multiple contributors into the same final file. Many people use Github for open-source software development, but in principle it can be used for any project that needs versions management (whether they are public OR private). You can access Github repositories through a variety of means, with or without contributing to them. This guide is specifically for setting up Git on the command-line for use contributing to personal or collaborative projects (such as this start-up guide).
+Git is a version management tool, especially useful for collaborating with others on shared code. You can use Git locally, on your computer, via the command line (or Terminal, on macOS) to work with files stored remotely on Github. By using Git to synch the local and remote copies of your files you automatically keep a record of all the changes you make (making it easy to revert to previous versions), and you can easily share the remote copy with a collaborator. If two or more people are working on the same file (or set of files) in a remote Github repository, Git helps keep track of who makes which changes. It also helps you merge changes from multiple contributors into the same final file. Many people use Github for open-source software development, but in principle it can be used for any project that needs versions management (whether they are public OR private). You can access Github repositories through a variety of means, with or without contributing to them. This guide is specifically for setting up Git on the command-line for use contributing to personal or collaborative projects (such as this start-up guide).
 
 *NOTE: Github has limited storage, and therefore it is NOT a suitable place to store data files. You can store your project code or documentation on Github, but you will need to store data separately (on your own computer, on Discovery, etc.)*
 
@@ -22,7 +22,7 @@ Once you have an account, you should [create a new repository](https://docs.gith
 <br>
 ## Install Git on the command line
 
-If you need more information about working on the command line, I recommend the first few lectures from ["The Missing Semester of Your CS Education"](https://missing.csail.mit.edu/). You can also look at our [MacOS System Setup Recommendations and Tips](/System-Setup/01-MacOS-Setup.md) and the early steps of the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for a quick review. This guide assumes you are using a zsh Terminal on MacOS.
+If you need more information about working on the command line, I recommend the first few lectures from ["The Missing Semester of Your CS Education"](https://missing.csail.mit.edu/). You can also look at our [macOS System Setup Recommendations and Tips](/System-Setup/02-macOS-Setup.md) and the early steps of the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for a quick review. This guide assumes you are using a zsh Terminal on macOS.
 
 Open Terminal to the home directory and use the command line to create a new directory where you want to store your Github repositories. This directory can also store non-Github files, for example it could be the "src" or "repositories" directory in your home directory, or you could create a new a "Github" specific directory. The directory does not need to be in the home directory (you could put it in another subfolder, or as a subfolfer in "repositories" etc.) but putting it in the home directory typically makes it easiest to access).
 
@@ -113,7 +113,7 @@ To configure Git to sign all commits by default, run
 % git config --global commit.gpgsign true
 ```
 
-This allows you to commit as normal, with identity verification, but it will require you to enter your GPG passphrase to authenticate a commit. If you would like the passphrase to be automatically entered from the MacOS keychain you can install [GPG Suite](https://gpgtools.org/) (recommended by Github), or configure `gpg-agent` to save your GPG passphrase automatically.
+This allows you to commit as normal, with identity verification, but it will require you to enter your GPG passphrase to authenticate a commit. If you would like the passphrase to be automatically entered from the macOS keychain you can install [GPG Suite](https://gpgtools.org/) (recommended by Github), or configure `gpg-agent` to save your GPG passphrase automatically.
 
 To configure `gpg-agent` to retrieve your passphrase, use the following steps:
 
@@ -138,7 +138,7 @@ Sign a test message so pinentry-mac can store your password in the keychain
 ```bash
 % echo "test" | gpg --clearsign
 ```
-A new MacOS window should pop-up prompting you to enter your passphrase. Make sure you check "Save in Keychain" and you should be all set. 
+A new macOS window should pop-up prompting you to enter your passphrase. Make sure you check "Save in Keychain" and you should be all set. 
 
 If you get a differnet pop-up (more like part of the Terminal window) without the "Save in Keychain" option then you can still enter your passphrase but it will not automatically enter it in the future. To fix this, quit all gpg-agent processes
 ```bash
