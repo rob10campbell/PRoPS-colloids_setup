@@ -13,6 +13,7 @@ This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
+1. [Best Practices for Scientific Computing](/Programming-Resources#best-practices-for-scientific-computing)
 1. [Best Practices for Collaborating on Code](/Programming-Resources#best-practices-for-collaborating-on-code)
 2. [Foundational CS Skills](/Programming-Resources#foundational-cs-skills)
 3. [Python](/Programming-Resources#python)
@@ -20,6 +21,14 @@ This guide was compiled by Rob Campbell.
 5. [C/C++](/Programming-Resources#cc)
 6. [HPC](/Programming-Resources#hpc)
 <br>
+
+## Best Practices for Scientific Computing
+
+* [Good Enough Practices for Scientific Computing]<br>
+2016 follow up to "Best Practices for Scientific Computing" as 6 best practices specifically geared towards people who are just getting started with scientific computing. 
+
+* [Best Practices for Scientific Computing]<br>
+2014 paper outlining 8 best practices for scientific computing.
 
 ## Best Practices for Collaborating on Code
 
@@ -32,6 +41,8 @@ Slides from a 2019 Princeton workshop with an overview of reproducible research 
 * [Making READMEs Readable]<br>
 Best practices for open-source READMEs/documentation
 
+[Good Enough Practices for Scientific Computing]: https://swcarpentry.github.io/good-enough-practices-in-scientific-computing/
+[Best Practices for Scientific Computing]: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
 [Stealing Google's Coding Practices for Academia]: https://da-data.blogspot.com/2016/04/stealing-googles-coding-practices-for.html?m=1
 [Reproducible research: Goals, Guidelines and Git]: https://opr.princeton.edu/workshops/Downloads/2019May_RRandGitPratt.pdf
 [Making READMEs Readable]: https://github.com/18F/open-source-guide/blob/18f-pages/pages/making-readmes-readable.md
@@ -77,6 +88,8 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 * [Markdown Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 
 * [Getting Started with writing and formatting on Github](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github)
+
+* [Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 
 <br>
 
