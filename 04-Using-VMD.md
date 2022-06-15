@@ -173,7 +173,8 @@ In general the VMD community is quite large, so there are a lot of resources ava
 Some recommended visualizations for colloid particles are:
 * Set the "Coloring Method" to "Velocity" to visualize shear flow
 * Use the "Periodic" tab in the **Graphical Representations** window to add 1 or 2 copies of the simulation box in the "+X" and "-X" direction to visualize flow 
-* Adust visualization settings in the "Z" axis and modify the lighting position to more accurately reprensent the volume fraction of a sample (i.e. add depth to the image). Set the coloring method to "Position/Z" and adjust the opacity and/or brightness of the particles along this axis.
+* Adust visualization settings in the "Z" axis and modify the lighting position to more accurately reprensent the volume fraction of a sample (i.e. add depth to the image). Set the coloring method to "Position/Z" and adjust the opacity and/or brightness of the particles along this axis. 
+	* After selecting "Position/Z" for coloring method, go back to the **VMD Main** window and the "Graphics" drop down menu. Select "Colors" to open the **Color Controls** window, and switch to the "Color Scale" tab. In the "Method" drop down menu select "BlkW" to have the particle fade to black as they go deeper into the Z-plane.
 <br>
 
 ## Next Steps
